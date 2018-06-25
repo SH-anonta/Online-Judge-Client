@@ -1,4 +1,6 @@
-# Chatapp
+# Task Tree Client
+
+A frontend SPA for the web app [Task Tree](https://github.com/SH-anonta/Task-Tree)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
