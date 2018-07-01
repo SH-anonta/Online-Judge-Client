@@ -9,6 +9,8 @@ import {RegisterComponent} from './page-components/register/register.component';
 import {DfaCreatorComponent} from './feature-modules/automata-creator/dfa-creator/dfa-creator.component';
 import {AutomataCreatorModule} from './feature-modules/automata-creator/automata-creator.module';
 import {AboutComponent} from './page-components/about/about.component';
+import {UserProfileComponent} from './page-components/user/user-profile/user-profile.component';
+import {UserComponent} from './page-components/user/user.component';
 
 
 
@@ -18,6 +20,8 @@ const routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'dfa', component: DfaCreatorComponent},
   {path: 'about', component: AboutComponent},
+
+  {path: 'user', component: UserComponent},
 
   {path: 'error-404', component: Error404Component},
   {path: '**', redirectTo: 'error-404'},
@@ -29,7 +33,10 @@ const routes = [
     Error404Component,
     LoginComponent,
     RegisterComponent,
-    AboutComponent
+    AboutComponent,
+
+    UserComponent,    //todo remove
+    UserProfileComponent, //todo remove
   ],
   imports: [
     RouterModule.forRoot(routes),
