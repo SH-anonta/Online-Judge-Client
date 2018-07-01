@@ -7,6 +7,7 @@ import {HeaderComponent} from './page-components/header/header.component';
 import {FooterComponent} from './page-components/footer/footer.component';
 import {UserService} from './global-services/user.service';
 import {AuthService} from './global-services/auth.service';
+import {DataFetcherService} from './global-services/data-fetcher.service';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {AuthService} from './global-services/auth.service';
   providers: [
     AuthService,
     UserService,
+    DataFetcherService,
 
   ],
   bootstrap: [AppComponent]
