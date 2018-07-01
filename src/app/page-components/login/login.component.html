@@ -4,25 +4,27 @@
 
       <form #f="ngForm"
             id="LoginForm"
-            (ngSubmit)="onFormSubmit(f)" >
+            class="text-right"
+            (ngSubmit)="onFormSubmit(f)">
 
-        <label for="username">Username</label>
-        <input ngModel
-               type="text"
-               id="username"
-               name="username"
-               class="form-control"
-               placeholder="Mr. User">
+        <div id="InputContainer" class="text-left">
+          <!--<label for="username">Username</label>-->
+          <input ngModel
+                 type="text"
+                 id="username"
+                 name="username"
+                 class="form-control"
+                 placeholder="User Name">
 
-        <label for="password">Password</label>
-        <input ngModel
-               type="password"
-               id="password"
-               name="password"
-               class="form-control"
-               placeholder="************">
-
-        <button class="btn btn-primary form-control"
+          <!--<label for="password">Password</label>-->
+          <input ngModel
+                 type="password"
+                 id="password"
+                 name="password"
+                 class="form-control"
+                 placeholder="Password">
+        </div>
+        <button class="btn btn-primary"
                 type="submit"
                 >Login</button>
       </form>
