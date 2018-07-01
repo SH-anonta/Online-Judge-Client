@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {UserComponent} from './user.component';
 import {UserProfileComponent} from './user-profile/user-profile.component';
 import {RouterModule} from '@angular/router';
+import { UserProfileEditorComponent } from './user-profile-editor/user-profile-editor.component';
 
 
 const routers= [
@@ -9,16 +10,29 @@ const routers= [
     path: 'user',
     component: UserComponent,
     children: [
-      {path: '', redirectTo: '/error-404', pathMatch: 'full'},
-      {path: ':user_id', component: UserProfileComponent},
+      {
+        path: ':user_id',
+        component: UserProfileComponent,
+      },
+      {
+        path: ':user_id/edit',
+        component : UserProfileEditorComponent
+      },
+      {
+        path: '',
+        redirectTo: '/error-404',
+        pathMatch: 'full'
+      },
     ]
+
   }
 ];
 
 @NgModule({
   declarations : [
     UserComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    UserProfileEditorComponent,
   ],
   imports : [
     RouterModule.forChild(routers)
