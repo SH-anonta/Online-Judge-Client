@@ -1,26 +1,30 @@
 <nav id="Header"
-     class="nav navbar-expand-lg navbar-light bg-light mt-2"
-     style="min-height: 50px; padding: 5px;">
+     class="nav navbar-expand-lg navbar-light bg-light mt-2">
 
   <a class="navbar-brand" routerLink=""> <h3>Task-Tree</h3></a>
 
 
 
-  <div *ngIf="!userService.userIsAuthenticated()"
-    class="form-inline float-right">
-    <a class="nav-item " routerLink="/login">Login</a>
-    |
-    <a routerLink="/register">Register</a>
-  </div>
+  <div id="LoginRegisterLinkContainer" class="ml-auto mt-2">
 
-  <div *ngIf="userService.userIsAuthenticated()"
-       class="form-inline float-right">
-    <a class="nav-item "
-       routerLink="/"
-       (click)="onLogoutClick()">
+    <div *ngIf="!userService.userIsAuthenticated()"
+         class="form-inline float-right">
+      <a class="nav-item " routerLink="/login">Login</a>
+      &nbsp;
+      &nbsp;
+      <a routerLink="/register">Register</a>
+    </div>
 
-      Logout
-    </a>
+    <div *ngIf="userService.userIsAuthenticated()"
+         class="form-inline float-right">
+      <a class="nav-item "
+         routerLink="/"
+         (click)="onLogoutClick()">
+
+        Logout
+      </a>
+    </div>
+
   </div>
 
 </nav>
