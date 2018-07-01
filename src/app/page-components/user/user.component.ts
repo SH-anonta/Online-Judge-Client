@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {DataFetcherService} from '../../global-services/data-fetcher.service';
 
 @Component({
-  selector: 'app-user',
+  // does not have a selector as this is a routing component
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.html']
 })

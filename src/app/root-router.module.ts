@@ -11,6 +11,7 @@ import {AutomataCreatorModule} from './feature-modules/automata-creator/automata
 import {AboutComponent} from './page-components/about/about.component';
 import {UserProfileComponent} from './page-components/user/user-profile/user-profile.component';
 import {UserComponent} from './page-components/user/user.component';
+import {UserRouterModule} from './page-components/user/user.router.module';
 
 
 
@@ -34,14 +35,12 @@ const routes = [
     LoginComponent,
     RegisterComponent,
     AboutComponent,
-
-    UserComponent,    //todo remove
-    UserProfileComponent, //todo remove
   ],
   imports: [
     RouterModule.forRoot(routes),
     FormsModule,
     AutomataCreatorModule,
+    UserRouterModule
   ],
   exports: [
     RouterModule
