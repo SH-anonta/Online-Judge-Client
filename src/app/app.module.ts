@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {RootRouterModule} from './root-router.module';
-import {HeaderComponent} from './page-components/header/header.component';
-import {FooterComponent} from './page-components/footer/footer.component';
+import {HeaderComponent} from './shared-components/header/header.component';
+import {FooterComponent} from './shared-components/footer/footer.component';
 import {UserService} from './global-services/user.service';
 import {AuthService} from './global-services/auth.service';
 import {DataFetcherService} from './global-services/data-fetcher.service';
