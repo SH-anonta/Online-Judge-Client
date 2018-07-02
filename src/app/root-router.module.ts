@@ -9,9 +9,9 @@ import {RegisterComponent} from './page-components/register/register.component';
 import {DfaCreatorComponent} from './feature-modules/automata-creator/dfa-creator/dfa-creator.component';
 import {AutomataCreatorModule} from './feature-modules/automata-creator/automata-creator.module';
 import {AboutComponent} from './page-components/about/about.component';
-import {UserProfileComponent} from './page-components/user/user-profile/user-profile.component';
 import {UserComponent} from './page-components/user/user.component';
 import {UserRouterModule} from './page-components/user/user.router.module';
+import {AdminRouterModule} from './admin/admin.router.module';
 
 
 
@@ -38,9 +38,10 @@ const routes = [
   ],
   imports: [
     RouterModule.forRoot(routes),
+    UserRouterModule,
+    AdminRouterModule,
     FormsModule,
     AutomataCreatorModule,
-    UserRouterModule
   ],
   exports: [
     RouterModule
