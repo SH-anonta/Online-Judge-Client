@@ -8,12 +8,14 @@ import {FooterComponent} from './shared-components/footer/footer.component';
 import {UserService} from './global-services/user.service';
 import {AuthService} from './global-services/auth.service';
 import {DataFetcherService} from './global-services/data-fetcher.service';
+import {SidebarComponent} from './shared-components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,

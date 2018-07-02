@@ -1,8 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-8 mx-auto">
+    <div class="col-sm-8 mx-auto text-left">
 
-      <table class="table">
+      <h3 class="h3">User List</h3>
+
+      <table class="table mt-5">
         <tr>
           <th>User Name</th>
           <th>Email</th>
@@ -10,7 +12,7 @@
 
         <tr *ngFor="let user of user_list">
           <td>
-            <a>
+            <a class="" href="">
               {{user.username}}
             </a>
           </td>
