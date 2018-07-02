@@ -7,22 +7,23 @@
             class="text-right"
             (ngSubmit)="onFormSubmit(f)">
 
+        <!--this div mainly exists to left align the input elements-->
         <div id="InputContainer" class="text-left">
-          <!--<label for="username">Username</label>-->
+          <label for="username">User Name</label>
           <input ngModel
                  type="text"
                  id="username"
                  name="username"
                  class="form-control"
-                 placeholder="User Name">
+                 placeholder="Mr User">
 
-          <!--<label for="password">Password</label>-->
+          <label for="password">Password</label>
           <input ngModel
                  type="password"
                  id="password"
                  name="password"
                  class="form-control"
-                 placeholder="Password">
+                 placeholder="*********">
         </div>
         <button class="btn btn-primary"
                 type="submit"

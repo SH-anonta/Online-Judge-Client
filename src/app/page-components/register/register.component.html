@@ -2,10 +2,33 @@
   <div class="row">
     <div class="col-sm-6 mx-auto">
       <form class="text-right mt-4">
-        <input class="form-control mb-2" type="text" id="UserName" placeholder="User Name">
-        <input class="form-control mb-2" type="text" id="Email" placeholder="Email">
-        <input class="form-control mb-2" type="text" id="Password" placeholder="Password">
-        <input class="form-control mb-2" type="text" id="ConfirmPassword" placeholder="Confirm Password">
+        <div id="InputContainer" class="text-left">
+          <label for="UserName">User Name</label>
+          <input name="username"
+                 class="form-control mb-2"
+                 type="text" id="UserName"
+                 placeholder="Mr_user">
+
+          <label for="Email">Email</label>
+          <input name="email"
+                 class="form-control mb-2"
+                 type="text" id="Email"
+                 placeholder="user@usermail.com">
+
+          <label for="Password">Password</label>
+          <input name="password"
+                 class="form-control mb-2"
+                 type="text"
+                 id="Password"
+                 placeholder="**********">
+
+          <label for="ConfirmPassword">Confirm Password</label>
+          <input name="confirm_password"
+                 class="form-control mb-2"
+                 type="text"
+                 id="ConfirmPassword"
+                 placeholder="**********">
+        </div>
 
 
         <button class="btn btn-primary">Register</button>
