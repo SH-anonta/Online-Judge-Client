@@ -9,15 +9,16 @@
 
     <div *ngIf="!userService.userIsAuthenticated()"
          class="form-inline float-right">
-      <a class="nav-item " routerLink="/login">Login</a>
-      &nbsp;
-      &nbsp;
-      <a routerLink="/register">Register</a>
+      <a class="nav-item btn btn-primary btn-sm mx-2"
+         routerLink="/login">Login</a>
+      <a class="nav-item btn btn-primary btn-sm mx-2"
+         routerLink="/register">Register</a>
+
     </div>
 
     <div *ngIf="userService.userIsAuthenticated()"
          class="form-inline float-right">
-      <a class="nav-item "
+      <a class="nav-item btn btn-primary btn-sm mx-2"
          routerLink="/"
          (click)="onLogoutClick()">
 
