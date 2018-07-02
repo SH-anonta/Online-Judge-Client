@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {DataFetcherService} from '../../global-services/data-fetcher.service';
+import {User} from '../../global-models/user.model';
 
 @Component({
   // does not have a selector as this is a routing component
@@ -15,5 +16,5 @@ export class UserComponent {
 
   }
 
-
 }
+

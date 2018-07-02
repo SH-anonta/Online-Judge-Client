@@ -40,6 +40,7 @@ const routes = [
     RouterModule.forRoot(routes),
     UserRouterModule,
     AdminRouterModule,
+
     FormsModule,
     AutomataCreatorModule,
   ],
