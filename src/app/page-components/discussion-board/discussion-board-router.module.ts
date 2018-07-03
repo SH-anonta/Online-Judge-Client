@@ -5,20 +5,35 @@ import { DiscussionListComponent } from './discussion-list/discussion-list.compo
 import { DiscussionCreatorComponent } from './discussion-creator/discussion-creator.component';
 import { DiscussionDetailsComponent } from './discussion-details/discussion-details.component';
 import { DiscussionEditorComponent } from './discussion-editor/discussion-editor.component';
+import { DiscussionReplyEditorComponent } from './discussion-reply-editor/discussion-reply-editor.component';
 
 
 const routers= [
   {
-    path: 'projects/:project_id/tasks',
+    path: 'projects/:project_id/tasks/:task_id/discussions',
     component: DiscussionBoardComponent,
-    //todo add routes to sub components
     children: [
       {
         path: '',
         component: DiscussionListComponent,
       },
       // order of routes is important
-
+      {
+        path: 'create',
+        component: DiscussionCreatorComponent,
+      },
+      {
+        path: ':discussion_id',
+        component: DiscussionDetailsComponent,
+      },
+      {
+        path: ':discussion_id/edit',
+        component: DiscussionEditorComponent,
+      },
+      {
+        path: ':discussion_id/replies/:reply_id/edit',
+        component: DiscussionReplyEditorComponent,
+      },
     ]
 
   }
@@ -30,7 +45,8 @@ const routers= [
     DiscussionListComponent,
     DiscussionCreatorComponent,
     DiscussionDetailsComponent,
-    DiscussionEditorComponent
+    DiscussionEditorComponent,
+    DiscussionReplyEditorComponent
   ],
   imports : [
     RouterModule.forChild(routers)
@@ -39,4 +55,4 @@ const routers= [
     RouterModule
   ]
 })
-export class TaskRouterModule{}
+export class DiscussionBoardRouterModule{}

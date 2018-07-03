@@ -14,6 +14,7 @@ import {UserRouterModule} from './page-components/user/user.router.module';
 import {AdminRouterModule} from './admin/admin.router.module';
 import {ProjectRouterModule} from './page-components/project/project.router.module';
 import {TaskRouterModule} from './page-components/task/task.router.module';
+import {DiscussionBoardRouterModule} from './page-components/discussion-board/discussion-board-router.module';
 
 
 
@@ -44,6 +45,7 @@ const routes = [
     AdminRouterModule,
     ProjectRouterModule,
     TaskRouterModule,
+    DiscussionBoardRouterModule,
 
     FormsModule,
     AutomataCreatorModule,
