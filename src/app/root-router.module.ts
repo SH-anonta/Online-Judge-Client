@@ -12,6 +12,7 @@ import {AboutComponent} from './page-components/about/about.component';
 import {UserComponent} from './page-components/user/user.component';
 import {UserRouterModule} from './page-components/user/user.router.module';
 import {AdminRouterModule} from './admin/admin.router.module';
+import {ProjectRouterModule} from './page-components/project/project.router.module';
 
 
 
@@ -40,6 +41,7 @@ const routes = [
     RouterModule.forRoot(routes),
     UserRouterModule,
     AdminRouterModule,
+    ProjectRouterModule,
 
     FormsModule,
     AutomataCreatorModule,
