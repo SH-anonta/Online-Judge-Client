@@ -15,6 +15,11 @@ const routers= [
         path: '',
         component: ProjectListComponent,
       },
+      // this route must be above the other routes two
+      {
+        path: 'create',
+        component: ProjectCreatorComponent,
+      },
       {
         path: ':project_id',
         component: ProjectDetailsComponent,
@@ -22,10 +27,6 @@ const routers= [
       {
         path: ':project_id/edit',
         component: ProjectEditorComponent,
-      },
-      {
-        path: 'create',
-        component: ProjectCreatorComponent,
       },
     ]
 
