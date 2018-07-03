@@ -1,11 +1,12 @@
+<div id="Wrapper">
 
+  <div *ngIf="user_service.userIsAuthenticated()">
+    <app-sidebar id="SideBar"></app-sidebar>
+  </div>
 
-<div id="SidebarWrapper">
-  <app-sidebar id="SideBar"></app-sidebar>
-</div>
-
-<div id="PageContentWrapper">
-  <div class="">
+  <div id="ContainerDiv"
+       class="container-fluid"
+       [ngClass]="{ShiftContainerDivForSidebar : user_service.userIsAuthenticated()}" >
 
     <div class="row">
       <div class="col-sm-12 mx-auto">
@@ -26,5 +27,5 @@
     </div>
 
   </div>
-</div>
 
+</div>

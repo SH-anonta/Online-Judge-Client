@@ -9,7 +9,7 @@ import {UserService} from './global-services/user.service';
 })
 export class AppComponent implements OnInit{
 
-  constructor(private user: UserService){}
+  constructor(public user_service: UserService){}
 
   ngOnInit(){
   }
