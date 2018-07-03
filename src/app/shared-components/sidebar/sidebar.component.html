@@ -4,24 +4,27 @@
   <p class="h3">Sidebar</p>
 
   <hr>
-  <ul class="list-unstyled">
+  <ul class="list-unstyled sidebar-link-group">
 
-    <li>Projects</li>
-    <li>Tasks</li>
+    <li><a href="#">Projects</a></li>
+    <li><a href="#">My Tasks</a></li>
 
-    <li class="active">
-      <a href="#homeSubmenu" data-toggle="" aria-expanded="false" class="dropdown-toggle">Home</a>
-      <ul class="collapse list-unstyled" id="homeSubmenu">
-        <li>
-          <a href="#">Home 1</a>
-        </li>
-        <li>
-          <a href="#">Home 2</a>
-        </li>
-        <li>
-          <a href="#">Home 3</a>
-        </li>
-      </ul>
+  </ul>
+
+  <!--todo admin page links should be visible only if the is an admin-->
+
+
+  <ul class="list-unstyled sidebar-link-group">
+    <li>
+      <a [routerLink]="'admin'">Admin</a>
+    </li>
+
+    <li>
+      <a [routerLink]="'admin/user-list'">Users</a>
+    </li>
+
+    <li>
+      <a href="#">Projects</a>
     </li>
 
   </ul>
