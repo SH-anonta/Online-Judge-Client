@@ -15,6 +15,7 @@ import {AdminRouterModule} from './admin/admin.router.module';
 import {ProjectRouterModule} from './page-components/project/project.router.module';
 import {TaskRouterModule} from './page-components/task/task.router.module';
 import {DiscussionBoardRouterModule} from './page-components/discussion-board/discussion-board-router.module';
+import {DevsOnlyPageComponent} from './page-components/devs-only-page/devs-only-page.component';
 
 
 
@@ -27,6 +28,8 @@ const routes = [
 
   {path: 'user', component: UserComponent},
 
+  {path: 'devs-only', component: DevsOnlyPageComponent},
+
   {path: 'error-404', component: Error404Component},
   {path: '**', redirectTo: 'error-404'},
 ];
@@ -38,6 +41,8 @@ const routes = [
     LoginComponent,
     RegisterComponent,
     AboutComponent,
+
+    DevsOnlyPageComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
