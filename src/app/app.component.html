@@ -1,26 +1,30 @@
-<div class="container">
 
-  <div class="row">
-    <div class="col-sm-12 mx-auto">
-      <app-header></app-header>
-    </div>
-  </div>
 
-  <div class="row" style="min-height: 500px">
-    <div class="col-sm-12 text-center">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
-
-  <!--todo add sidebar-->
-  <div>
-
-  </div>
-
-  <div class="row">
-    <div class="col-sm-12 mx-auto">
-      <app-footer></app-footer>
-    </div>
-  </div>
-
+<div id="SidebarWrapper">
+  <app-sidebar id="SideBar"></app-sidebar>
 </div>
+
+<div id="PageContentWrapper">
+  <div class="">
+
+    <div class="row">
+      <div class="col-sm-12 mx-auto">
+        <app-header></app-header>
+      </div>
+    </div>
+
+    <div class="row" style="min-height: 500px">
+      <div class="col-sm-12">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12 mx-auto">
+        <app-footer></app-footer>
+      </div>
+    </div>
+
+  </div>
+</div>
+
