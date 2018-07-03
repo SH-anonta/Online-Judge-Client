@@ -5,6 +5,7 @@ import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectCreatorComponent } from './project-creator/project-creator.component';
 import { ProjectEditorComponent } from './project-editor/project-editor.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { ProjectMemberListComponent } from './project-member-list/project-member-list.component';
 
 const routers= [
   {
@@ -15,10 +16,14 @@ const routers= [
         path: '',
         component: ProjectListComponent,
       },
-      // this route must be above the other routes two
+      // order of routes is important
       {
         path: 'create',
         component: ProjectCreatorComponent,
+      },
+      {
+        path: ':project_id/members',
+        component: ProjectMemberListComponent,
       },
       {
         path: ':project_id',
@@ -39,7 +44,8 @@ const routers= [
     ProjectListComponent,
     ProjectCreatorComponent,
     ProjectEditorComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    ProjectMemberListComponent
   ],
   imports : [
     RouterModule.forChild(routers)
