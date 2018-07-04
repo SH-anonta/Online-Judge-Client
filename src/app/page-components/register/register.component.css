@@ -1,0 +1,12 @@
+
+/*style for form inputs with invalid data*/
+/*input.ng-invalid.ng-touched{*/
+  /*border-style: solid;*/
+  /*border-color: red;*/
+  /*border-width: thin;*/
+/*}*/
+
+
+#ErrorListContainer{
+  color: red;
+}

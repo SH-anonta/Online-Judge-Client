@@ -16,6 +16,7 @@ import {ProjectRouterModule} from './page-components/project/project.router.modu
 import {TaskRouterModule} from './page-components/task/task.router.module';
 import {DiscussionBoardRouterModule} from './page-components/discussion-board/discussion-board-router.module';
 import {DevsOnlyPageComponent} from './page-components/devs-only-page/devs-only-page.component';
+import {CommonModule} from '@angular/common';
 
 
 
@@ -54,6 +55,7 @@ const routes = [
 
     FormsModule,
     AutomataCreatorModule,
+    CommonModule,
   ],
   exports: [
     RouterModule

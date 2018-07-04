@@ -1,22 +1,40 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6 mx-auto">
-      <form class="text-right">
+
+      <div *ngIf="shouldShowErrorMessages()"
+           id="ErrorListContainer" >
+          <!--// todo  add validation error messages-->
+        <ul>
+          <li *ngFor="let error_msg of form_error_list">
+            {{error_msg}}
+          </li>
+        </ul>
+      </div>
+
+      <form class="text-right" (ngSubmit)="onSubmitHandler(reg_form)" #reg_form="ngForm">
         <div id="InputContainer" class="text-left">
           <label for="UserName">User Name</label>
           <input name="username"
+                 ngModel
+                 required
                  class="form-control mb-2"
                  type="text" id="UserName"
                  placeholder="Mr_user">
 
           <label for="Email">Email</label>
           <input name="email"
+                 ngModel
+                 required
+                 email
                  class="form-control mb-2"
                  type="email" id="Email"
                  placeholder="user@usermail.com">
 
           <label for="Password">Password</label>
           <input name="password"
+                 ngModel
+                 required
                  class="form-control mb-2"
                  type="password"
                  id="Password"
@@ -24,6 +42,8 @@
 
           <label for="ConfirmPassword">Confirm Password</label>
           <input name="confirm_password"
+                 ngModel
+                 required
                  class="form-control mb-2"
                  type="password"
                  id="ConfirmPassword"
@@ -31,7 +51,9 @@
         </div>
 
 
-        <button class="btn btn-primary">Register</button>
+        <button class="btn btn-primary">
+          Register
+        </button>
 
       </form>
 
