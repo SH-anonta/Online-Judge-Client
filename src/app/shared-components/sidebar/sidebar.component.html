@@ -6,8 +6,8 @@
   <hr>
   <ul class="list-unstyled sidebar-link-group">
 
-    <li><a href="#">Projects</a></li>
-    <li><a href="#">My Tasks</a></li>
+    <li><a [routerLink]="'/projects'">Projects</a></li>
+    <li><a [routerLink]="'/user/12/tasks'">My Tasks</a></li>
 
   </ul>
 
@@ -20,10 +20,6 @@
 
     <li>
       <a [routerLink]="'admin/user-list'">Users</a>
-    </li>
-
-    <li>
-      <a href="#">Projects</a>
     </li>
 
   </ul>
