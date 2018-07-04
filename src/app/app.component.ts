@@ -14,4 +14,8 @@ export class AppComponent implements OnInit{
   ngOnInit(){
   }
 
+  routerOutletActivateEventHandler(event: any) {
+    //after changing route scroll to the top of page
+    window.scroll(0,0);
+  }
 }

@@ -22,7 +22,10 @@
 
     <div class="row" style="min-height: 500px">
       <div class="col-sm-12">
-        <router-outlet></router-outlet>
+        <router-outlet
+          (activate)="routerOutletActivateEventHandler($event)">
+        </router-outlet>
+
       </div>
     </div>
 
