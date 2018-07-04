@@ -1,3 +1,8 @@
+<!--
+  THis component defines the general layout of the pages
+  Where the sidebar, header, footer, body is etc
+-->
+
 <div id="Wrapper">
 
   <!--Todo remove true || -->
@@ -10,7 +15,7 @@
        [ngClass]="{ShiftContainerDivForSidebar : user_service.userIsAuthenticated()}" >
 
     <div class="row">
-      <div class="col-sm-12 mx-auto">
+      <div class="col-sm-12 mx-auto mb-4">
         <app-header></app-header>
       </div>
     </div>

@@ -6,9 +6,8 @@
 
 #SideBar{
   width: 250px;
-  min-height: 100vh;
+  min-height: 100%;
   float: left;
-
   /*border-style: solid;*/
 
   transition: all 0.3s;
