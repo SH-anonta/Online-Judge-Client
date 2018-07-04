@@ -1,3 +1,42 @@
-<p>
-  project-creator works!
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project Creator</title>
+</head>
+
+<body>
+<div class="jumbotron text-center">
+    <h1>Create a new Project</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 mx-auto">
+            <form class="text-right mt-4">
+                <div id="InputContainer" class="text-left">
+                    <label for="ProjectTitle">Project Title:</label>
+                    <input name="Project_Title"
+                           class="form-control mb-2"
+                           type="text" id="ProjectTitle"
+                           placeholder="Title">
+                </div>
+                <div class="form-group" class="text-left">
+                    <label for="ProjectDetails">Project Details/Description</label>
+                    <textarea name="Project_Details"
+                              class="form-control"
+                              rows="5"
+                              cols="2"
+                              id="ProjectDetails"
+                              placeholder="Description of your project"></textarea>
+                </div>
+
+                <button class="btn btn-warning">Submit</button>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

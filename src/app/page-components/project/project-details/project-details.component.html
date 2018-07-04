@@ -1,3 +1,61 @@
-<p>
-  project-details works!
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Project Details</title>
+</head>
+
+<body>
+<div class="jumbotron text-center">
+    <h1><p class="text-success">Project Details</p></h1>
+</div>
+
+
+<div class="container">
+    <dl>
+        <dt><p class="text-danger" >Project Title:</p></dt>
+        <dd><p class="text-info" id="ProjectTitle">Library Management System</p></dd>
+
+        <dt><p class="text-danger" >Project Details:</p></dt>
+        <dd><textarea readonly
+                      name="Project_Details"
+                      class="form-control"
+                      rows="5"
+                      cols="2"
+                      id="ProjectDetails"
+                      placeholder="Description of your project">"A college library management is a project that manages and stores books information electronically according to students needs.
+                        Modules:
+                        Admin login: Admin is the one who administers the system by adding or removing e-books into and from the system respectively.
+                        User login: Students have to register themselves into the system to create an account. After registering successfully, they can then login into the system by entering 10 digit mobile number and their email id.
+                        Add and Update Books: The admin can add books to the system by entering the details of the books and can even update the details.
+                        Search option: Admin and Students can even search for books by entering the name of the book.
+                        View Order-The admin can view order for the books.
+                        Place order- The students can place order for the books and simultaneously the quantity of the book ordered will be decremented.
+                        Calculate Fine- The student can view the issue and expiry date for the book issued and can even calculate fine.</textarea></dd>
+
+        <dt><p class="text-danger" >Number Of Members:</p></dt>
+        <dd><p class="text-info" id="NumberOfMembers">50</p></dd>
+
+        <dt><p class="text-danger" >Number Of Tasks::</p></dt>
+        <dd><p class="text-info" id="NumberOfTasks">15 Modules</p></dd>
+
+        <dt><p class="text-danger" >Completion:</p></dt>
+        <dd><p class="text-info" id="Completion">58%</p></dd>
+
+        <dt><p class="text-danger" >Project Creation Date:</p></dt>
+        <dd><p class="text-info" id="ProjectCreationDate">15-03-18</p></dd>
+
+        <dt><p class="text-danger" >Project Finishing Deadline:</p></dt>
+        <dd><p class="text-info" id="ProjectFinishingDeadline:">15-09-19</p></dd>
+
+    </dl>
+</div>
+
+<div class="btn-group btn-group-justified">
+    <a href="../project-member-list/project-member-list.component.html" class="btn btn-link">Member List</a>
+    <a href="#" class="btn btn-link">Tasks</a>
+    <a href="../project-editor/project-editor.component.html" class="btn btn-link">Edit Project</a>
+</div>
+
+
+</body>
+</html>
