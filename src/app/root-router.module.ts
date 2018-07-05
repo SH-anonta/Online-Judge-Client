@@ -12,9 +12,6 @@ import {AboutComponent} from './page-components/about/about.component';
 import {UserComponent} from './page-components/user/user.component';
 import {UserRouterModule} from './page-components/user/user.router.module';
 import {AdminRouterModule} from './admin/admin.router.module';
-import {ProjectRouterModule} from './page-components/project/project.router.module';
-import {TaskRouterModule} from './page-components/task/task.router.module';
-import {DiscussionBoardRouterModule} from './page-components/discussion-board/discussion-board-router.module';
 import {DevsOnlyPageComponent} from './page-components/devs-only-page/devs-only-page.component';
 import {CommonModule} from '@angular/common';
 
@@ -49,9 +46,7 @@ const routes = [
     RouterModule.forRoot(routes),
     UserRouterModule,
     AdminRouterModule,
-    ProjectRouterModule,
-    TaskRouterModule,
-    DiscussionBoardRouterModule,
+
 
     FormsModule,
     AutomataCreatorModule,
