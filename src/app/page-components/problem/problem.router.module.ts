@@ -14,8 +14,8 @@ const routes= [
     component: ProblemComponent,
     children: [
       {path: '', component: ProblemListComponent,},
+      {path: 'create', component: ProblemCreatorComponent,},
       {path: ':problem_id', component: ProblemDetailsComponent,},
-      {path: ':problem_id/create', component: ProblemCreatorComponent,},
       {path: ':problem_id/edit', component: ProblemEditorComponent,},
     ],
   },
