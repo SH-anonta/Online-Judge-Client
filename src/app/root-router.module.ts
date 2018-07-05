@@ -14,6 +14,7 @@ import {UserRouterModule} from './page-components/user/user.router.module';
 import {AdminRouterModule} from './admin/admin.router.module';
 import {DevsOnlyPageComponent} from './page-components/devs-only-page/devs-only-page.component';
 import {CommonModule} from '@angular/common';
+import {ProblemRouterModule} from './page-components/problem/problem.router.module';
 
 
 
@@ -46,7 +47,7 @@ const routes = [
     RouterModule.forRoot(routes),
     UserRouterModule,
     AdminRouterModule,
-
+    ProblemRouterModule,
 
     FormsModule,
     AutomataCreatorModule,
