@@ -7,7 +7,7 @@ import { UserSubmissionsComponent } from './user-submissions/user-submissions.co
 import { ContestHistoryComponent } from './contest-history/contest-history.component';
 
 
-const routers= [
+const routes= [
   {
     path: 'user',
     component: UserComponent,
@@ -47,7 +47,7 @@ const routers= [
     ContestHistoryComponent,
   ],
   imports : [
-    RouterModule.forChild(routers)
+    RouterModule.forChild(routes)
   ],
   exports: [
     RouterModule
