@@ -5,6 +5,7 @@ import { TaskDetailsComponent } from './task-details/task-details.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskCreatorComponent } from './task-creator/task-creator.component';
 import { TaskEditorComponent } from './task-editor/task-editor.component';
+import {FormsModule} from '@angular/forms';
 
 
 const routers= [
@@ -43,7 +44,8 @@ const routers= [
     TaskEditorComponent
   ],
   imports : [
-    RouterModule.forChild(routers)
+    RouterModule.forChild(routers),
+    FormsModule,
   ],
   exports: [
     RouterModule
