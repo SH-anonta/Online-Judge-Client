@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-contest-creator',
@@ -21,5 +22,9 @@ export class ContestCreatorComponent implements OnInit {
 
   removeProblemClickHandler(){
     this.problem_list.pop();
+  }
+
+  createBtnClickHandler(form: NgForm) {
+    console.log(form);
   }
 }

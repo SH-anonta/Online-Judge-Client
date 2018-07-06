@@ -8,7 +8,7 @@
     <div class="col-sm-12">
 
 
-      <form class="text-right" #reg_form="ngForm">
+      <form class="text-right" #contest_form="ngForm">
         <div id="InputContainer" class="text-left">
           <label  for="UserName">Title</label>
 
@@ -20,11 +20,10 @@
                  placeholder="">
 
           <label for="DescriptionTextArea">Description</label>
-          <textarea class="custom-control-input"
+          <textarea class="form-control"
                     ngModel
                     required
                     name="description"
-                    class="form-control"
                     rows="5"
                     id="DescriptionTextArea"></textarea>
 
@@ -33,6 +32,8 @@
             <div class="col">
               <label for="StartDatePicker">Start time</label>
               <input type="datetime-local"
+                     ngModel
+                     name="start_time"
                      class="form-control"
                      id="StartDatePicker">
             </div>
@@ -40,6 +41,8 @@
             <div class="col">
               <label for="EndDatePicker">End time</label>
               <input type="datetime-local"
+                     ngModel
+                     name="end_time"
                      class="form-control"
                      id="EndDatePicker">
             </div>
@@ -50,6 +53,7 @@
           <div class="form-row mb-2">
             <div class="col-sm-11">
               <div class="ProblemSetSelection">
+                <!--intentionally did not give ngModel attribute-->
                 <input
                   id="ProblemIdInput"
                   class="form-control"
@@ -98,6 +102,8 @@
 
           <label for="ContestType">Type</label>
           <select
+            name="contest_type"
+            [ngModel]
             #contest_type_selector
             id="ContestType"
             class="form-control mb-2">
@@ -113,18 +119,22 @@
             <input id="Password"
                    ngModel
                    type="password"
+                   name="password"
                    class="form-control">
 
             <label for="ConfirmPassword">Confirm password</label>
             <input id="ConfirmPassword"
                    ngModel
                    type="password"
+                   name="confirm_password"
                    class="form-control">
           </div>
 
         </div>
 
-        <button class="btn btn-primary mt-3">
+        <button type="submit"
+                class="btn btn-primary mt-3"
+                (click)="createBtnClickHandler(contest_form)">
           Create
         </button>
 
