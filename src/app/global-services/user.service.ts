@@ -28,4 +28,12 @@ export class UserService {
     //todo clear session on the server side
   }
 
+  //todo implement
+  isAuthorizedToCreateContest(){
+
+  }
+
+  isAuthorizedToCreateProblem(){
+
+  }
 }
