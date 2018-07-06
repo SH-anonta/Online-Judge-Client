@@ -16,6 +16,7 @@ import {DevsOnlyPageComponent} from './page-components/devs-only-page/devs-only-
 import {CommonModule} from '@angular/common';
 import {ProblemRouterModule} from './page-components/problem/problem.router.module';
 import {ContestRouterModule} from './page-components/contest/contest.router.module';
+import {AnnouncementsRouterModule} from './page-components/announcements/announcements.router.module';
 
 
 
@@ -50,6 +51,7 @@ const routes = [
     AdminRouterModule,
     ProblemRouterModule,
     ContestRouterModule,
+    AnnouncementsRouterModule,
 
     FormsModule,
     AutomataCreatorModule,

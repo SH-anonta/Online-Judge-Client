@@ -18,6 +18,18 @@ const routes= [
         path: '',
         component: AnnouncementsListComponent,
       },
+      {
+        path: 'create',
+        component: AnnouncementsCreatorComponent,
+      },
+      {
+        path: ':announcement_id',
+        component: AnnouncementsDetailsComponent,
+      },
+      {
+        path: ':announcement_id/edit',
+        component: AnnouncementsEditorComponent,
+      },
     ]
 
   }
@@ -25,6 +37,7 @@ const routes= [
 
 @NgModule({
   declarations : [
+    AnnouncementsComponent,
     AnnouncementsListComponent,
     AnnouncementsCreatorComponent,
     AnnouncementsEditorComponent,
