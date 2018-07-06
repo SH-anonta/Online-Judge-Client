@@ -5,6 +5,8 @@ import { ContestListComponent } from './contest-list/contest-list.component';
 import { ContestCreatorComponent } from './contest-creator/contest-creator.component';
 import { ContestEditorComponent } from './contest-editor/contest-editor.component';
 import { ContestDetailsComponent } from './contest-details/contest-details.component';
+import {FormsModule} from '@angular/forms';
+import {CommonModule} from '@angular/common';
 
 
 const routers= [
@@ -42,7 +44,9 @@ const routers= [
     ContestDetailsComponent,
   ],
   imports : [
-    RouterModule.forChild(routers)
+    RouterModule.forChild(routers),
+    FormsModule,
+    CommonModule,
   ],
   exports: [
     RouterModule
