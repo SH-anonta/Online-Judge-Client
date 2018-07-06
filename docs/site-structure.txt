@@ -1,0 +1,37 @@
+Whole Site
+	|
+	|- User Profile
+	|		|
+	|		|- User profile
+	|		|- User profile editor
+	|		|- User submission history
+	|		|- User contest history
+	|
+	|- Problem sets
+	|		|
+	|		|- Problem set list
+	|		|- Problem set creator (only for judges)
+	|		|- Problem set editor
+	|		|- Solution submission page
+	|
+	|- Contests
+	|		|
+	|		|- Register for contest
+	|		|- Problem set list
+	|		|- Problem set
+	|		|- Problem set creator	(only for judges)
+	|		|- Problem set editor	(only for judges)
+	|		|- Contest rank page
+	|		|- Contest submissions page
+	|
+	|- Announcements
+	|		|
+	|		|- Announcements list
+	|		|- Announcement details
+	|		|- Announcement creator
+	|		|- Announcement editor
+	|
+	|- Admin
+		|
+		|- Site statistics
+		|- All submissions page
