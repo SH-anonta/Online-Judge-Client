@@ -8,13 +8,13 @@ import {UserService} from '../../global-services/user.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public userService: UserService) { }
+  constructor(public user_service: UserService) { }
 
   ngOnInit() {
   }
 
   onLogoutClick(){
-    this.userService.logout();
+    this.user_service.logout();
   }
 
 }
