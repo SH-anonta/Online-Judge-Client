@@ -12,17 +12,22 @@
   </ul>
 
   <!--todo admin page links should be visible only if the is an admin-->
-  <hr>
-  <ul class="list-unstyled sidebar-link-group">
-    <li>
-      <a [routerLink]="'admin'">Admin</a>
-    </li>
 
-    <li>
-      <a [routerLink]="'admin/user-list'">Users</a>
-    </li>
+  <div id="AdminPageLinksDiv"
+      *ngIf="user_service.authorizedToViewAdminPages()">
+    <hr>
+    <ul class="list-unstyled sidebar-link-group">
+      <li>
+        <a [routerLink]="'admin'">Admin</a>
+      </li>
 
-  </ul>
+      <li>
+        <a [routerLink]="'admin/user-list'">Users</a>
+      </li>
+
+    </ul>
+  </div>
+
 
   <hr>
   <a [routerLink]="'devs-only'">Devs only</a>
