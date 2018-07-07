@@ -9,7 +9,7 @@ import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import { ContestProblemListComponent } from './contest-problem-list/contest-problem-list.component';
 import { ContestRankListComponent } from './contest-rank-list/contest-rank-list.component';
-import { RegisterComponent } from './register/register.component';
+import { ContestRegistrationComponent } from './contest-registration/contest-registration.component';
 
 
 const routers= [
@@ -31,7 +31,7 @@ const routers= [
       },
       {
         path: ':contest_id/register',
-        component: RegisterComponent,
+        component: ContestRegistrationComponent,
       },
       {
         path: ':contest_id/edit',
@@ -59,7 +59,7 @@ const routers= [
     ContestDetailsComponent,
     ContestProblemListComponent,
     ContestRankListComponent,
-    RegisterComponent,
+    ContestRegistrationComponent,
   ],
   imports : [
     RouterModule.forChild(routers),
