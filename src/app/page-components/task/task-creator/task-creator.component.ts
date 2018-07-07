@@ -9,7 +9,10 @@ import {Router} from '@angular/router';
 export class TaskCreatorComponent implements OnInit {
   constructor(private router: Router) { }
 
-  @ViewChild('checklist_elector') checklist_selector;
+  @ViewChild('checklist_selector') checklist_selector;
+  @ViewChild('member_selector') member_selector;
+
+
 
   ngOnInit() {
   }

@@ -21,7 +21,7 @@ export class CheckListSelectorComponent implements OnInit {
 
   onRemoveCheckListItemClick(idx: number) {
     this.check_list.splice(idx, 1);
-    // this.check_list.pop();
+    // this.member_list.pop();
   }
 
 }
