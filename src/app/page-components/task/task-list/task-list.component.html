@@ -1,3 +1,87 @@
-<p>
-  task-list works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h4>Project tasks</h4>
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Priority</th>
+            <th>Assignee</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>
+              <a [routerLink]="'/projects/21/tasks/12'">
+                Feasibility study
+              </a>
+            </td>
+            <td>High</td>
+            <td>
+              <a [routerLink]="'/user/21'">
+                Anonta
+              </a>
+            </td>
+            <td>Done</td>
+          </tr>
+
+          <tr>
+            <td>
+              <a [routerLink]="'/projects/21/tasks/12'">
+                Requirements elicitation
+              </a>
+            </td>
+            <td>High</td>
+            <td>
+              <a [routerLink]="'/user/21'">
+                Manosh
+              </a>
+            </td>
+            <td>Done</td>
+          </tr>
+
+          <tr>
+            <td>
+              <a [routerLink]="'/projects/21/tasks/12'">
+                System design
+              </a>
+            </td>
+            <td>High</td>
+            <td>
+              <a [routerLink]="'/user/21'">
+                Manosh
+              </a>
+            </td>
+            <td>Done</td>
+          </tr>
+
+          <tr>
+            <td>
+              <a [routerLink]="'/projects/21/tasks/12'">
+                Test planning
+              </a>
+            </td>
+            <td>High</td>
+            <td>
+              <a [routerLink]="'/user/21'">
+                Manosh
+              </a>
+            </td>
+            <td>Done</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
