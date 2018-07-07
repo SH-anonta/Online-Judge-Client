@@ -7,6 +7,8 @@ import { ContestEditorComponent } from './contest-editor/contest-editor.componen
 import { ContestDetailsComponent } from './contest-details/contest-details.component';
 import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
+import { ContestProblemListComponent } from './contest-problem-list/contest-problem-list.component';
+import { ContestRankListComponent } from './contest-rank-list/contest-rank-list.component';
 
 
 const routers= [
@@ -30,6 +32,14 @@ const routers= [
         path: ':contest_id/edit',
         component: ContestEditorComponent,
       },
+      {
+        path: ':contest_id/problems',
+        component: ContestProblemListComponent,
+      },
+      {
+        path: ':contest_id/rank',
+        component: ContestRankListComponent,
+      },
 
     ]
   }
@@ -42,6 +52,8 @@ const routers= [
     ContestCreatorComponent,
     ContestEditorComponent,
     ContestDetailsComponent,
+    ContestProblemListComponent,
+    ContestRankListComponent,
   ],
   imports : [
     RouterModule.forChild(routers),
