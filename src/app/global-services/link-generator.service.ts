@@ -1,5 +1,5 @@
 
-export class LingGeneratorService {
+export class LinkGeneratorService {
   constructor(){
 
   }

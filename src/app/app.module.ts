@@ -9,7 +9,7 @@ import {UserService} from './global-services/user.service';
 import {AuthService} from './global-services/auth.service';
 import {DataFetcherService} from './global-services/data-fetcher.service';
 import {SidebarComponent} from './shared-components/sidebar/sidebar.component';
-import {LingGeneratorService} from './global-services/ling-generator.service';
+import {LinkGeneratorService} from './global-services/link-generator.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import {LingGeneratorService} from './global-services/ling-generator.service';
     AuthService,
     UserService,
     DataFetcherService,
-    LingGeneratorService
+    LinkGeneratorService
 
   ],
   bootstrap: [AppComponent]

@@ -30,6 +30,10 @@ const routers= [
         component: ContestDetailsComponent,
       },
       {
+        path: ':contest_id/register',
+        component: RegisterComponent,
+      },
+      {
         path: ':contest_id/edit',
         component: ContestEditorComponent,
       },
