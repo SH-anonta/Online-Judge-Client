@@ -11,7 +11,10 @@ export class UserService {
     return this._user;
   }
 
-  constructor(private authenticator: AuthService){}
+  constructor(private authenticator: AuthService){
+    //todo remove statement before release, user is logged by default for ease of development only
+    this.login('admin', 'password');
+  }
 
   userIsAuthenticated(){
     return this._user!=null;
@@ -41,7 +44,12 @@ export class UserService {
 
   }
 
+  isAuthorizedToEditContest(contest_id: string){
+    return this.user.isAdmin || this.user.isJudge;
+  }
+
   isAuthorizedToCreateProblem(){
 
   }
+
 }
