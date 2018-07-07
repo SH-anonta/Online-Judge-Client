@@ -1,3 +1,92 @@
-<p>
-  contest-details works!
-</p>
+<div class="container">
+
+  <div class="row mb-3">
+    <div class="col-sm-10">
+      <h3 class="h3">Practice contest #8</h3>
+    </div>
+
+    <div  *ngIf="user_service.isAuthorizedToEditContest(12)"
+          class="col-sm-2 text-right pt-1">
+      <a [routerLink]="'/contest/11/edit'"
+         class="brn btn-sm btn-primary mr-1">
+        Edit
+      </a>
+
+      <a [routerLink]=""
+         class="brn btn-sm btn-danger">
+        Delete
+      </a>
+    </div>
+
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-sm">
+
+      <a [routerLink]="'/contest/11/problems'"
+         class="btn form-control btn-light">
+        Problems
+      </a>
+    </div>
+
+    <div class="col-sm">
+      <a [routerLink]="'/contest/11/rank'"
+         class="btn form-control btn-light">
+        Rank
+      </a>
+    </div>
+    <div class="col-sm">
+      <a [routerLink]="'/contest/11/problems'"
+         class="btn form-control btn-light">
+        Submission
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8 mx-auto">
+
+      <table class="table text-left">
+        <tr>
+          <th>Start time</th>
+          <td>UTC 03.07.18 20:21:16</td>
+        </tr>
+
+        <tr>
+          <th>Duration</th>
+          <td>5Hr</td>
+        </tr>
+
+        <tr>
+          <th>Judge</th>
+          <td>
+            <a [routerLink]="'/user/112'">Anonta</a>
+          </td>
+        </tr>
+
+        <tr>
+          <th>Type</th>
+          <td>private</td>
+        </tr>
+
+        <tr>
+          <th>Problems</th>
+          <td>6</td>
+        </tr>
+
+        <tr>
+          <th>Registered</th>
+          <td>60</td>
+        </tr>
+
+        <tr>
+          <th>Participants</th>
+          <td>52</td>
+        </tr>
+      </table>
+
+    </div>
+
+
+  </div>
+</div>

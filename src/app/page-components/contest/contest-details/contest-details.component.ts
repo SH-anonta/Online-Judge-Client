@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from '../../../global-services/user.service';
 
 @Component({
   selector: 'app-contest-details',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContestDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public user_service: UserService) { }
 
   ngOnInit() {
   }
