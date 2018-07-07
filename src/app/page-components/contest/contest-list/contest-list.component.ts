@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LingGeneratorService} from '../../../global-services/ling-generator.service';
 
 @Component({
   selector: 'app-contest-list',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContestListComponent implements OnInit {
 
-  constructor() { }
+  constructor(public link_generator: LingGeneratorService) { }
 
   ngOnInit() {
   }
