@@ -21,7 +21,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row mb-3">
     <div class="col-sm-12 ChecklistDiv" >
 
       <h5 class="h5">Check List</h5>
@@ -60,12 +60,70 @@
 
   </div>
 
-  <div class="row">
+  <div class="row mb-3">
     <div class="col-sm-12">
-      <h4 class="h4">Assignees</h4>
+      <h5 class="h5">Assignees</h5>
+      <ul class="list-group">
+        <a [routerLink]="'/user/21'">
+          <li class="list-group-item">
+            Manosh
+          </li>
+        </a>
+      </ul>
 
+      <ul class="list-group">
+        <a [routerLink]="'/user/21'">
+          <li class="list-group-item">
+            Bob
+          </li>
+        </a>
+      </ul>
     </div>
 
   </div>
 
+  <div class="row">
+    <div class="col-sm">
+      <h5 class="h5">Subtasks</h5>
+
+      <table class="table">
+        <tr>
+          <th>Title</th>
+          <th>Completion</th>
+          <th>Status</th>
+        </tr>
+
+        <tr>
+          <td>
+            <a [routerLink]="'/projects/12/tasks/23'">
+              Project list view
+            </a>
+          </td>
+          <td>100%</td>
+          <td>Done</td>
+        </tr>
+
+        <tr>
+          <td>
+            <a [routerLink]="'/projects/12/tasks/23'">
+              Project details view
+            </a>
+          </td>
+          <td>53%</td>
+          <td>Done</td>
+        </tr>
+
+        <tr>
+          <td>
+            <a [routerLink]="'/projects/12/tasks/23'">
+              Project authorization checker
+            </a>
+          </td>
+          <td>10%</td>
+          <td>Done</td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
 </div>
