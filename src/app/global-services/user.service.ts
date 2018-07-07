@@ -5,26 +5,34 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class UserService {
-  private user: User= null;
+  private _user: User= null;
+
+  get user(): User{
+    return this._user;
+  }
 
   constructor(private authenticator: AuthService){}
 
   userIsAuthenticated(){
-    return this.user!=null;
+    return this._user!=null;
   }
 
   login(username: string, password: string): Promise<User>{
     let auth_promise = this.authenticator.login(username, password);
 
     auth_promise.then((user: User) =>{
-      this.user = user;
+      this._user = user;
     });
 
     return auth_promise;
   }
 
+  getUser(){
+    this._user;
+  }
+
   logout(){
-    this.user = null;
+    this._user = null;
     //todo clear session on the server side
   }
 

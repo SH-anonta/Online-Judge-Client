@@ -6,7 +6,7 @@
 
   <div id="LoginRegisterLinkContainer" class="ml-auto mt-2">
 
-    <div *ngIf="!userService.userIsAuthenticated()"
+    <div *ngIf="!user_service.userIsAuthenticated()"
          class="form-inline float-right">
       <a class="nav-item btn btn-primary btn-sm mx-2"
          routerLink="/login">Login</a>
@@ -15,8 +15,10 @@
 
     </div>
 
-    <div *ngIf="userService.userIsAuthenticated()"
+    <div *ngIf="user_service.userIsAuthenticated()"
          class="form-inline float-right">
+
+      <a [routerLink]="'/user/22'">{{user_service.user.username}}</a>
       <a class="nav-item btn btn-primary btn-sm mx-2"
          routerLink="/"
          (click)="onLogoutClick()">
