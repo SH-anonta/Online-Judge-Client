@@ -1,0 +1,10 @@
+#RankTableContainer{
+  /*overflow-x: scroll;*/
+}
+
+#RankTable{
+  overflow-x: auto;
+}
+
+table#RankTable td{
+}
