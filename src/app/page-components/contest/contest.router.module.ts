@@ -11,6 +11,8 @@ import { ContestProblemListComponent } from './contest-problem-list/contest-prob
 import { ContestRankListComponent } from './contest-rank-list/contest-rank-list.component';
 import { ContestRegistrationComponent } from './contest-registration/contest-registration.component';
 import { ContestProblemSelectorComponent } from './shared-components/contest-problem-selector/contest-problem-selector.component';
+import { ContestProblemComponent } from './contest-problem/contest-problem.component';
+import { ContestSubmitComponent } from './contest-submit/contest-submit.component';
 
 
 const routers= [
@@ -43,6 +45,14 @@ const routers= [
         component: ContestProblemListComponent,
       },
       {
+        path: ':contest_id/problems/:problem_id',
+        component: ContestProblemComponent,
+      },
+      {
+        path: ':contest_id/problems/:problem_id/submit',
+        component: ContestSubmitComponent,
+      },
+      {
         path: ':contest_id/rank',
         component: ContestRankListComponent,
       },
@@ -62,6 +72,8 @@ const routers= [
     ContestRankListComponent,
     ContestRegistrationComponent,
     ContestProblemSelectorComponent,
+    ContestProblemComponent,
+    ContestSubmitComponent,
   ],
   imports : [
     RouterModule.forChild(routers),
