@@ -20,27 +20,42 @@
 
   </div>
 
-  <div class="row mb-3">
+  <div class="row">
+    <div class="col-sm">
+      <hr>
+    </div>
+  </div>
+
+  <div class="row mb-5">
     <div class="col-sm">
 
       <a [routerLink]="'/contest/11/problems'"
-         class="btn form-control btn-light">
+         class="btn form-control btn-dark">
         Problems
       </a>
     </div>
 
     <div class="col-sm">
       <a [routerLink]="'/contest/11/rank'"
-         class="btn form-control btn-light">
+         class="btn form-control btn-dark">
         Rank
       </a>
     </div>
     <div class="col-sm">
       <a [routerLink]="'/contest/11/problems'"
-         class="btn form-control btn-light">
-        Submission
+         class="btn form-control btn-dark">
+        Submissions
       </a>
     </div>
+
+    <div class="col-sm">
+      <!-- todo hide if user is already registered-->
+      <a [routerLink]="'/contest/11/register'"
+         class="btn btn-dark form-control">
+        Registration
+      </a>
+    </div>
+
   </div>
 
   <div class="row">
