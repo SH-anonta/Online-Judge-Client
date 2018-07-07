@@ -37,7 +37,7 @@ export class UserService {
 
 //  Authorization checking
   authorizedToViewAdminPages(): boolean{
-    return this.user && this.user.isAdmin
+    return this.user && this.user.isAdmin;
   }
 
 }

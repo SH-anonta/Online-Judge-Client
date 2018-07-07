@@ -7,6 +7,8 @@ import { TaskCreatorComponent } from './task-creator/task-creator.component';
 import { TaskEditorComponent } from './task-editor/task-editor.component';
 import {FormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
+import { MemberSelectorComponent } from './shared-components/member-selector/member-selector.component';
+import { CheckListSelectorComponent } from './shared-components/check-list-selector/check-list-selector.component';
 
 
 const routers= [
@@ -42,7 +44,9 @@ const routers= [
     TaskDetailsComponent,
     TaskListComponent,
     TaskCreatorComponent,
-    TaskEditorComponent
+    TaskEditorComponent,
+    MemberSelectorComponent,
+    CheckListSelectorComponent
   ],
   imports : [
     RouterModule.forChild(routers),

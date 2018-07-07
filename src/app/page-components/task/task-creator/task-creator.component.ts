@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -7,8 +7,9 @@ import {Router} from '@angular/router';
   styleUrls: ['./task-creator.component.css']
 })
 export class TaskCreatorComponent implements OnInit {
-
   constructor(private router: Router) { }
+
+  @ViewChild('checklist_elector') checklist_selector;
 
   ngOnInit() {
   }
