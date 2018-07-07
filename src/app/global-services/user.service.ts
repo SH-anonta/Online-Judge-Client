@@ -30,22 +30,17 @@ export class UserService {
     return auth_promise;
   }
 
-  getUser(){
-    this._user;
-  }
-
   logout(){
     this._user = null;
     //todo clear session on the server side
   }
 
-  //todo implement
   isAuthorizedToCreateContest(){
-
+    return this.user && (this.user.isAdmin || this.user.isJudge);
   }
 
   isAuthorizedToEditContest(contest_id: string){
-    return this.user.isAdmin || this.user.isJudge;
+    return this.user && (this.user.isAdmin || this.user.isJudge);
   }
 
   isAuthorizedToCreateProblem(){

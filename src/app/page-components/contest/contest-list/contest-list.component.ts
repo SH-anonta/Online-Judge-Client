@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LinkGeneratorService} from '../../../global-services/link-generator.service';
+import {UserService} from '../../../global-services/user.service';
 
 @Component({
   selector: 'app-contest-list',
@@ -8,7 +9,7 @@ import {LinkGeneratorService} from '../../../global-services/link-generator.serv
 })
 export class ContestListComponent implements OnInit {
 
-  constructor(public link_generator: LinkGeneratorService) { }
+  constructor(public link_generator: LinkGeneratorService, public user_service: UserService) { }
 
   ngOnInit() {
   }
