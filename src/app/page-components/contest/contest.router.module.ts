@@ -10,10 +10,10 @@ import {CommonModule} from '@angular/common';
 import { ContestProblemListComponent } from './contest-problem-list/contest-problem-list.component';
 import { ContestRankListComponent } from './contest-rank-list/contest-rank-list.component';
 import { ContestRegistrationComponent } from './contest-registration/contest-registration.component';
-import { ContestProblemSelectorComponent } from './shared-components/contest-problem-selector/contest-problem-selector.component';
 import { ContestProblemComponent } from './contest-problem/contest-problem.component';
 import { ContestSubmitComponent } from './contest-submit/contest-submit.component';
 import {SharedComponentsModule} from '../../shared-components/shared-components.module';
+import {ProblemSelectorComponent} from './shared-components/problem-selector/problem-selector.component';
 
 
 const routers= [
@@ -72,9 +72,9 @@ const routers= [
     ContestProblemListComponent,
     ContestRankListComponent,
     ContestRegistrationComponent,
-    ContestProblemSelectorComponent,
     ContestProblemComponent,
     ContestSubmitComponent,
+    ProblemSelectorComponent,
   ],
   imports : [
     RouterModule.forChild(routers),
