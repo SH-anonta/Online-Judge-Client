@@ -12,8 +12,7 @@ import { SubmissionsTableComponent } from './submissions-table/submissions-table
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    // ProblemSelectorComponent,
-    SubmissionsTableComponent
+    SubmissionsTableComponent,
   ],
   imports:[
     CommonModule,
@@ -23,7 +22,7 @@ import { SubmissionsTableComponent } from './submissions-table/submissions-table
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    // ProblemSelectorComponent,
+    SubmissionsTableComponent,
   ],
 })
 export class SharedComponentsModule {}
