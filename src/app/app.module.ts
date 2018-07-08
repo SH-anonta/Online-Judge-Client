@@ -10,17 +10,19 @@ import {AuthService} from './global-services/auth.service';
 import {DataFetcherService} from './global-services/data-fetcher.service';
 import {SidebarComponent} from './shared-components/sidebar/sidebar.component';
 import {LinkGeneratorService} from './global-services/link-generator.service';
+import {SharedComponentsModule} from './shared-components/shared-components.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    SidebarComponent,
+    // HeaderComponent,
+    // FooterComponent,
+    // SidebarComponent,
   ],
   imports: [
     BrowserModule,
     RootRouterModule,
+    SharedComponentsModule
   ],
   providers: [
     AuthService,

@@ -49,55 +49,12 @@
 
           </div>
 
-          <label for="ProblemIdInput" class="mt-2">Problems</label>
-          <div class="form-row mb-2">
-            <div class="col-sm-11">
-              <div class="ProblemSetSelection">
-                <!--intentionally did not give ngModel attribute-->
-                <input
-                  id="ProblemIdInput"
-                  class="form-control"
-                  placeholder="Problem code"
-                  type="text">
-
-              </div>
+          <div class="form-row">
+            <div class="col-sm">
+              <label>Problems</label>
+              <app-problem-selector></app-problem-selector>
             </div>
 
-            <div class="col-sm-1">
-              <!--button for adding problems to the contest-->
-              <button type="button"
-                      class="form-control btn-primary font-weight-bold"
-                      (click)="onAddProblemClickHandler($event)">
-                +
-              </button>
-            </div>
-          </div>
-
-          <!--todo move to another component-->
-          <div class="form-row pl-3 pr-3">
-            <table class="table">
-              <tr>
-                <th>Code</th>
-                <th>Title</th>
-                <th>Success Ratio</th>
-              </tr>
-
-              <tr *ngFor="let problem of problem_list">
-                <td>{{problem}}</td>
-                <td>
-                  <a href="#">Problem title goes here</a>
-                </td>
-                <td>35.9%</td>
-
-                <!--button for removing -->
-                <td class="text-right">
-                  <button class="btn btn-danger btn-sm font-weight-bold"
-                          (click)="removeProblemClickHandler()">
-                    X
-                  </button>
-                </td>
-              </tr>
-            </table>
           </div>
 
           <label for="ContestType">Type</label>

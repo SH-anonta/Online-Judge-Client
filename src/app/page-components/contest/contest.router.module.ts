@@ -13,6 +13,7 @@ import { ContestRegistrationComponent } from './contest-registration/contest-reg
 import { ContestProblemSelectorComponent } from './shared-components/contest-problem-selector/contest-problem-selector.component';
 import { ContestProblemComponent } from './contest-problem/contest-problem.component';
 import { ContestSubmitComponent } from './contest-submit/contest-submit.component';
+import {SharedComponentsModule} from '../../shared-components/shared-components.module';
 
 
 const routers= [
@@ -79,6 +80,7 @@ const routers= [
     RouterModule.forChild(routers),
     FormsModule,
     CommonModule,
+    SharedComponentsModule,
   ],
   exports: [
     RouterModule
