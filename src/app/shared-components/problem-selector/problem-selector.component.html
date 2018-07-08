@@ -1,0 +1,56 @@
+<!--Expected to be uesd inside a form-->
+
+<div class="form-row">
+  <div class="col-sm-11">
+    <input type="text"
+           #checklist_input
+           id="ChecklistInput"
+           class="form-control">
+  </div>
+
+  <div class="col-sm-1">
+    <button class="btn btn-primary font-weight-bold"
+            (click)="onAddProblemClick(checklist_input.value, $event)"
+            type="button">
+      +
+    </button>
+  </div>
+
+</div>
+
+<div class="form-row">
+  <div class="col-sm">
+    <hr>
+    <table class="table" style="width: 100%">
+      <tr>
+        <th>Code</th>
+        <th>Title</th>
+        <th>Success ratio</th>
+        <th></th>
+      </tr>
+
+      <!-- idx is used to identify which item to remove when a remove button is clicked-->
+      <tr *ngFor="let problem of problem_list; let idx = index">
+        <td>
+            {{problem}}
+        </td>
+
+        <td>
+          <a [routerLink]="'/problem/12'">
+            Problem title goes here
+          </a>
+        </td>
+
+        <td>54/90</td>
+
+        <td class="text-right">
+          <button class="btn btn-sm btn-danger font-weight-bold"
+                  (click)="onRemoveProblemClick(idx)">
+            X
+          </button>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+</div>
