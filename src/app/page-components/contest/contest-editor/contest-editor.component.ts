@@ -15,7 +15,7 @@ export class ContestEditorComponent implements OnInit {
   ngOnInit() {
   }
 
-  onAddProblemClickHandler(){
+  onAddProblemClickHandler(event: any){
 
   }
 

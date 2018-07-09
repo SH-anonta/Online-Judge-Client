@@ -15,6 +15,7 @@ import { ContestSubmitComponent } from './contest-submit/contest-submit.componen
 import {SharedComponentsModule} from '../../shared-components/shared-components.module';
 import {ProblemSelectorComponent} from './shared-components/problem-selector/problem-selector.component';
 import { ContestAllSubmissionsComponent } from './contest-all-submissions/contest-all-submissions.component';
+import { ContestCountDownComponent } from './contest-count-down/contest-count-down.component';
 
 
 const routers= [
@@ -80,6 +81,7 @@ const routers= [
     ContestSubmitComponent,
     ProblemSelectorComponent,
     ContestAllSubmissionsComponent,
+    ContestCountDownComponent,
   ],
   imports : [
     RouterModule.forChild(routers),

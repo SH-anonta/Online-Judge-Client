@@ -23,12 +23,8 @@ Whole Site
 	|		|- Problem set editor	(only for judges)
 	|		|- Contest rank page
 	|		|- Contest submissions page
-	|		|
-	|		|- Contest Notices
-	|				|
-	|				|- Creator
-	|				|- Editor
-	|				|- Notice list
+	|		|- Contest count down
+	|   |- Contest user rank
 	|
 	|- Announcements
 	|		|
