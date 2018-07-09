@@ -16,6 +16,7 @@ import {SharedComponentsModule} from '../../shared-components/shared-components.
 import {ProblemSelectorComponent} from './shared-components/problem-selector/problem-selector.component';
 import { ContestAllSubmissionsComponent } from './contest-all-submissions/contest-all-submissions.component';
 import { ContestCountDownComponent } from './contest-count-down/contest-count-down.component';
+import {TimeAgoPipe} from 'time-ago-pipe';
 
 
 const routers= [
@@ -92,6 +93,7 @@ const routers= [
     FormsModule,
     CommonModule,
     SharedComponentsModule,
+    // TimeAgoPipe
   ],
   exports: [
     RouterModule
