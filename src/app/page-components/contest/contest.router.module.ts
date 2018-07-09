@@ -48,6 +48,10 @@ const routers= [
         component: ContestAllSubmissionsComponent,
       },
       {
+        path: ':contest_id/count-down',
+        component: ContestCountDownComponent,
+      },
+      {
         path: ':contest_id/problems',
         component: ContestProblemListComponent,
       },
