@@ -8,6 +8,7 @@ import {SidebarComponent} from './sidebar/sidebar.component';
 import { SubmissionsTableComponent } from './submissions-table/submissions-table.component';
 import { CountDownComponent } from './count-down/count-down.component';
 import { ProblemDescriptionComponent } from './problem-description/problem-description.component';
+import { ProblemListTableComponent } from './problem-list-table/problem-list-table.component';
 
 @NgModule({
   declarations:[
@@ -17,6 +18,7 @@ import { ProblemDescriptionComponent } from './problem-description/problem-descr
     SubmissionsTableComponent,
     CountDownComponent,
     ProblemDescriptionComponent,
+    ProblemListTableComponent,
   ],
   imports:[
     CommonModule,
@@ -28,7 +30,8 @@ import { ProblemDescriptionComponent } from './problem-description/problem-descr
     SidebarComponent,
     SubmissionsTableComponent,
     CountDownComponent,
-    ProblemDescriptionComponent
+    ProblemDescriptionComponent,
+    ProblemListTableComponent,
   ],
 })
 export class SharedComponentsModule {}
