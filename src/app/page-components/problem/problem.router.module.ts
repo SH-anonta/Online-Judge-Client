@@ -6,6 +6,7 @@ import { ProblemListComponent } from './problem-list/problem-list.component';
 import { ProblemDetailsComponent } from './problem-details/problem-details.component';
 import { ProblemCreatorComponent } from './problem-creator/problem-creator.component';
 import { ProblemEditorComponent } from './problem-editor/problem-editor.component';
+import {SharedComponentsModule} from '../../shared-components/shared-components.module';
 
 
 const routes= [
@@ -32,7 +33,8 @@ const routes= [
 
   imports: [
     RouterModule.forChild(routes),
-    CommonModule
+    CommonModule,
+    SharedComponentsModule,
   ],
 
   exports:[

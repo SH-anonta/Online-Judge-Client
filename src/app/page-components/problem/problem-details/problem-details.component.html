@@ -1,3 +1,30 @@
-<p>
-  problem-details works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <h3 class="h3">Naive Chef</h3>
+    </div>
+
+    <div class="col-sm-4 text-right">
+    <!--functions accessible to admins only -->
+      <span *ngIf="user_service.isAuthorizedToEditProblem()">
+        <a class="btn btn-sm btn-danger" [routerLink]="'problem/121/delete'">
+          Delete
+        </a>
+
+        <a class="btn btn-sm btn-dark" [routerLink]="'problem/121/edit'">
+          Edit
+        </a>
+      </span>
+
+      <a class="btn btn-sm btn-dark" [routerLink]="'problem/121/submit'">
+        Submit
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <app-problem-description></app-problem-description>
+    </div>
+  </div>
+</div>
