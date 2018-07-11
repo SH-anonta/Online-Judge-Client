@@ -1,39 +1,44 @@
 Whole Site
 	|
-	|- User Profile
+	|- Users
 	|		|
-	|		|- User profile
-	|		|- User profile editor
-	|		|- User submission history
-	|		|- User contest history
+	|		|- User profile				/user/:user_id
+	|		|- User profile editor		/user/:user_id/edit
+	|		|- User submission history	/user/:user_id/submissions
+	|		|- User contest history		/user/:user_id/contest-history
+	|		|- User list				/user/all
 	|
 	|- Problem sets
 	|		|
-	|		|- Problem set list
-	|		|- Problem set creator (only for judges)
-	|		|- Problem set editor
-	|		|- Solution submission page
+	|		|- Problem set list				/problem/
+	|		|- Problem set creator 			/problem/create 
+	|		|- Problem set details			/problem/:problem_id
+	|		|- Problem set editor			/problem/:problem_id/edit
+	|		|- Submit solution  			/problem/:problem_id/submit
+	|		|- Solution submissions			/problem/:problem_id/submissions
 	|
 	|- Contests
 	|		|
-	|		|- Register for contest
-	|		|- Problem set list
-	|		|- Problem set
-	|		|- Problem set creator	(only for judges)
-	|		|- Problem set editor	(only for judges)
-	|		|- Contest rank page
-	|		|- Contest submissions page
-	|		|- Contest count down
-	|   |- Contest user rank
+	|		|- Contest list					/contest
+	|		|- Contest set creator			/contest/create
+	|		|- Contest details				/contest/:contest_id
+	|		|- Contest set editor			/contest/:contest_id/edit
+	|		|- Contest registration 		/contest/:contest_id/register
+	|		|- Contest count down			/contest/:contest_id/count-down
+	|		|- Problem set list				/contest/:contest_id/problems
+	|		|- Problem details 				/contest/:contest_id/problems/:problem_number
+	|		|- Contest rank page			/contest/:contest_id/rank
+	|		|- Contest submissions 			/contest/:contest_id/submissions
+	|		|- Contest submissions of user	/contest/:contest_id/submissions/:user_id
 	|
 	|- Announcements
 	|		|
-	|		|- Announcements list
-	|		|- Announcement details
-	|		|- Announcement creator
-	|		|- Announcement editor
+	|		|- Announcements list			/announcements
+	|		|- Announcement details			/announcements/:announcement_id
+	|		|- Announcement creator			/announcements/create
+	|		|- Announcement editor			/announcements/:announcement_id/edit
 	|
 	|- Admin
 		|
-		|- Site statistics
-		|- All submissions page
+		|- Site statistics					/admin
+		|- All submissions page				
