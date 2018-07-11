@@ -1,27 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <h3>New Problems added!</h3>
+    </div>
 
-<table class="table">
-	<tr >
-		<th  colspan="10"><h3>New Problems added!</h3>
-	</tr>
-	<tr colspan="5">
-		<th style="font-size: 16px; text-align: left" colspan="5">Posted by: <i> <a href="#">Manosh</a></i></th>
-		<th style="font-size: 16px; text-align: left" colspan="5">Date Posted on: 07/10/2018</th>
-	</tr>
-	<tr>
-		<td style="text-align: justify;" colspan="5">
-      		We have added new problems to out site. Please browse through the problems and check them out!
-			Currently working on adding more contests. We will notify you when more problems are available.
-			<br/>
-		</td>
-		<td colspan="2"><i>Tags: admin notice</i></td>
-		<td colspan="3">
-			<a href="">
-				<img src="" height="120px" width="82px">
-			</a>
-		</td> 
-	</tr>	
-</table>	
+    <div class="col-sm-4 text-right">
 
-<div class="btn btn-sm btn-dark" style="width: 120px;">
-	Go Back
+      <div *ngIf="user_service.isAuthorizedToCreateAnnouncements()">
+        <button (click)="onDeleteBtnClick()"
+                type="button"
+                class="btn btn-sm btn-danger">
+          Delete
+        </button>
+        <a [routerLink]="'/announcements/2/edit'"
+           class="btn btn-sm btn-dark">
+          Edit
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <p>
+        Posted by: <a [routerLink]="'/user/12'">Manosh</a>
+        <br>
+        Date Posted on: 07/10/2018</p>
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <div>
+        <p>We have added new problems to out site. Please browse through the problems and check them out!
+          Currently working on adding more contests. We will notify you when more problems are available</p>
+      </div>
+
+    </div>
+  </div>
 </div>
+
+
