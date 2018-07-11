@@ -1,129 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Problem Editor</title>
-</head>
-
-<body>
-<div class="jumbotron text-center">
-    <h1>Edit Problem</h1>
-</div>
-
 <div class="container">
-    <div class="row">
-        <div class="col-sm-12 mx-auto">
-            <form class="text-right mt-4">
-                <div id="InputContainer" class="text-left">
-                    <label for="ProblemTitle">Project Title:</label>
-                    <input name="Problem_Title"
-                           class="form-control mb-2"
-                           type="text" id="ProblemTitle"
-                           placeholder="Title"
-                           value="Given Length and Sum of Digits...">
-                </div>
-                <div class="form-group" class="text-left">
-                    <label for="ProblemDetails">Problem Details/Description</label>
-                    <textarea name="Problem_Details"
-                              class="form-control"
-                              rows="5"
-                              cols="2"
-                              id="ProblemDetails"
-                              placeholder="Description of the Problem">You have a positive integer m and a non-negative integers.Your task is to find the smallest and the largest of the numbers that have length m and sum of digits s.The required numbers should be non-negative integers written in the decimal base without leading zeroes.</textarea>
-                </div>
-                <div class="form-group" class="text-left">
-                    <label for="ProblemConstraints">Problem Constraints</label>
-                    <textarea name="Problem_Constraints"
-                              class="form-control"
-                              rows="5"
-                              cols="2"
-                              id="ProblemConstraints"
-                              placeholder="Description of Problem Constraints">I/O samples are separated by comma </textarea>
-                </div>
-
-                <div class="form-group" class="text-left">
-                    <label for="SampleInput">Sample Input</label>
-                    <textarea name="Sample_Input"
-                              class="form-control"
-                              rows="5"
-                              cols="2"
-                              id="SampleInput"
-                              placeholder="Sample Input">2 15, 3 0</textarea>
-                </div>
-
-                <div class="form-group" class="text-left">
-                    <label for="SampleOutput">Sample Output</label>
-                    <textarea name="Sample_Output"
-                              class="form-control"
-                              rows="5"
-                              cols="2"
-                              id="SampleOutput"
-                              placeholder="Sample Output">69 96, -1 -1</textarea>
-                </div>
-
-                <div class="form-group" class="text-left">
-                    <label for="Note">Note</label>
-                    <textarea name="Note"
-                              class="form-control"
-                              rows="3"
-                              cols="2"
-                              id="Note"
-                              placeholder="Notes">Be careful. Input range can be up to 10^6.</textarea>
-                </div>
-
-
-                <div class="container" class="text-left">
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th>TimeLimit</th>
-                            <th>MemoryLimit</th>
-                            <th>Privacy</th>
-                            <th>Output File</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <input name="Time_Limit"
-                                       class="form-control mb-2"
-                                       type="text" id="TimeLimit"
-                                       placeholder="In Seconds"
-                                       value="1000 ms">
-                            </td>
-                            <td>
-                                <input name="Memory_Limit"
-                                       class="form-control mb-2"
-                                       type="text" id="MemoryLimit"
-                                       placeholder="In MB"
-                                       value="260 MB">
-                            </td>
-                            <td style="overflow:visible;">
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option value="Public">Public</option>
-                                    <option value="private">private</option>
-                                </select>
-
-                            </td>
-                            <td>
-                                <div class="form-group">
-                                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                                </div>
-                            </td>
-
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-
-                <button class="btn btn-warning">Preview</button>
-                <button class="btn btn-success">Save</button>
-
-            </form>
-
-        </div>
+  <div class="row">
+    <div class="col-sm">
+      <h3 class="h3">Create a new Problem</h3>
     </div>
-</div>
+  </div>
 
-</body>
-</html>
+  <div class="row">
+
+    <div class="col-sm">
+      <form class="mt-4">
+        <div id="InputContainer" class="text-left">
+          <label for="ProblemTitle">Title</label>
+          <input name="Problem_Title"
+                 class="form-control mb-2"
+                 type="text" id="ProblemTitle"
+                 placeholder="Title">
+        </div>
+
+        <div class="form-group text-left">
+          <label for="ProblemDetails">Description</label>
+          <textarea name="Problem_Details"
+                    class="form-control"
+                    rows="5"
+                    cols="2"
+                    id="ProblemDetails"></textarea>
+        </div>
+
+        <div class="form-group text-left">
+          <label for="ProblemConstraints">Constraints</label>
+          <textarea name="Problem_Constraints"
+                    class="form-control"
+                    rows="5"
+                    cols="2"
+                    id="ProblemConstraints"></textarea>
+        </div>
+
+        <div class="form-group text-left">
+          <label for="Input">Input</label>
+          <textarea name="input"
+                    class="form-control"
+                    rows="3"
+                    cols="2"
+                    id="Input"></textarea>
+        </div>
+
+        <div class="form-group text-left">
+          <label for="Output">Output</label>
+          <textarea name="output"
+                    class="form-control"
+                    rows="3"
+                    cols="2"
+                    id="Output"></textarea>
+        </div>
+
+        <div class="form-group text-left">
+          <label for="SampleInput">Sample Input</label>
+          <textarea name="Sample_Input"
+                    class="form-control"
+                    rows="5"
+                    cols="2"
+                    id="SampleInput"></textarea>
+        </div>
+
+        <div class="form-group text-left">
+          <label for="SampleOutput">Sample Output</label>
+          <textarea name="Sample_Output"
+                    class="form-control"
+                    rows="5"
+                    cols="2"
+                    id="SampleOutput"></textarea>
+        </div>
+
+        <div class="form-group text-left">
+          <label for="Note">Note</label>
+          <textarea name="Note"
+                    class="form-control"
+                    rows="3"
+                    cols="2"
+                    id="Note"></textarea>
+        </div>
+
+        <label for="ContestType">Visibility</label>
+        <select class="form-control mb-3" id="ContestType">
+          <option selected value="private">private</option>
+          <option value="Public">Public</option>
+        </select>
+
+        <div class="form-row mb-2">
+          <div class="col-sm">
+            <label for="TimeLimit">Time limit (s)</label>
+            <input type="text"
+                   class="form-control"
+                   id="TimeLimit"
+                   name="time_limit">
+
+          </div>
+
+          <div class="col-sm">
+            <label for="MemoryLimit">Memory limit (MB)</label>
+            <input type="text"
+                   class="form-control"
+                   id="MemoryLimit"
+                   name="memory_limit">
+
+          </div>
+        </div>
+
+        <div class="form-row mb-2">
+          <div class="col-sm">
+            <label class="col-form-label"  for="InputFIle">Input file</label>
+            <input type="file"
+                   class="form-control"
+                   id="InputFIle"
+                   name="time_limit">
+
+          </div>
+
+          <div class="col-sm">
+            <label class="col-form-label" for="OutputFile">Output file</label>
+            <input type="file"
+                   class="form-control"
+                   id="OutputFile"
+                   name="memory_limit">
+
+          </div>
+        </div>
+
+
+        <div class="form-row">
+          <div class="col-sm text-right">
+            <!--<button class="btn btn-dark">Preview</button>-->
+            <button class="btn btn-dark"
+                    (click)="onSaveBtnClick()">
+              Save
+            </button>
+          </div>
+        </div>
+
+
+      </form>
+
+    </div>
+  </div>
+</div>
