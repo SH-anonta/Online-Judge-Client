@@ -8,14 +8,16 @@
     <div  *ngIf="user_service.isAuthorizedToEditContest('12')"
           class="col-sm-2 text-right pt-1">
       <a [routerLink]="'/contest/11/edit'"
-         class="brn btn-sm btn-primary mr-1">
+         class="btn btn-sm btn-primary mr-1">
         Edit
       </a>
 
-      <a [routerLink]=""
-         class="brn btn-sm btn-danger">
+      <button
+              type="button"
+              class="btn btn-sm btn-danger"
+              (click)="onDeleteBtnClick()">
         Delete
-      </a>
+      </button>
     </div>
 
   </div>
