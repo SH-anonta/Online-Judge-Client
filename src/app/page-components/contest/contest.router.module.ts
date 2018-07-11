@@ -16,7 +16,7 @@ import {SharedComponentsModule} from '../../shared-components/shared-components.
 import {ProblemSelectorComponent} from './shared-components/problem-selector/problem-selector.component';
 import { ContestAllSubmissionsComponent } from './contest-all-submissions/contest-all-submissions.component';
 import { ContestCountDownComponent } from './contest-count-down/contest-count-down.component';
-import {TimeAgoPipe} from 'time-ago-pipe';
+import { ContestUserSubmissionsComponent } from './contest-user-submissions/contest-user-submissions.component';
 
 
 const routers= [
@@ -68,6 +68,10 @@ const routers= [
         path: ':contest_id/rank',
         component: ContestRankListComponent,
       },
+      {
+        path: ':contest_id/submissions/user/:user_id',
+        component: ContestUserSubmissionsComponent,
+      },
     ]
   }
 ];
@@ -87,6 +91,7 @@ const routers= [
     ProblemSelectorComponent,
     ContestAllSubmissionsComponent,
     ContestCountDownComponent,
+    ContestUserSubmissionsComponent,
   ],
   imports : [
     RouterModule.forChild(routers),

@@ -14,6 +14,6 @@ export class ContestSubmitComponent implements OnInit {
   }
 
   submitBtnClickHandler() {
-    this.router.navigate(['/contest/3/user/3/submissions'])
+    this.router.navigate(['/contest/12/submissions/user/23'])
   }
 }
