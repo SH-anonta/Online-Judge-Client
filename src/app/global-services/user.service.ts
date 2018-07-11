@@ -52,4 +52,8 @@ export class UserService {
     return this.user && (this.user.isAdmin || this.user.isJudge);
   }
 
+  isAuthorizedToCreateAnnouncements(problem_id: string){
+    return this.user && this.user.isAdmin;
+  }
+
 }

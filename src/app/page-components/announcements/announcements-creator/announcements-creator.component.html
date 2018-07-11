@@ -17,11 +17,11 @@
           <!--- Selecting/Reselecting post tags -->
           <label for="AnnouncementTags">Tags</label>
           <div>
-            <input type="checkbox" name="contest_tag" value="contest">  contest 
-            <input type="checkbox" name="contest_tag" value="maintaintence">  maintaintence 
-            <input type="checkbox" name="contest_tag" value="update">  update 
-            <input type="checkbox" name="contest_tag" value="new_problem">  new problem 
-            <input type="checkbox" name="contest_tag" value="admin_post">  admin post 
+            <input type="checkbox" name="contest_tag" value="contest">  contest
+            <input type="checkbox" name="contest_tag" value="maintaintence">  maintaintence
+            <input type="checkbox" name="contest_tag" value="update">  update
+            <input type="checkbox" name="contest_tag" value="new_problem">  new problem
+            <input type="checkbox" name="contest_tag" value="admin_post">  admin post
           </div>
 
           <!--- Confirming password for all secured changes to announcements. -->
@@ -32,16 +32,11 @@
             <label for="ConfirmPassword">Confirm password</label>
             <input id="ConfirmPassword" type="password" name="confirm_password" class="form-control" placeholder="reconfirm your password">
           </div>
-              <!--- Browse and update the attached image to the file. -->
-              <label for="EditImage">Upload Image: </label>
-              <div>                
-                <img src="#" height="100" width="200"> <button type="button" class="btn btn-primary mt-3" (click)="browseBtnClickHandler()"> Browse </button>
-              </div>
+
           </div>
 
            <!--- Submit changes / Cancel changes. -->
-          <button type="submit" class="btn btn-primary mt-3" (click)="postBtnClickHandler(announcement_form)"> Publish </button>
-          <button type="button" class="btn btn-primary mt-3 btn-danger" (click)="cancelBtnClickHandler()"> Cancel </button>
+          <button type="submit" class="btn btn-primary mt-3"> Publish </button>
       </form>
     </div>
   </div>
