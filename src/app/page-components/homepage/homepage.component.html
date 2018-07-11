@@ -1,8 +1,80 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm">
-      <p>Homepage content</p>
+    <div class="col-sm-12">
+      <h3>Home page</h3>
+      <p>Link to every page in the site</p>
+
+      <hr>
 
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md">
+      <h5>Site pages</h5>
+      <ul>
+        <li><a [routerLink]="''">Home</a></li>
+        <li><a [routerLink]="'/about'">About</a></li>
+      </ul>
+
+      <h5>User profile pages</h5>
+      <ul>
+        <li><a [routerLink]="'/user/12'">User profile</a></li>
+        <li><a [routerLink]="'/user/13/edit'">User profile editor</a></li>
+        <li><a [routerLink]="'/user/13/submissions'">User submissions</a></li>
+        <li><a [routerLink]="'/user/13/contest-history'">User contest hostroy</a></li>
+      </ul>
+
+      <h5>Admin pages</h5>
+      <ul>
+        <li><a [routerLink]="'/admin'">Admin home</a></li>
+        <li><a [routerLink]="'/admin/user-list'">Users list page</a></li>
+      </ul>
+
+      <h5>Problem pages</h5>
+      <ul>
+        <li><a [routerLink]="'/problem/'">Problem list</a></li>
+        <li><a [routerLink]="'/problem/11'">Problem details</a></li>
+        <li><a [routerLink]="'/problem/create'">Problem creator</a></li>
+        <li><a [routerLink]="'/problem/11/edit'">Problem editor</a></li>
+        <li><a [routerLink]="'/problem/11/submit'">Problem submit</a></li>
+        <li><a [routerLink]="'/problem/11/submissions'">Problem submissions</a></li>
+      </ul>
+
+    </div>
+
+    <div class="col-md">
+      <h5>Contest pages</h5>
+      <ul>
+        <li><a [routerLink]="'/contest/'">Contest list</a></li>
+        <li><a [routerLink]="'/contest/11'">Contest details</a></li>
+        <li><a [routerLink]="'/contest/create'">Contest creator</a></li>
+        <li><a [routerLink]="'/contest/11/edit'">Contest editor</a></li>
+        <li><a [routerLink]="'/contest/11/problems'">Contest problems</a></li>
+        <li><a [routerLink]="'/contest/11/rank'">Contest rank</a></li>
+        <li><a [routerLink]="'/contest/11/register'">Contest registration</a></li>
+        <li><a [routerLink]="'/contest/11/problems/D'">Contest problem</a></li>
+        <li><a [routerLink]="'/contest/11/problems/12/submit'">Contest submit</a></li>
+        <li><a [routerLink]="'/contest/11/submissions'">Contest all submissions</a></li>
+        <li><a [routerLink]="'/contest/11/submissions/user/21'">Contest user submissions</a></li>
+        <li><a [routerLink]="'/contest/12/count-down'">Contest count down</a></li>
+      </ul>
+
+      <h5>Announcement pages</h5>
+      <ul>
+        <li><a [routerLink]="'/announcements/'">Announcement list</a></li>
+        <li><a [routerLink]="'/announcements/11'">Announcement details</a></li>
+        <li><a [routerLink]="'/announcements/create'">Announcement creator</a></li>
+        <li><a [routerLink]="'/announcements/11/edit'">Announcement editor</a></li>
+      </ul>
+
+
+    </div>
+
+    <div class="col-sm">
+    </div>
+  </div>
 </div>
+
+
+

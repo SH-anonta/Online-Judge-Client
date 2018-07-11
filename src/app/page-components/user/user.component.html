@@ -1,41 +1,32 @@
-<div class="container">
-  <div class="row">
-    <div class="com-sm-12">
-      <nav class="nav navbar nav-fill">
+<div class="nav navbar nav-fill">
 
-        <ul class="nav justify-content-center">
-          <li class="nav-item">
-            <a class="nav-link"
-              [routerLink]="'21'">
-              Profile
-            </a>
-          </li>
+  <ul class="nav justify-content-center" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active"
+         data-toggle="pill" role="tab" aria-controls="pills-profile" aria-selected="true"
+        [routerLink]="'21'">
+        Profile
+      </a>
+    </li>
 
-          <li class="nav-item">
-            <a class="nav-link"
-              [routerLink]="'12/submissions'">
-              Submissions
-            </a>
-          </li>
+    <li class="nav-item">
+      <a class="nav-link"
+         data-toggle="pill" role="tab" aria-controls="pills-profile" aria-selected="false"
+        [routerLink]="'12/submissions'">
+        Submissions
+      </a>
+    </li>
 
-          <li class="nav-item">
-            <a class="nav-link"
-               [routerLink]="'12/contest-history'">
-              Contests
-            </a>
-          </li>
-        </ul>
+    <li class="nav-item">
+      <a class="nav-link"
+         data-toggle="pill" role="tab" aria-controls="pills-profile" aria-selected="false"
+         [routerLink]="'12/contest-history'">
+        Contests
+      </a>
+    </li>
+  </ul>
 
-      </nav>
-
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="com-sm-12">
-      <hr>
-      <router-outlet></router-outlet>
-    </div>
-  </div>
 </div>
 
+<hr>
+<router-outlet></router-outlet>
