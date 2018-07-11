@@ -1,3 +1,58 @@
+<!-- 
 <p>
   user-profile-editor works!
-</p>
+</p> 
+-->
+
+
+<div class="container">
+
+
+	<div class="row">
+
+
+		<div class="col-sm-6 mx-auto">
+
+
+			<form name="" action="" method="" >
+				
+				<div class="form-group">
+					<label for="">Username</label>
+					<input type="text" name="username" id="Username" class="form-control mb-2" value="Bob" readonly/>
+				</div>
+				
+				<div class="form-group">
+					<label for="E-mail">E-mail</label>
+					<input type="text" name="email" id="E-mail" class="form-control mb-2" value="bob@abc.xyz" required/>
+				</div>
+				
+				<div class="form-group">
+					<label for="Password">Password</label>
+					<input type="password" name="pass1" id="Password" class="form-control mb-2" placeholder="********" required/>
+					<small class="form-text text-muted">Length must be >7 and must contain atleast 1 uppercase,1 lowercase letter,1 number & 1 special character.</small>
+				</div>
+
+				<div class="form-group">
+					<label for="conf-pass">Confirm Password</label>
+					<input type="password" name="pass2" id="conf-pass" class="form-control mb-2" placeholder="********" required/>
+					<small class="form-text text-danger">Passwords Do Not Match!</small>
+				</div>
+			
+				<div class="form-group">
+					<small class="form-text text-danger">*All Fields Are Required</small>
+				</div>
+				
+				<div class="form-group">
+					<button class="btn btn-primary">Update</button>
+				</div>
+
+			</form>
+
+		
+		</div>
+
+
+	</div>
+
+
+</div>

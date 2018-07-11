@@ -35,6 +35,7 @@ export class UserService {
     //todo clear session on the server side
   }
 
+  // todo these are dummy and only check if user is admin or judge
   isAuthorizedToCreateContest(){
     return this.user && (this.user.isAdmin || this.user.isJudge);
   }
@@ -45,6 +46,10 @@ export class UserService {
 
   isAuthorizedToCreateProblem(){
 
+  }
+
+  isAuthorizedToEditProblem(problem_id: string){
+    return this.user && (this.user.isAdmin || this.user.isJudge);
   }
 
 }

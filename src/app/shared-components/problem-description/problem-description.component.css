@@ -1,0 +1,13 @@
+.description-section{
+  background-color: #eeeeee;
+  padding: 10px;
+  border-radius: 10px;
+
+  text-align: justify;
+  text-justify: inter-character;
+  /*text-justify: inter-word;*/
+}
+
+.section-header{
+  margin-top: 10px;
+}

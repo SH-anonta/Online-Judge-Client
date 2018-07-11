@@ -15,6 +15,8 @@ import { ContestSubmitComponent } from './contest-submit/contest-submit.componen
 import {SharedComponentsModule} from '../../shared-components/shared-components.module';
 import {ProblemSelectorComponent} from './shared-components/problem-selector/problem-selector.component';
 import { ContestAllSubmissionsComponent } from './contest-all-submissions/contest-all-submissions.component';
+import { ContestCountDownComponent } from './contest-count-down/contest-count-down.component';
+import { ContestUserSubmissionsComponent } from './contest-user-submissions/contest-user-submissions.component';
 
 
 const routers= [
@@ -47,6 +49,10 @@ const routers= [
         component: ContestAllSubmissionsComponent,
       },
       {
+        path: ':contest_id/count-down',
+        component: ContestCountDownComponent,
+      },
+      {
         path: ':contest_id/problems',
         component: ContestProblemListComponent,
       },
@@ -61,6 +67,10 @@ const routers= [
       {
         path: ':contest_id/rank',
         component: ContestRankListComponent,
+      },
+      {
+        path: ':contest_id/submissions/user/:user_id',
+        component: ContestUserSubmissionsComponent,
       },
     ]
   }
@@ -80,12 +90,15 @@ const routers= [
     ContestSubmitComponent,
     ProblemSelectorComponent,
     ContestAllSubmissionsComponent,
+    ContestCountDownComponent,
+    ContestUserSubmissionsComponent,
   ],
   imports : [
     RouterModule.forChild(routers),
     FormsModule,
     CommonModule,
     SharedComponentsModule,
+    // TimeAgoPipe
   ],
   exports: [
     RouterModule

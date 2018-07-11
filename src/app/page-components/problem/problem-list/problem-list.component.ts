@@ -12,4 +12,7 @@ export class ProblemListComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSearchClick(event: any) {
+    event.target.blur();
+  }
 }

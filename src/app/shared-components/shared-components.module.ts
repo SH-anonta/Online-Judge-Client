@@ -6,6 +6,9 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {SidebarComponent} from './sidebar/sidebar.component';
 import { SubmissionsTableComponent } from './submissions-table/submissions-table.component';
+import { CountDownComponent } from './count-down/count-down.component';
+import { ProblemDescriptionComponent } from './problem-description/problem-description.component';
+import { ProblemListTableComponent } from './problem-list-table/problem-list-table.component';
 
 @NgModule({
   declarations:[
@@ -13,6 +16,9 @@ import { SubmissionsTableComponent } from './submissions-table/submissions-table
     FooterComponent,
     SidebarComponent,
     SubmissionsTableComponent,
+    CountDownComponent,
+    ProblemDescriptionComponent,
+    ProblemListTableComponent,
   ],
   imports:[
     CommonModule,
@@ -23,6 +29,9 @@ import { SubmissionsTableComponent } from './submissions-table/submissions-table
     FooterComponent,
     SidebarComponent,
     SubmissionsTableComponent,
+    CountDownComponent,
+    ProblemDescriptionComponent,
+    ProblemListTableComponent,
   ],
 })
 export class SharedComponentsModule {}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-contest-creator',
@@ -9,7 +10,7 @@ import {NgForm} from '@angular/forms';
 export class ContestCreatorComponent implements OnInit {
   contest_type: string= 'private'; // this is used to hide or show the password fields
   problem_list: string[]= [];
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
 
@@ -25,6 +26,6 @@ export class ContestCreatorComponent implements OnInit {
   }
 
   createBtnClickHandler(form: NgForm) {
-    console.log(form);
+    this.router.navigate(['/contest/21']);
   }
 }

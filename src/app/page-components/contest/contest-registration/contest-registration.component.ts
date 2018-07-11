@@ -14,6 +14,6 @@ export class ContestRegistrationComponent implements OnInit {
   }
 
   onRegisterBtnClick() {
-    this.router.navigate(['..'], { relativeTo: this.route});
+    this.router.navigate(['contest/12/count-down']);
   }
 }
