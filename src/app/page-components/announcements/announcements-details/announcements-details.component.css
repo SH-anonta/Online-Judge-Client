@@ -1,0 +1,26 @@
+/* CSS styling for announcement-details*/
+
+.table {
+	width: 100%;
+    color: #333;
+    font-family: Helvetica;
+    border-collapse: collapse;
+	border-spacing: 0; 
+	border: 1px gray;
+	overflow-y: scroll;
+}	
+
+.table td, .table th {  
+    border: 1px solid transparent; /*To make the border lines inbetween gone.*/
+    height: 40px; 
+}
+.table th {  
+    background: #333; 
+    font-weight: bold;
+	color: white;
+}
+
+.table td {  
+    background: #e6f0ff;
+    text-align: left;
+}
