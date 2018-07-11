@@ -29,4 +29,47 @@
       <app-problem-description></app-problem-description>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <hr>
+      <!--problem info separator-->
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+
+      <h4>Info</h4>
+
+      <table class="table table-sm">
+        <tr>
+          <th>Author</th>
+          <td>
+            <a [routerLink]="'/user/12'">
+              Anonta
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <th>Success</th>
+          <td>90/301</td>
+        </tr>
+
+        <tr>
+          <th>Create date</th>
+          <td>07/11/2018</td>
+        </tr>
+      </table>
+
+      <div class="text-center">
+        <a [routerLink]="'/problem/23/submissions'">
+          Submissions
+        </a>
+      </div>
+
+    </div>
+
+  </div>
 </div>
