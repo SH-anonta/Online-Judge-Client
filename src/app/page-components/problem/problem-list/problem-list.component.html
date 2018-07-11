@@ -18,7 +18,10 @@
         <input type="text"
                class="form-control"
                placeholder="Problem title">
-        <button class="btn btn-dark form-control ml-1">Search</button>
+        <button class="btn btn-dark form-control ml-1"
+                (click)="onSearchClick($event)">
+          Search
+        </button>
       </span>
 
     </div>
