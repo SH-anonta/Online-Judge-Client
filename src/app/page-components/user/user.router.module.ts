@@ -4,8 +4,8 @@ import {UserProfileComponent} from './user-profile/user-profile.component';
 import {RouterModule} from '@angular/router';
 import { UserProfileEditorComponent } from './user-profile-editor/user-profile-editor.component';
 import { UserSubmissionsComponent } from './user-submissions/user-submissions.component';
-import { ContestHistoryComponent } from './contest-history/contest-history.component';
 import {SharedComponentsModule} from '../../shared-components/shared-components.module';
+import { UserContestHistoryComponent } from './user-contest-history/user-contest-history.component';
 
 
 const routes= [
@@ -23,7 +23,7 @@ const routes= [
       },
       {
         path: ':user_id/contest-history',
-        component: ContestHistoryComponent,
+        component: UserContestHistoryComponent,
       },
       {
         path: ':user_id/edit',
@@ -45,7 +45,7 @@ const routes= [
     UserProfileComponent,
     UserProfileEditorComponent,
     UserSubmissionsComponent,
-    ContestHistoryComponent,
+    UserContestHistoryComponent,
   ],
   imports : [
     RouterModule.forChild(routes),
