@@ -7,6 +7,8 @@ import { ProblemDetailsComponent } from './problem-details/problem-details.compo
 import { ProblemCreatorComponent } from './problem-creator/problem-creator.component';
 import { ProblemEditorComponent } from './problem-editor/problem-editor.component';
 import {SharedComponentsModule} from '../../shared-components/shared-components.module';
+import { ProblemSubmitComponent } from './problem-submit/problem-submit.component';
+import {FormsModule} from '@angular/forms';
 
 
 const routes= [
@@ -18,6 +20,7 @@ const routes= [
       {path: 'create', component: ProblemCreatorComponent,},
       {path: ':problem_id', component: ProblemDetailsComponent,},
       {path: ':problem_id/edit', component: ProblemEditorComponent,},
+      {path: ':problem_id/submit', component: ProblemSubmitComponent,},
     ],
   },
 ];
@@ -28,13 +31,15 @@ const routes= [
     ProblemListComponent,
     ProblemDetailsComponent,
     ProblemCreatorComponent,
-    ProblemEditorComponent
+    ProblemEditorComponent,
+    ProblemSubmitComponent
   ],
 
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
     SharedComponentsModule,
+    FormsModule,
   ],
 
   exports:[

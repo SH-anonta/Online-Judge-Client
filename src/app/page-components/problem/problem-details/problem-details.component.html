@@ -6,7 +6,7 @@
 
     <div class="col-sm-4 text-right">
     <!--functions accessible to admins only -->
-      <span *ngIf="user_service.isAuthorizedToEditProblem()">
+      <span *ngIf="user_service.isAuthorizedToEditProblem('121')">
         <button class="btn btn-sm btn-danger"
                 type="button"
                 (click)="onDeleteBtnClick()">
