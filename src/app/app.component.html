@@ -5,8 +5,7 @@
 
 <div id="Wrapper">
 
-  <!--Todo remove true || -->
-  <div *ngIf="true || user_service.userIsAuthenticated()">
+  <div *ngIf="user_service.userIsAuthenticated()">
     <app-sidebar id="SideBar"></app-sidebar>
   </div>
 
