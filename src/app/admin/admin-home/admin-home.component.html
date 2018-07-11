@@ -1,3 +1,31 @@
-<p>
-  admin-home works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h4 class="h4">Profile: </h4>
+    </div>
+
+	<div class="col-sm-12">
+	  <form class="text-right" >
+	    <div id="Admin" class="text-left">
+	    	<img src="https://img.devrant.com/devrant/rant/r_1087596_Rpd6E.jpg" height="130px" width="130px"><br/><br/>
+	    	<button type="button" class="btn btn-sm btn-dark" (click)="changeImgBtnClickHandler()"> Change image </button><br><br/>
+			<label for="AdminUsername">Username:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>Dblaze47<br/>
+	      	<label for="AdminFullName">Full Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> Manosh Talukder<br/>
+	      	<label for="AdminDOB">Date of Birth:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>22/**/19**<br/>
+	      	<label for="AdminEmail">Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> manosh.office015@gmail.com<br/>
+	      	<label for="AdminMembership">Member Since:&nbsp;&nbsp;</label>06/01/2018 (42 days)<br/>
+	      	<label for="AdminLastLogin">Last Seen:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 0 days ago<br/>
+	      	<hr>
+	      <!--- Confirming password for all secured changes to announcements. -->
+	      <div id="ViewStatistics">
+	        <label for="UserStat"><a href=""> View User Statistics</a></label><br><br>
+	        <label for="ContestStat"><a href=""> View Contest Statistics</a></label><br><br>
+	        <label for="ProblemHits"><a href=""> View Problem Hit Counts</a></label>
+	      </div>              
+	    </div>
+	       <!--- Provide option to edit the profile data. -->
+	      <button type="submit" class="btn btn-primary mt-3" (click)="editBtnClickHandler(announcement_form)"> Edit Profile </button>
+	  	</form>
+	  </div>
+	</div>
+</div>
