@@ -1,3 +1,19 @@
-<p>
-  user-submissions works!
-</p>
+<div class="container">
+  <div class="row mb-2">
+    <div class="col-sm">
+      <h5 class="h4">User: John</h5>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-sm">
+      <h5 class="h5">Submission history</h5>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <app-submissions-table [submissions]="[]"></app-submissions-table>
+    </div>
+  </div>
+</div>

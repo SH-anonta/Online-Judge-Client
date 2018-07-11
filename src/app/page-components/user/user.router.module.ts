@@ -5,6 +5,7 @@ import {RouterModule} from '@angular/router';
 import { UserProfileEditorComponent } from './user-profile-editor/user-profile-editor.component';
 import { UserSubmissionsComponent } from './user-submissions/user-submissions.component';
 import { ContestHistoryComponent } from './contest-history/contest-history.component';
+import {SharedComponentsModule} from '../../shared-components/shared-components.module';
 
 
 const routes= [
@@ -47,7 +48,8 @@ const routes= [
     ContestHistoryComponent,
   ],
   imports : [
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    SharedComponentsModule,
   ],
   exports: [
     RouterModule
