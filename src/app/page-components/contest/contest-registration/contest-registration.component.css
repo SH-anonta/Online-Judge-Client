@@ -1,5 +1,14 @@
 #ContestRulesContainer{
   background-color: whitesmoke;
-  min-height: 500px;
-  padding: 5px;
+  height: 500px;
+
+  border-radius: 10px;
+  padding: 10px;
+
+  text-align: justify;
+  text-justify: inter-word;
+
+  overflow-y: auto;
 }
+
+
