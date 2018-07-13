@@ -6,6 +6,7 @@ Whole Site
 	|		|- User profile editor		/user/:user_id/edit
 	|		|- User submission history	/user/:user_id/submissions
 	|		|- User contest history		/user/:user_id/contest-history
+	|		|- Uesr my problems 		/user/:user_id/problem-list
 	|		|- User list				/user/all
 	|
 	|- Problem sets

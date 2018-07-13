@@ -8,6 +8,7 @@ import {AuthService} from './global-services/auth.service';
 import {DataFetcherService} from './global-services/data-fetcher.service';
 import {LinkGeneratorService} from './global-services/link-generator.service';
 import {SharedComponentsModule} from './shared-components/shared-components.module';
+import {APP_BASE_HREF} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,10 @@ import {SharedComponentsModule} from './shared-components/shared-components.modu
     AuthService,
     UserService,
     DataFetcherService,
-    LinkGeneratorService
+    LinkGeneratorService,
+
+    // Needed for integrating with ASP backend
+    {provide: APP_BASE_HREF, useValue: '/'}
 
   ],
   bootstrap: [AppComponent]
