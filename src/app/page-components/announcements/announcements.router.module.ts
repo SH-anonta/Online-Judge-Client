@@ -6,6 +6,7 @@ import {AnnouncementsEditorComponent} from './announcements-editor/announcements
 import {AnnouncementsDetailsComponent} from './announcements-details/announcements-details.component';
 import {CommonModule} from '@angular/common';
 import {AnnouncementsComponent} from './announcements.component';
+import {SharedComponentsModule} from '../../shared-components/shared-components.module';
 
 
 
@@ -46,6 +47,7 @@ const routes= [
   imports : [
     RouterModule.forChild(routes),
     CommonModule,
+    SharedComponentsModule,
   ],
   exports: [
     RouterModule

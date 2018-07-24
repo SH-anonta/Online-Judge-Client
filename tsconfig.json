@@ -15,5 +15,12 @@
       "es2017",
       "dom"
     ]
-  }
+  },
+
+  "include": [
+    "src/**/*",
+    "node_modules/ngx-quill-editor/index.ts",
+    "node_modules/ngx-quill-editor/quillEditor.component.ts",
+    "node_modules/ngx-quill-editor/quillEditor.module.ts"
+  ]
 }

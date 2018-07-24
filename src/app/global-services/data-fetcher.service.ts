@@ -2,10 +2,13 @@
 
 // this service fetches data from the server backend
 import {User} from '../global-models/user.model';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
 
+@Injectable()
 export class DataFetcherService {
 
-  constructor() {
+  constructor(private client: HttpClient) {
 
   }
 
@@ -30,5 +33,16 @@ export class DataFetcherService {
 
       resolve(users);
     });
+  }
+
+  getAnnouncementList(): Promise<any>{
+    let promise = new Promise((resolve, reject) =>{
+      let p = this.client.get('http://localhost:52774/api/announcements/1');
+      p.subscribe(d => {
+        resolve(d);
+      });
+    });
+
+    return promise;
   }
 }

@@ -9,6 +9,7 @@ import {DataFetcherService} from './global-services/data-fetcher.service';
 import {LinkGeneratorService} from './global-services/link-generator.service';
 import {SharedComponentsModule} from './shared-components/shared-components.module';
 import {APP_BASE_HREF} from '@angular/common';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {APP_BASE_HREF} from '@angular/common';
   imports: [
     BrowserModule,
     RootRouterModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+    HttpClientModule,
   ],
   providers: [
     AuthService,
