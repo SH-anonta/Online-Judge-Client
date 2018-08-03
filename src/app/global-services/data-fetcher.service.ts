@@ -2,15 +2,60 @@
 
 // this service fetches data from the server backend
 import {User} from '../global-models/user.model';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 
 @Injectable()
 export class DataFetcherService {
+  HOST_NAME: string= 'http://localhost:52774';
 
   constructor(private client: HttpClient) {
 
   }
+
+  public get(uri: string, params?: any, headers?: any): Promise<any>{
+    let promise = new Promise((resolve, reject)=> {
+      let url = [this.HOST_NAME,uri].join('/');
+
+
+        let p = this.client.get(url, {
+          params : params,
+          headers : headers,
+        });
+
+        p.subscribe((data : any)=>{
+            resolve(data);
+          },
+          (error: HttpErrorResponse) => {
+              reject(error);
+          });
+    });
+
+    return promise;
+  }
+
+
+  public post(uri: string, data?: any, params?: any, headers?: any): Promise<any>{
+    let promise = new Promise((resolve, reject)=> {
+      let url = [this.HOST_NAME,uri].join('/');
+
+
+      let p = this.client.post(url, data, {
+        params : params,
+        headers : headers,
+      });
+
+      p.subscribe((data : any)=>{
+          resolve(data);
+        },
+        (error: HttpErrorResponse) => {
+          reject(error);
+        });
+    });
+
+    return promise;
+  }
+
 
   getUserProfileData(id: string){
     return {
@@ -36,13 +81,10 @@ export class DataFetcherService {
   }
 
   getAnnouncementList(): Promise<any>{
-    let promise = new Promise((resolve, reject) =>{
-      let p = this.client.get('http://localhost:52774/api/announcements/1');
-      p.subscribe(d => {
-        resolve(d);
-      });
+    return this.get('api/announcements', {
+      from: 2, to: 2
     });
-
-    return promise;
   }
+
+
 }
