@@ -9,9 +9,7 @@ import {Injectable} from '@angular/core';
 export class DataFetcherService {
   HOST_NAME: string= 'http://localhost:52774';
 
-  constructor(private client: HttpClient) {
-
-  }
+  constructor(private client: HttpClient) {}
 
   public get(uri: string, params?: any, headers?: any): Promise<any>{
     let promise = new Promise((resolve, reject)=> {
@@ -79,12 +77,5 @@ export class DataFetcherService {
       resolve(users);
     });
   }
-
-  getAnnouncementList(): Promise<any>{
-    return this.get('api/announcements', {
-      from: 2, to: 2
-    });
-  }
-
 
 }

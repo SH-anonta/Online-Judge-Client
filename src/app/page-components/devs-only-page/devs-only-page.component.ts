@@ -1,22 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import {DataFetcherService} from '../../global-services/data-fetcher.service';
 import {HttpClient} from '@angular/common/http';
+import {AnnouncementRepositoryService} from '../../global-services/repository-services/announcement-repository.service';
 
 @Component({
   selector: 'app-devs-only-page',
   templateUrl: './devs-only-page.component.html',
-  styleUrls: ['./devs-only-page.component.css']
+  styleUrls: ['./devs-only-page.component.css'],
+
 })
 export class DevsOnlyPageComponent implements OnInit {
 
-  constructor(private data_fetcher: DataFetcherService,
-              private client: HttpClient) { }
+  constructor(private client: HttpClient,
+              private announcement_repo: AnnouncementRepositoryService) { }
 
   ngOnInit() {
   }
 
   onDoStuffBtnClick(){
-    let p = this.data_fetcher.getAnnouncementList();
+    let p = this.announcement_repo.getAnnouncements(1, 10);
 
     p.then(d =>{
       console.log(d);
