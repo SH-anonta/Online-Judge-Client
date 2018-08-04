@@ -1,6 +1,14 @@
 import {Injectable} from '@angular/core';
 import {DataFetcherService} from '../data-fetcher.service';
 
+export class AnnouncementListItem {
+  Id: number;
+  Title: string;
+  Description: string;
+  Creator: string;
+  CreatorId: number;
+}
+
 @Injectable()
 export class AnnouncementRepositoryService {
 
@@ -12,7 +20,7 @@ export class AnnouncementRepositoryService {
     });
   }
 
-  getAnnouncement(id: number): Promise<any>{
+  getAnnouncement(id: number): Promise<AnnouncementListItem[]>{
     return this.data_fetcher.get('api/announcements/'+id);
   }
 }
