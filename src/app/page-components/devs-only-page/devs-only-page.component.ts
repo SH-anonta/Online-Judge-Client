@@ -18,6 +18,12 @@ export class DevsOnlyPageComponent implements OnInit {
   }
 
   onDoStuffBtnClick(){
+    // showAnnouncementList()
+    this.showAnnouncementDetail();
+  }
+
+
+  showAnnouncementList(){
     let p = this.announcement_repo.getAnnouncements(1, 10);
 
     p.then(d =>{
@@ -30,4 +36,16 @@ export class DevsOnlyPageComponent implements OnInit {
     let x = this;
   }
 
+  private showAnnouncementDetail() {
+    let p = this.announcement_repo.getAnnouncement(1);
+
+    p.then(d =>{
+      console.log(d);
+    });
+    p.catch(e =>{
+      console.log(e);
+    });
+
+    let x = this;
+  }
 }

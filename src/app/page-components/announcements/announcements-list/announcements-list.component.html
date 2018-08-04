@@ -20,27 +20,21 @@
           <th>Post date</th>
         </tr>
 
-        <tr >
+
+        <tr *ngFor="let list_item of announcement_list">
           <td style="text-align: left">
-            <a [routerLink]="'/announcements/12'">Our contests are open and countdown starts</a>
+            <a [routerLink]="link_generator.announcementDetails(list_item.Id)">
+              {{list_item.Title}}
+            </a>
           </td>
 
           <td>
-            <a [routerLink]="'/user/12'">John</a>
+            <a [routerLink]="link_generator.userDetails(list_item.CreatorId)">{{list_item.Creator}}</a>
           </td>
-          <td>07/02/2018</td>
+          <td>{{list_item.CreateDate | date}}</td>
         </tr>
 
-        <tr>
-          <td style="text-align: left">
-            <a [routerLink]="'/announcements/12'">New problems added!</a>
-          </td>
 
-          <td>
-            <a [routerLink]="'/user/12'">Manosh</a>
-          </td>
-          <td>07/10/2018</td>
-        </tr>
       </table>
 
     </div>

@@ -11,4 +11,8 @@ export class AnnouncementRepositoryService {
       from: from, to: to
     });
   }
+
+  getAnnouncement(id: number): Promise<any>{
+    return this.data_fetcher.get('api/announcements/'+id);
+  }
 }

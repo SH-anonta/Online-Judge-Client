@@ -14,14 +14,11 @@ export class AppComponent implements OnInit, AfterViewInit{
               private data_fetcher: DataFetcherService,
               private router: Router){}
 
-  ngOnInit(){
-    // todo remove before production
-    // this.experimentalStuff();
-  }
+  ngOnInit(){}
 
   ngAfterViewInit(){
     // todo remove before production navigation only set for development
-    this.router.navigate(['/devs-only']);
+    // this.router.navigate(['/devs-only']);
   }
 
   routerOutletActivateEventHandler(event: any) {
@@ -30,10 +27,5 @@ export class AppComponent implements OnInit, AfterViewInit{
   }
 
 
-  experimentalStuff(){
-    let promise = this.data_fetcher.getAnnouncementList();
-    promise.then(data =>{
-      console.log(data);
-    })
-  }
+
 }

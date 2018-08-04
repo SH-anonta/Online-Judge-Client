@@ -10,7 +10,7 @@ import { UserContestHistoryComponent } from './user-contest-history/user-contest
 
 const routes= [
   {
-    path: 'user',
+    path: 'users',
     component: UserComponent,
     children: [
       {
