@@ -49,10 +49,14 @@ export class AnnouncementsDetailsComponent implements OnInit {
   onDeleteBtnClick(){
     let ans = confirm('Delete this announcement?');
 
-    // todo send request to delete announcement
-    if(ans){
-      this.router.navigate(this.link_generator.announcementList())
+    if(!ans){
+      return;
     }
+
+    let promise = this.announcement_repository.deleteAnnouncement(this.announcement_id);
+    promise.then((data) => {
+      this.router.navigate(this.link_generator.announcementList())
+    });
   }
 
 }

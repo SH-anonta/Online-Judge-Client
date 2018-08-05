@@ -41,4 +41,8 @@ export class AnnouncementRepositoryService {
   createAnnouncement(data: AnnouncementCreationData): Promise<any>{
     return this.data_fetcher.post('api/announcements/create', data)
   }
+
+  deleteAnnouncement(announcement_id: number) {
+    return this.data_fetcher.post(`api/announcements/${announcement_id}/delete`)
+  }
 }
