@@ -37,6 +37,16 @@
 
       </table>
 
+      <div class="text-center">
+        <app-page-selector
+          #PageSelector
+          (PageNavigationClick)="onPageNavoigationClick($event)"
+          [current_page]="1"
+          [total_items]="total_list_items"
+          [items_per_page]="LIST_ITEMS_PER_PAGE">
+        </app-page-selector>
+      </div>
+
     </div>
   </div>
 

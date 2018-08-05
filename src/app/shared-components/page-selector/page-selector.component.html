@@ -1,0 +1,28 @@
+<div id="Wrapper">
+
+  <button
+    class="btn btn-link"
+    (click)="onPreviousLinkClick($event)"
+    [ngClass]="{'disabled': current_page == 1}">
+    Previous
+  </button>
+
+
+  <span *ngFor="let x of page_numbers">
+    <button
+      (click)="onPageNumberClick($event, x)"
+      class="btn btn-link"
+      [ngClass]="{'selected-page-number': current_page == x}"
+      style="">
+      {{x}}
+    </button>
+  </span>
+
+
+  <button
+    class="btn btn-link"
+    (click)="onNextLinkClick($event)"
+    [ngClass]="{'disabled': current_page >= page_numbers.length}">
+    Next
+  </button>
+</div>

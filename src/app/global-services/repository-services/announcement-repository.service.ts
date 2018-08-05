@@ -20,7 +20,7 @@ export class AnnouncementRepositoryService {
     });
   }
 
-  getAnnouncement(id: number): Promise<AnnouncementListItem[]>{
+  getAnnouncement(id: number): Promise<any>{
     return this.data_fetcher.get('api/announcements/'+id);
   }
 }

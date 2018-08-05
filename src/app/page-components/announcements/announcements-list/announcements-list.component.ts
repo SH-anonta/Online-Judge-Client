@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {UserService} from '../../../global-services/user.service';
 import {
   AnnouncementListItem,
@@ -13,18 +13,37 @@ import {LinkGeneratorService} from '../../../global-services/link-generator.serv
 })
 export class AnnouncementsListComponent implements OnInit {
   announcement_list: AnnouncementListItem[];
+  readonly LIST_ITEMS_PER_PAGE: number = 10;
+  total_list_items: number;
+  @ViewChild('PageSelector') page_selector;
 
   constructor(public user_service: UserService,
               public link_generator: LinkGeneratorService,
               public announcement_repository: AnnouncementRepositoryService) { }
 
   ngOnInit() {
-    var promise = this.announcement_repository.getAnnouncements(1, 100);
+    this.loadData();
+  }
+
+  loadData(page_number: number = 1){
+    let start = (page_number-1)*this.LIST_ITEMS_PER_PAGE+1;
+    // start = start == 0 ? 1 : start;
+
+    let limit = start+this.LIST_ITEMS_PER_PAGE-1;
+
+    console.log(start, limit);
+    let promise = this.announcement_repository.getAnnouncements(start, limit);
 
     promise.then(data => {
       console.log(data);
-      this.announcement_list= data;
+
+      this.page_selector.total_items =data.TotalCount;
+      this.announcement_list= data.Collection;
     });
   }
 
+  onPageNavoigationClick(page_number: number){
+    this.page_selector.current_page= page_number;
+    this.loadData(page_number);
+  }
 }

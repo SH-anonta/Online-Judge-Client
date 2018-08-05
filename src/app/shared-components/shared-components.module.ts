@@ -10,6 +10,7 @@ import { ProblemDescriptionComponent } from './problem-description/problem-descr
 import { ProblemListTableComponent } from './problem-list-table/problem-list-table.component';
 import {QuillEditorModule} from 'ngx-quill-editor/quillEditor.module';
 import {DocumentEditorComponent} from './document-editor/document-editor.component';
+import { PageSelectorComponent } from './page-selector/page-selector.component';
 
 @NgModule({
   declarations:[
@@ -20,7 +21,10 @@ import {DocumentEditorComponent} from './document-editor/document-editor.compone
     CountDownComponent,
     ProblemDescriptionComponent,
     ProblemListTableComponent,
-    DocumentEditorComponent
+    DocumentEditorComponent,
+    PageSelectorComponent,
+    PageSelectorComponent,
+
   ],
   imports:[
     CommonModule,
@@ -35,7 +39,8 @@ import {DocumentEditorComponent} from './document-editor/document-editor.compone
     CountDownComponent,
     ProblemDescriptionComponent,
     ProblemListTableComponent,
-    DocumentEditorComponent
+    DocumentEditorComponent,
+    PageSelectorComponent,
   ],
 })
 export class SharedComponentsModule {}
