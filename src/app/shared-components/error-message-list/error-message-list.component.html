@@ -1,0 +1,11 @@
+<div>
+  <span
+    *ngIf="error_messages.length > 0">
+    <strong>Errors:</strong>
+  </span>
+  <ul class="text-danger">
+    <li *ngFor="let error_msg of error_messages">
+      {{error_msg}}
+    </li>
+  </ul>
+</div>

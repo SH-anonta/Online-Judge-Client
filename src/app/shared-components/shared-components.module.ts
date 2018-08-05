@@ -12,6 +12,7 @@ import {QuillEditorModule} from 'ngx-quill-editor/quillEditor.module';
 import {DocumentEditorComponent} from './document-editor/document-editor.component';
 import { PageSelectorComponent } from './page-selector/page-selector.component';
 import {FormsModule} from '@angular/forms';
+import { ErrorMessageListComponent } from './error-message-list/error-message-list.component';
 
 @NgModule({
   declarations:[
@@ -25,7 +26,7 @@ import {FormsModule} from '@angular/forms';
     DocumentEditorComponent,
     PageSelectorComponent,
     PageSelectorComponent,
-
+    ErrorMessageListComponent,
   ],
   imports:[
     CommonModule,
@@ -43,6 +44,7 @@ import {FormsModule} from '@angular/forms';
     ProblemListTableComponent,
     DocumentEditorComponent,
     PageSelectorComponent,
+    ErrorMessageListComponent
   ],
 })
 export class SharedComponentsModule {}

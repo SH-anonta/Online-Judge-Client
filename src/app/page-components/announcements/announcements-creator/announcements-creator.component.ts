@@ -7,6 +7,7 @@ import {
 } from '../../../global-services/repository-services/announcement-repository.service';
 import {NgForm} from '@angular/forms';
 import {LinkGeneratorService} from '../../../global-services/link-generator.service';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-announcements-creator',
@@ -14,12 +15,12 @@ import {LinkGeneratorService} from '../../../global-services/link-generator.serv
   styleUrls: ['./announcements-creator.component.css']
 })
 export class AnnouncementsCreatorComponent implements OnInit {
-  // @ViewChild('DocumentEditor') editor;
+  error_messages: string[]= [];
+
 
   constructor(private router: Router,
               public link_generator: LinkGeneratorService,
               private announcement_repository: AnnouncementRepositoryService) {
-
   }
 
   ngOnInit() {
@@ -32,6 +33,10 @@ export class AnnouncementsCreatorComponent implements OnInit {
 
     promise.then((data: any)=>{
       this.router.navigate(this.link_generator.announcementDetails(data.Id));
-    })
+    });
+
+    promise.catch((resp: HttpErrorResponse) =>{
+      this.error_messages= resp.error;
+    });
   }
 }

@@ -45,4 +45,8 @@ export class AnnouncementRepositoryService {
   deleteAnnouncement(announcement_id: number) {
     return this.data_fetcher.post(`api/announcements/${announcement_id}/delete`)
   }
+
+  updateAnnouncement(announcement_id: number, data: AnnouncementCreationData) {
+    return this.data_fetcher.post(`api/announcements/${announcement_id}/edit`, data);
+  }
 }
