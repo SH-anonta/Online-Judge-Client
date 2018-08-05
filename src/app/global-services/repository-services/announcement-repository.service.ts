@@ -7,6 +7,7 @@ export class AnnouncementListItem {
   Description: string;
   Creator: string;
   CreatorId: number;
+  CreateDate: Date;
 }
 
 @Injectable()

@@ -42,8 +42,9 @@ export class AnnouncementsListComponent implements OnInit {
     });
   }
 
-  onPageNavoigationClick(page_number: number){
+  onPageNavigationClick(page_number: number){
     this.page_selector.current_page= page_number;
+    scroll(0,0);
     this.loadData(page_number);
   }
 }
