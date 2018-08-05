@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-8">
-      <h3>New Problems added!</h3>
+      <h3>{{announcement.Title}}</h3>
     </div>
 
     <div class="col-sm-4 text-right">
@@ -12,7 +12,7 @@
                 class="btn btn-sm btn-danger">
           Delete
         </button>
-        <a [routerLink]="'/announcements/2/edit'"
+        <a [routerLink]="link_generator.announcementEdit(announcement.Id)"
            class="btn btn-sm btn-dark">
           Edit
         </a>
@@ -24,9 +24,12 @@
   <div class="row">
     <div class="col-sm">
       <p>
-        Posted by: <a [routerLink]="'/user/12'">Manosh</a>
+        Posted by: <a [routerLink]="link_generator.userDetails(announcement.CreatorId)">
+        {{announcement.Creator}}
+      </a>
         <br>
-        Date Posted on: 07/10/2018</p>
+        Posted on: {{announcement.CreateDate | date}}
+      </p>
       <hr>
     </div>
   </div>
@@ -34,8 +37,9 @@
   <div class="row">
     <div class="col-sm">
       <div>
-        <p>We have added new problems to out site. Please browse through the problems and check them out!
-          Currently working on adding more contests. We will notify you when more problems are available</p>
+        <div [innerHtml]="announcement.Description">
+        </div>
+
       </div>
 
     </div>

@@ -31,12 +31,9 @@ export class AnnouncementsListComponent implements OnInit {
 
     let limit = start+this.LIST_ITEMS_PER_PAGE-1;
 
-    console.log(start, limit);
     let promise = this.announcement_repository.getAnnouncements(start, limit);
 
     promise.then(data => {
-      console.log(data);
-
       this.page_selector.total_items =data.TotalCount;
       this.announcement_list= data.Collection;
     });

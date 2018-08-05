@@ -4,6 +4,14 @@ import {DataFetcherService} from '../data-fetcher.service';
 export class AnnouncementListItem {
   Id: number;
   Title: string;
+  Creator: string;
+  CreatorId: number;
+  CreateDate: Date;
+}
+
+export class AnnouncementData {
+  Id: number;
+  Title: string;
   Description: string;
   Creator: string;
   CreatorId: number;
