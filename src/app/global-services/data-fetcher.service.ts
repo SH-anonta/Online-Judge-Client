@@ -37,7 +37,6 @@ export class DataFetcherService {
     let promise = new Promise((resolve, reject)=> {
       let url = [this.HOST_NAME,uri].join('/');
 
-
       let p = this.client.post(url, data, {
         params : params,
         headers : headers,

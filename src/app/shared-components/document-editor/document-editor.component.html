@@ -1,4 +1,6 @@
 <div id="Wrapper" #Wrapper style="width: 100%; overflow-x: auto;">
-  <quill-editor [options]="editor_options">
+  <quill-editor
+    [(ngModel)]="editor_content"
+    [options]="editor_options">
   </quill-editor>
 </div>

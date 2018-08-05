@@ -11,6 +11,7 @@ import { ProblemListTableComponent } from './problem-list-table/problem-list-tab
 import {QuillEditorModule} from 'ngx-quill-editor/quillEditor.module';
 import {DocumentEditorComponent} from './document-editor/document-editor.component';
 import { PageSelectorComponent } from './page-selector/page-selector.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations:[
@@ -29,7 +30,8 @@ import { PageSelectorComponent } from './page-selector/page-selector.component';
   imports:[
     CommonModule,
     RouterModule,
-    QuillEditorModule
+    QuillEditorModule,
+    FormsModule,
   ],
   exports:[
     HeaderComponent,

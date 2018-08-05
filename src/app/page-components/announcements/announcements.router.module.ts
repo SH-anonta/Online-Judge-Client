@@ -7,6 +7,8 @@ import {AnnouncementsDetailsComponent} from './announcements-details/announcemen
 import {CommonModule} from '@angular/common';
 import {AnnouncementsComponent} from './announcements.component';
 import {SharedComponentsModule} from '../../shared-components/shared-components.module';
+import {FormsModule} from '@angular/forms';
+import {QuillEditorModule} from 'ngx-quill-editor/quillEditor.module';
 
 
 
@@ -47,7 +49,9 @@ const routes= [
   imports : [
     RouterModule.forChild(routes),
     CommonModule,
+    FormsModule,
     SharedComponentsModule,
+    QuillEditorModule,
   ],
   exports: [
     RouterModule

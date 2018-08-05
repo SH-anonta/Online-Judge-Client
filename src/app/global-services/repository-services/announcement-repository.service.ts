@@ -1,6 +1,11 @@
 import {Injectable} from '@angular/core';
 import {DataFetcherService} from '../data-fetcher.service';
 
+export class AnnouncementCreationData{
+  Title: string;
+  Description: string;
+}
+
 export class AnnouncementListItem {
   Id: number;
   Title: string;
@@ -31,5 +36,9 @@ export class AnnouncementRepositoryService {
 
   getAnnouncement(id: number): Promise<any>{
     return this.data_fetcher.get('api/announcements/'+id);
+  }
+
+  createAnnouncement(data: AnnouncementCreationData): Promise<any>{
+    return this.data_fetcher.post('api/announcements/create', data)
   }
 }
