@@ -42,7 +42,7 @@
     <div *ngIf="user_service.userIsAuthenticated()"
          class="form-inline float-right">
 
-      <a [routerLink]="'/user/22'">{{user_service.user.username}}</a>
+      <a [routerLink]="link_generator.userDetails(1)">{{user_service.user.username}}</a>
       <a class="nav-item btn btn-primary btn-sm mx-2"
          routerLink="/"
          (click)="onLogoutClick()">
