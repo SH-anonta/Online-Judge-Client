@@ -29,7 +29,23 @@
 
   <div class="row">
     <div class="col-sm">
-      <app-problem-list-table></app-problem-list-table>
+      <app-problem-list-table
+        [problem_list]="problems_list">
+      </app-problem-list-table>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm text-center">
+      <app-page-selector
+        #PageSelector
+        (PageNavigationClick)="onPageNavigationClick($event)"
+        [current_page]="current_page"
+        [total_items]="total_list_items"
+        [items_per_page]="LIST_ITEMS_PER_PAGE">
+
+      </app-page-selector>
     </div>
   </div>
 </div>

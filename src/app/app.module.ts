@@ -11,6 +11,7 @@ import {SharedComponentsModule} from './shared-components/shared-components.modu
 import {APP_BASE_HREF} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {AnnouncementRepositoryService} from './global-services/repository-services/announcement-repository.service';
+import {ProblemRepositoryService} from './global-services/repository-services/problem-repository-service';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import {AnnouncementRepositoryService} from './global-services/repository-servic
 
     // repository providers
     AnnouncementRepositoryService,
+    ProblemRepositoryService,
 
     // Needed for integrating with ASP backend
     {provide: APP_BASE_HREF, useValue: '/'}

@@ -15,7 +15,7 @@ export class AnnouncementsListComponent implements OnInit {
   announcement_list: AnnouncementListItem[];
   readonly LIST_ITEMS_PER_PAGE: number = 10;
   total_list_items: number;
-  @ViewChild('PageSelector') page_selector;
+  current_page: number= 1;
 
   constructor(public user_service: UserService,
               public link_generator: LinkGeneratorService,
@@ -27,20 +27,18 @@ export class AnnouncementsListComponent implements OnInit {
 
   loadData(page_number: number = 1){
     let start = (page_number-1)*this.LIST_ITEMS_PER_PAGE+1;
-    // start = start == 0 ? 1 : start;
-
     let limit = start+this.LIST_ITEMS_PER_PAGE-1;
 
     let promise = this.announcement_repository.getAnnouncements(start, limit);
 
     promise.then(data => {
-      this.page_selector.total_items =data.TotalCount;
+      this.total_list_items =data.TotalCount;
       this.announcement_list= data.Collection;
     });
   }
 
   onPageNavigationClick(page_number: number){
-    this.page_selector.current_page= page_number;
+    this.current_page= page_number;
     scroll(0,0);
     this.loadData(page_number);
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../global-services/user.service';
+import {LinkGeneratorService} from '../../global-services/link-generator.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,8 @@ import {UserService} from '../../global-services/user.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public user_service: UserService) { }
+  constructor(public user_service: UserService,
+              public link_generator: LinkGeneratorService) { }
 
   ngOnInit() {
   }

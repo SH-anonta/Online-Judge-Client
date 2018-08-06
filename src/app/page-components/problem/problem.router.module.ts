@@ -14,7 +14,7 @@ import { ProblemSubmissionsComponent } from './problem-submissions/problem-submi
 
 const routes= [
   {
-    path: 'problem',
+    path: 'problems',
     component: ProblemComponent,
     children: [
       {path: '', component: ProblemListComponent,},

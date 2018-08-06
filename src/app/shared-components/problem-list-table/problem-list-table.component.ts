@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {ProblemListItem} from '../../global-services/repository-services/problem-repository-service';
+import {LinkGeneratorService} from '../../global-services/link-generator.service';
 
 @Component({
   selector: 'app-problem-list-table',
@@ -6,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./problem-list-table.component.css']
 })
 export class ProblemListTableComponent implements OnInit {
+  @Input() problem_list: ProblemListItem[]= [];
 
-  constructor() { }
+  constructor(public link_generator: LinkGeneratorService) { }
 
   ngOnInit() {
   }

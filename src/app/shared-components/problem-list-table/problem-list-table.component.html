@@ -1,43 +1,21 @@
 <table class="table table-striped">
   <tr>
     <th>Title</th>
-    <th>Success(%)</th>
+    <th>Author</th>
   </tr>
 
-  <tr>
+  <tr *ngFor="let item of problem_list">
     <td>
-      <a [routerLink]="'/problem/12'">
-        Naive Chef
+      <a [routerLink]="link_generator.problemDetails(item.Id)">
+        {{item.Title}}
       </a>
     </td>
 
     <td>
-      40
-    </td>
-  </tr>
-
-
-  <tr>
-    <td>
-      <a [routerLink]="'/problem/12'">
-        Path Permutations
+      <a [routerLink]="link_generator.userDetails(item.CreatorId)">
+        {{item.Creator}}
       </a>
     </td>
-
-    <td>
-      23
-    </td>
   </tr>
 
-  <tr>
-    <td>
-      <a [routerLink]="'/problem/12'">
-        Grass cutter
-      </a>
-    </td>
-
-    <td>
-      10
-    </td>
-  </tr>
 </table>

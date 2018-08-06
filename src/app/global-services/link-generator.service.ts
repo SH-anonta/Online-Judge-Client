@@ -34,4 +34,13 @@ export class LinkGeneratorService {
     return ['/error-404'];
   }
 
+  // problems
+  problemList(){
+    return '/problems';
+  }
+
+  problemDetails(problem_id: number){
+    return `/problems/${problem_id}`;
+  }
+
 }
