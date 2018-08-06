@@ -1,43 +1,50 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
-      <h4 class="h4">Create New Announcement: </h4>
+    <div class="col-sm">
+      <h4 class="h4">Edit announcement</h4>
+      <hr>
     </div>
 
-    <div class="col-sm-12">
-      <form class="text-right" >
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <app-error-message-list
+        [error_messages]="error_messages">
+      </app-error-message-list>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-sm">
+      <form
+        #form= "ngForm"
+        (ngSubmit)="formSubmit(form)"
+        class="text-right">
         <div id="NewPost" class="text-left">
-          <!--- For editing the post title -->
-          <label for="AnnouncementTitle">Announcement Title</label>
-          <input name="an_title" class="form-control" required="yes" type="text" id="announce_title" placeholder="Provide a title to be posted">
+          <label for="AnnouncementTitle">Title</label>
+          <input name="Title"
+                 [ngModel]="announcement.Title"
+                 class="form-control"
+                 required type="text"
+                 id="AnnouncementTitle">
 
-          <!--- For editing the post body -->
-          <label for="AnnouncementBody">Announcement Body</label>
-          <textarea name="an_body" class="form-control" required="yes" type="text" id="announce_body" placeholder="Provide the body of the announcement"></textarea>
-          <!--- Selecting/Reselecting post tags -->
-          <label for="AnnouncementTags">Tags</label>
-          <div>
-            <input type="checkbox" name="contest_tag" value="contest">  contest
-            <input type="checkbox" name="contest_tag" value="maintaintence">  maintaintence
-            <input type="checkbox" name="contest_tag" value="update">  update
-            <input type="checkbox" name="contest_tag" value="new_problem">  new problem
-            <input type="checkbox" name="contest_tag" value="admin_post">  admin post
-          </div>
+          <label for="AnnouncementBody" class="mt-2">Description</label>
 
-          <!--- Confirming password for all secured changes to announcements. -->
-          <div id="PasswordInputContainer">
-            <label for="Password">Password</label>
-            <input id="Password" type="password" name="password" class="form-control" placeholder="please provide your password">
+          <quill-editor
+            name = "Description"
+            id="AnnouncementBody"
+            [ngModel]="announcement.Description">
 
-            <label for="ConfirmPassword">Confirm password</label>
-            <input id="ConfirmPassword" type="password" name="confirm_password" class="form-control" placeholder="reconfirm your password">
-          </div>
-
+          </quill-editor>
         </div>
 
-        <!--- Submit changes / Cancel changes. -->
-        <button type="button" class="btn btn-primary mt-3 btn-danger"> Cancel </button>
-        <button type="submit" class="btn btn-primary mt-3"> Save </button>
+        <button
+          type="submit"
+          class="btn btn-dark mt-3">
+          Create
+        </button>
       </form>
     </div>
   </div>

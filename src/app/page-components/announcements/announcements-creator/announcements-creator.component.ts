@@ -1,6 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
-import {DataFetcherService} from '../../../global-services/data-fetcher.service';
 import {
   AnnouncementCreationData,
   AnnouncementRepositoryService
