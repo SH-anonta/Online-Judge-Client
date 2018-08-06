@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {ProblemDetailsData} from '../../global-services/repository-services/problem-repository-service';
 
 @Component({
   selector: 'app-problem-description',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./problem-description.component.css']
 })
 export class ProblemDescriptionComponent implements OnInit {
+  @Input() problem_data: ProblemDetailsData;
 
   constructor() { }
 

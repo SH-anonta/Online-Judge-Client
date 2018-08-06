@@ -36,11 +36,26 @@ export class LinkGeneratorService {
 
   // problems
   problemList(){
-    return '/problems';
+    return ['/problems'];
   }
 
   problemDetails(problem_id: number){
-    return `/problems/${problem_id}`;
+    return ['/problems', problem_id];
   }
 
+  problemCreate(){
+    return [`/problems/create`];
+  }
+
+  problemEdit(problem_id: number){
+    return ['/problems', problem_id, 'edit'];
+  }
+
+  problemSubmit(problem_id: number){
+    return ['/problems', problem_id, 'submit'];
+  }
+
+  problemSubmissions(problem_id: number){
+    return ['/problems', problem_id, 'submissions'];
+  }
 }

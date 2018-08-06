@@ -13,12 +13,12 @@
           Delete
         </button>
 
-        <a class="btn btn-sm btn-dark" [routerLink]="'/problem/121/edit'">
+        <a class="btn btn-sm btn-dark" [routerLink]="link_generator.problemEdit(problem_id)">
           Edit
         </a>
       </span>
 
-      <a class="btn btn-sm btn-dark" [routerLink]="'/problem/121/submit'">
+      <a class="btn btn-sm btn-dark" [routerLink]="link_generator.problemSubmit(problem_id)">
         Submit
       </a>
     </div>
@@ -26,7 +26,9 @@
 
   <div class="row">
     <div class="col-sm">
-      <app-problem-description></app-problem-description>
+      <app-problem-description
+        [problem_data]="problem_data">
+      </app-problem-description>
     </div>
   </div>
 
@@ -46,12 +48,13 @@
         <tr>
           <th>Author</th>
           <td>
-            <a [routerLink]="'/user/12'">
-              Anonta
+            <a [routerLink]="link_generator.userDetails(problem_data.CreatorId)">
+              {{problem_data.Creator}}
             </a>
           </td>
         </tr>
 
+        <!-- todo implement:-->
         <tr>
           <th>Success</th>
           <td>90/301</td>
@@ -64,7 +67,7 @@
       </table>
 
       <div class="text-center">
-        <a [routerLink]="'/problem/23/submissions'">
+        <a [routerLink]="link_generator.problemSubmissions(problem_data.Id)">
           Submissions
         </a>
       </div>
