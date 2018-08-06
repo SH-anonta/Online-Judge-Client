@@ -8,6 +8,7 @@ export class SubmissionListCollection{
 
 export class SubmissionListItem{
   Id: number;
+  ProgrammingLanguage: string;
   ProblemTitle: string;
   ProblemId: number;
   Status: string;
@@ -15,11 +16,12 @@ export class SubmissionListItem{
   UserId: number;
   SubmissionDate: Date;
   RunningTime: number;
-  PeakMemmoryUsage: number;
+  PeakMemoryUsage: number;
 }
 
 export class SubmissionDetailsData{
   Id: number;
+  ProgrammingLanguage: string;
   ProblemTitle: string;
   ProblemId: number;
   Status: string;
@@ -29,7 +31,7 @@ export class SubmissionDetailsData{
   StandardErrorStream: string;
   SubmissionDate: Date;
   RunningTime: number;
-  PeakMemmoryUsage: number;
+  PeakMemoryUsage: number;
 }
 
 

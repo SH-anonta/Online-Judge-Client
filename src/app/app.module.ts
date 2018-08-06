@@ -12,6 +12,7 @@ import {APP_BASE_HREF} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {AnnouncementRepositoryService} from './global-services/repository-services/announcement-repository.service';
 import {ProblemRepositoryService} from './global-services/repository-services/problem-repository-service';
+import {SubmissionRepositoryService} from './global-services/repository-services/submissions-repository.service';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import {ProblemRepositoryService} from './global-services/repository-services/pr
     // repository providers
     AnnouncementRepositoryService,
     ProblemRepositoryService,
+    SubmissionRepositoryService,
 
     // Needed for integrating with ASP backend
     {provide: APP_BASE_HREF, useValue: '/'}

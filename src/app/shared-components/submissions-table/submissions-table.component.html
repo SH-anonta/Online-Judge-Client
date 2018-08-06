@@ -9,79 +9,24 @@
     <th>Memory (MB)</th>
   </tr>
 
-  <tr>
+  <tr *ngFor="let submission of submissions">
     <td>
-      <a [routerLink]="'/problem/233'">
-        Longest path home
+      <a [routerLink]="''">
+        {{submission.ProblemTitle}}
       </a>
     </td>
     <td>
       <a [routerLink]="'/user/33'">
-        John
+        {{submission.UserName}}
       </a>
     </td>
-    <td>C++</td>
-    <td>Queued</td>
-    <td>5s ago</td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
+    <td>{{submission.ProgrammingLanguage}}</td>
+    <td>{{submission.Status}}</td>
+    <!--todo change date format-->
+    <td>{{submission.SubmissionDate | date}}</td>
 
-  <tr>
-    <td>
-      <a [routerLink]="'/problem/233'">
-        Longest path home
-      </a>
-    </td>
-    <td>
-      <a [routerLink]="'/user/33'">
-        John
-      </a>
-    </td>
-    <td>C++</td>
-    <td>Running</td>
-    <td>39s ago</td>
-    <td>-</td>
-    <td>-</td>
+    <td>{{submission.RunningTime}}</td>
+    <td>{{submission.PeakMemoryUsage}}</td>
   </tr>
-
-  <tr>
-    <td>
-      <a [routerLink]="'/problem/233'">
-        Longest path home
-      </a>
-    </td>
-    <td>
-      <a [routerLink]="'/user/33'">
-        John
-      </a>
-    </td>
-    <td>C++</td>
-    <td>Wrong Answer</td>
-    <td>10min ago</td>
-    <td>.03</td>
-    <td>6</td>
-  </tr>
-
-  <tr>
-    <td>
-      <a [routerLink]="'/problem/233'">
-        Longest path home
-      </a>
-    </td>
-    <td>
-      <a [routerLink]="'/user/33'">
-        John
-      </a>
-    </td>
-    <td>C++</td>
-    <td>Wrong Answer</td>
-    <td>15min ago</td>
-    <td>0.05</td>
-    <td>8</td>
-  </tr>
-
-  <!--<td></td>-->
-  <!--<td>Longest path home</td>-->
 
 </table>

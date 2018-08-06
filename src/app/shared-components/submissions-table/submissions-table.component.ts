@@ -2,6 +2,7 @@
 // this is meant to be ued in user and contest components
 
 import {Component, Input, OnInit} from '@angular/core';
+import {SubmissionListItem} from '../../global-services/repository-services/submissions-repository.service';
 
 @Component({
   selector: 'app-submissions-table',
@@ -10,7 +11,8 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class SubmissionsTableComponent implements OnInit {
   // a list of submissions that this component (table) will show
-  @Input() submissions;   //todo add type Submission
+  @Input() submissions: SubmissionListItem[]= [];
+
   constructor() { }
 
   ngOnInit() {
