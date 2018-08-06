@@ -6,6 +6,11 @@ export class ProblemListData{
   Collection: ProblemListItem[];
 }
 
+export class SubmissionFormData{
+  ProgrammingLanguageId: number;
+  SourceCode: string;
+}
+
 export class ProblemListItem{
   Id: string;
   Title : string;
@@ -36,11 +41,20 @@ export class ProblemDetailsData {
   CreateDate : Date;
 }
 
+export class ProgrammingLanguage {
+  Id: number;
+  Name: string;
+}
+
 @Injectable()
 export class ProblemRepositoryService {
 
   constructor(private data_fetcher: DataFetcherService){
 
+  }
+
+  getProgrammingLanguages(): Promise<ProgrammingLanguage[]>{
+    return this.data_fetcher.get('api/programming-languages');
   }
 
   getProblemList(start, limit): Promise<ProblemListData>{
@@ -54,4 +68,7 @@ export class ProblemRepositoryService {
     return this.data_fetcher.get(`api/problems/${problem_id}`);
   }
 
+  submitSolution(problem_id: number, submission: SubmissionFormData){
+    return this.data_fetcher.post(`api/problems/${problem_id}/submit`, submission);
+  }
 }

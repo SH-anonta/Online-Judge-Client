@@ -58,4 +58,8 @@ export class LinkGeneratorService {
   problemSubmissions(problem_id: number){
     return ['/problems', problem_id, 'submissions'];
   }
+
+  userSubmissions(user_id: number) {
+    return ['/users', user_id, 'submissions'];
+  }
 }
