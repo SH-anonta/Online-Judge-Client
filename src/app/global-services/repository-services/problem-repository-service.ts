@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {DataFetcherService} from '../data-fetcher.service';
+import {strictEqual} from 'assert';
 
 export class ProblemListData{
   TotalCount: number;
@@ -20,7 +21,7 @@ export class ProblemListItem{
 }
 
 export class ProblemDetailsData {
-  Id: string;
+  Id: number;
   Title : string;
   Description : string;
   Constraints : string;
@@ -39,6 +40,24 @@ export class ProblemDetailsData {
   CreatorId : number;
 
   CreateDate : Date;
+}
+
+export class ProblemCreationForm{
+  Title : string;
+  Description : string;
+  Constraints : string;
+  InputSpecification : string;
+  OutputSpecification : string;
+  SampleInput : string;
+  SampleOutput : string;
+  Notes : string;
+
+  TimeLimit : number;
+  MemoryLimit : number;
+
+  Visibility : number;
+
+  // TestCaseInput and TestCaseOutput are not included here as they are uploaded as files
 }
 
 export class ProgrammingLanguage {
@@ -68,7 +87,35 @@ export class ProblemRepositoryService {
     return this.data_fetcher.get(`api/problems/${problem_id}`);
   }
 
+  createProblem(problem_data:ProblemCreationForm,
+                input_file:File,
+                output_file:File ): Promise<any>{
+
+    console.log(problem_data);
+    let form = new FormData();
+
+    //IMPORTANT: files must be inserted in order input_file then output_file
+    form.append('InputTestCase', input_file, input_file.name);
+    form.append('InputTestCase', output_file, output_file.name);
+
+    form.append('Title', problem_data.Title);
+    form.append('Description', problem_data.Description);
+    form.append('Constraints', problem_data.Constraints);
+    form.append('InputSpecification', problem_data.InputSpecification);
+    form.append('OutputSpecification', problem_data.OutputSpecification);
+    form.append('SampleInput', problem_data.SampleInput);
+    form.append('SampleOutput', problem_data.SampleOutput);
+    form.append('Notes', problem_data.Notes);
+    form.append('TimeLimit', problem_data.TimeLimit.toString());
+    form.append('MemoryLimit', problem_data.MemoryLimit.toString());
+    form.append('IsPublic', 'True'); // todo use actual value
+
+    return this.data_fetcher.post('api/problems/create', form);
+  }
+
   submitSolution(problem_id: number, submission: SubmissionFormData){
     return this.data_fetcher.post(`api/problems/${problem_id}/submit`, submission);
   }
+
+
 }

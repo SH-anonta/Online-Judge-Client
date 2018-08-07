@@ -17,6 +17,8 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./problem-submit.component.css']
 })
 export class ProblemSubmitComponent implements OnInit {
+  DEFAULT_PROGRAMMING_LANGUAGE_ID: number = 1;
+
   problem_id: number;
   problem_data: ProblemDetailsData= new ProblemDetailsData();
   programming_languages: ProgrammingLanguage[]= [];
