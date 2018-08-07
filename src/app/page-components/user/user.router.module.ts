@@ -6,6 +6,7 @@ import { UserProfileEditorComponent } from './user-profile-editor/user-profile-e
 import { UserSubmissionsComponent } from './user-submissions/user-submissions.component';
 import {SharedComponentsModule} from '../../shared-components/shared-components.module';
 import { UserContestHistoryComponent } from './user-contest-history/user-contest-history.component';
+import { UserProblemsComponent } from './user-problems/user-problems.component';
 
 
 const routes= [
@@ -16,6 +17,10 @@ const routes= [
       {
         path: ':user_id',
         component: UserProfileComponent,
+      },
+      {
+        path: ':user_id/problems',
+        component: UserProblemsComponent,
       },
       {
         path: ':user_id/submissions',
@@ -46,6 +51,7 @@ const routes= [
     UserProfileEditorComponent,
     UserSubmissionsComponent,
     UserContestHistoryComponent,
+    UserProblemsComponent,
   ],
   imports : [
     RouterModule.forChild(routes),

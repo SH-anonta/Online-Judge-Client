@@ -1,6 +1,9 @@
 <table class="table table-striped">
   <tr>
     <th>Title</th>
+    <th *ngIf="show_accessibility_column">
+      Visibility
+    </th>
     <th>Author</th>
   </tr>
 
@@ -9,6 +12,10 @@
       <a [routerLink]="link_generator.problemDetails(item.Id)">
         {{item.Title}}
       </a>
+    </td>
+
+    <td *ngIf="show_accessibility_column">
+        {{item.IsPublic ? 'Public' : 'Private'}}
     </td>
 
     <td>

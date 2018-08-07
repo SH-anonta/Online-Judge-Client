@@ -9,6 +9,7 @@ import {LinkGeneratorService} from '../../global-services/link-generator.service
 })
 export class ProblemListTableComponent implements OnInit {
   @Input() problem_list: ProblemListItem[]= [];
+  @Input() show_accessibility_column: boolean = true;
 
   constructor(public link_generator: LinkGeneratorService) { }
 
