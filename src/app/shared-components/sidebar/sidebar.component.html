@@ -6,9 +6,10 @@
   <hr>
   <ul class="list-unstyled sidebar-link-group">
 
-    <li><a [routerLink]="'/contest'">Contests</a></li>
-    <li><a [routerLink]="'/user/12/submissions'">My Submissions</a></li>
-    <li><a [routerLink]="'/announcements'">Announcements</a></li>
+    <li><a [routerLink]="link_generator.contestLink()">Contests</a></li>
+    <li><a [routerLink]="link_generator.userSubmissions(user_service.user_id)">My Submissions</a></li>
+    <li><a [routerLink]="link_generator.userProblems(user_service.user_id)">My Problems</a></li>
+    <li><a [routerLink]="link_generator.announcementList()">Announcements</a></li>
   </ul>
 
   <!--todo admin page links should be visible only if the is an admin-->

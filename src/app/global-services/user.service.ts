@@ -11,6 +11,10 @@ export class UserService {
     return this._user;
   }
 
+  get user_id(): number{
+    return this._user.id;
+  }
+
   constructor(private authenticator: AuthService){
     //todo remove statement before release, user is logged by default for ease of development only
     this.login('admin', 'password');

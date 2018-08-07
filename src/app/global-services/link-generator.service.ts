@@ -4,16 +4,20 @@ export class LinkGeneratorService {
 
   }
 
+  contestList(){
+    return ['/contest'];
+  }
+
   contestLink(contest_id: number){
     return ['/contest', contest_id];
   }
 
   // announcement list
-  announcementDetails(announcement_id){
+  announcementDetails(announcement_id: number){
     return ['/announcements', announcement_id];
   }
 
-  announcementEdit(announcement_id){
+  announcementEdit(announcement_id: number){
     return ['/announcements', announcement_id, 'edit'];
   }
 
@@ -26,8 +30,16 @@ export class LinkGeneratorService {
   }
 
   // users
-  userDetails(user_id){
+  userDetails(user_id: number){
     return ['/users/', user_id];
+  }
+
+  userProblems(user_id: number){
+    return ['/users', user_id, 'problems'];
+  }
+
+  userSubmissions(user_id: number) {
+    return ['/users', user_id, 'submissions'];
   }
 
   error404(){
@@ -59,7 +71,4 @@ export class LinkGeneratorService {
     return ['/problems', problem_id, 'submissions'];
   }
 
-  userSubmissions(user_id: number) {
-    return ['/users', user_id, 'submissions'];
-  }
 }
