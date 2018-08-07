@@ -55,8 +55,7 @@ export class ProblemCreationForm{
   TimeLimit : number;
   MemoryLimit : number;
 
-  Visibility : number;
-
+  IsPublic: boolean;
   // TestCaseInput and TestCaseOutput are not included here as they are uploaded as files
 }
 
@@ -108,7 +107,7 @@ export class ProblemRepositoryService {
     form.append('Notes', problem_data.Notes);
     form.append('TimeLimit', problem_data.TimeLimit.toString());
     form.append('MemoryLimit', problem_data.MemoryLimit.toString());
-    form.append('IsPublic', 'True'); // todo use actual value
+    form.append('IsPublic', problem_data.IsPublic? 'True' : 'False');
 
     return this.data_fetcher.post('api/problems/create', form);
   }
