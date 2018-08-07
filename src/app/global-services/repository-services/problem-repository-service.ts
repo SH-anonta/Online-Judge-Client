@@ -86,16 +86,25 @@ export class ProblemRepositoryService {
     return this.data_fetcher.get(`api/problems/${problem_id}`);
   }
 
+  getUserProblemList(user_id: number, start: number, limit: number) {
+    let params={
+      start: start,
+      limit: limit
+    };
+
+    return this.data_fetcher.get(`api/users/${user_id}/problems`, params);
+  }
+
   createProblem(problem_data:ProblemCreationForm,
                 input_file:File,
                 output_file:File ): Promise<any>{
 
-    console.log(problem_data);
+    // console.log(problem_data);
     let form = new FormData();
 
     //IMPORTANT: files must be inserted in order input_file then output_file
     form.append('InputTestCase', input_file, input_file.name);
-    form.append('InputTestCase', output_file, output_file.name);
+    form.append('OutputTestCase', output_file, output_file.name);
 
     form.append('Title', problem_data.Title);
     form.append('Description', problem_data.Description);
@@ -119,5 +128,38 @@ export class ProblemRepositoryService {
 
   deleteProblem(problem_id: number) {
     return this.data_fetcher.post(`api/problems/${problem_id}/delete`);
+  }
+
+
+  updateProblem(problem_id,
+                problem_data:ProblemCreationForm,
+                input_file:File,
+                output_file:File ): Promise<any>{
+    // console.log(problem_data);
+    let form = new FormData();
+
+    // Files will be uploaded only if both are provided
+    // thi is due to the fact that the server depends on the file order
+    // to distinguish which files contain what
+    if(input_file && output_file){
+      //IMPORTANT: files must be inserted in order input_file then output_file
+      form.append('InputTestCase', input_file, input_file.name);
+      form.append('OutputTestCase', output_file, output_file.name);
+    }
+
+
+    form.append('Title', problem_data.Title);
+    form.append('Description', problem_data.Description);
+    form.append('Constraints', problem_data.Constraints);
+    form.append('InputSpecification', problem_data.InputSpecification);
+    form.append('OutputSpecification', problem_data.OutputSpecification);
+    form.append('SampleInput', problem_data.SampleInput);
+    form.append('SampleOutput', problem_data.SampleOutput);
+    form.append('Notes', problem_data.Notes);
+    form.append('TimeLimit', problem_data.TimeLimit.toString());
+    form.append('MemoryLimit', problem_data.MemoryLimit.toString());
+    form.append('IsPublic', problem_data.IsPublic? 'True' : 'False');
+
+    return this.data_fetcher.post(`api/problems/${problem_id}/edit`, form);
   }
 }
