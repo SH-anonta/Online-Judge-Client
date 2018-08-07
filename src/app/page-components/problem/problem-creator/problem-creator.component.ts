@@ -21,8 +21,6 @@ export class ProblemCreatorComponent implements OnInit {
   }
 
   onCreateBtnClick(form: NgForm){
-    // this.router.navigate(['/problem/12']);
-
     let promise = this.problem_repository.createProblem(form.value,
                                             this.test_case_input_file,
                                             this.test_case_output_file);
@@ -35,7 +33,6 @@ export class ProblemCreatorComponent implements OnInit {
   // file input needs to be handled this way
   onTestCaseInputChange(file: FileList){
     this.test_case_input_file= file.item(0);
-    console.log(this.test_case_input_file)
   }
 
   // file input needs to be handled this way

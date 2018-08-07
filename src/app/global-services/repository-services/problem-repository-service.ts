@@ -117,4 +117,7 @@ export class ProblemRepositoryService {
   }
 
 
+  deleteProblem(problem_id: number) {
+    return this.data_fetcher.post(`api/problems/${problem_id}/delete`);
+  }
 }

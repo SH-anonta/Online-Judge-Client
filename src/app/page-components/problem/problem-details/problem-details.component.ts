@@ -30,11 +30,16 @@ export class ProblemDetailsComponent implements OnInit {
   }
 
   onDeleteBtnClick() {
-    let ans = confirm('Delete this problem?');
 
-    if(ans){
-      this.router.navigate(['/problem']);
+    if(!confirm('Delete this problem?')){
+      return;
     }
+
+    let promise = this.problem_repository.deleteProblem(this.problem_id);
+
+    promise.then(x=>{
+      this.router.navigate(this.link_generator.problemList());
+    });
   }
 
   loadData(){
