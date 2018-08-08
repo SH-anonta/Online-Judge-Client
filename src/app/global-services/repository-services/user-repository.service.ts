@@ -15,6 +15,13 @@ export class UserDetailsData{
 }
 
 export class UserEditFormData {
+  UserType: number;
+  Email: string;
+  Password: string;
+  ConfirmPassword: string;
+}
+
+export class UserRegistrationFormData {
   UserName: string;
   UserType: number;
   Email: string;
@@ -27,7 +34,6 @@ export class UserRepositoryService {
 
 
   constructor(private data_fetcher: DataFetcherService){
-
   }
 
   getUserData(user_id:number): Promise<UserDetailsData>{
@@ -38,7 +44,11 @@ export class UserRepositoryService {
     return this.data_fetcher.get('api/users/types');
   }
 
-  updateUser(user_id: number, data: UserEditFormData) {
+  updateUser(user_id: number, data: UserEditFormData): Promise<any> {
     return this.data_fetcher.post(`api/users/${user_id}/edit`, data);
+  }
+
+  createNewUser(data: UserRegistrationFormData ): Promise<any>{
+    return this.data_fetcher.post('api/register', data);
   }
 }

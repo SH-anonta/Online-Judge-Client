@@ -1,59 +1,45 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-6 mx-auto">
+    <div class="col-sm-8 mx-auto">
 
-      <div *ngIf="shouldShowErrorMessages()"
-           id="ErrorListContainer" >
-          <!--// todo  add validation error messages-->
-        <ul>
-          <li *ngFor="let error_msg of form_error_list">
-            {{error_msg}}
-          </li>
-        </ul>
-      </div>
+      <form
+        class="text-left"
+        #reg_form="ngForm"
+        (ngSubmit)="onSubmitHandler(reg_form)">
 
-      <form class="text-right" (ngSubmit)="onSubmitHandler(reg_form)" #reg_form="ngForm">
-        <div id="InputContainer" class="text-left">
           <label for="UserName">User Name</label>
-          <input name="username"
-                 ngModel
+          <input name="UserName"
+                 [ngModel]
                  required
                  class="form-control mb-2"
-                 type="text" id="UserName"
-                 placeholder="Mr_user">
+                 type="text" id="UserName">
 
           <label for="Email">Email</label>
-          <input name="email"
-                 ngModel
-                 required
-                 email
+          <input name="Email"
+                 [ngModel]
                  class="form-control mb-2"
-                 type="email" id="Email"
-                 placeholder="user@usermail.com">
+                 type="email" id="Email">
 
           <label for="Password">Password</label>
-          <input name="password"
-                 ngModel
-                 required
+          <input name="Password"
+                 [ngModel]
                  class="form-control mb-2"
                  type="password"
-                 id="Password"
-                 placeholder="**********">
+                 id="Password">
 
           <label for="ConfirmPassword">Confirm Password</label>
-          <input name="confirm_password"
-                 ngModel
-                 required
+          <input name="ConfirmPassword"
+                 [ngModel]
                  class="form-control mb-2"
                  type="password"
-                 id="ConfirmPassword"
-                 placeholder="**********">
+                 id="ConfirmPassword">
+
+        <div class="form-group text-right">
+          <button class="btn btn-dark">
+            Register
+          </button>
         </div>
 
-
-        <button class="btn btn-primary">
-          Register
-        </button>
 
       </form>
 

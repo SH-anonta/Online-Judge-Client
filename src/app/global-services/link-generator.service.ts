@@ -87,5 +87,11 @@ export class LinkGeneratorService {
   }
 
 
+  registerPage() {
+    return ['/register'];
+  }
 
+  loginPage() {
+    return ['/login'];
+  }
 }
