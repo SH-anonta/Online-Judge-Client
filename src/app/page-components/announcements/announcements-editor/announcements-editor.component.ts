@@ -51,7 +51,7 @@ export class AnnouncementsEditorComponent implements OnInit {
     let promise= this.announcement_repository.updateAnnouncement(this.announcement_id, data);
 
     promise.then((data: any)=>{
-      this.router.navigate(this.link_generator.announcementList());
+      this.router.navigate(this.link_generator.announcementDetails(this.announcement_id));
     });
 
     promise.catch((resp: HttpErrorResponse) =>{
