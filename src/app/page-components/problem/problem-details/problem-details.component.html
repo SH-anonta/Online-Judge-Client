@@ -74,5 +74,18 @@
 
     </div>
 
+    <div *ngIf="user_service.isAuthorizedToAccessProblemFiles(problem_id)"
+         class="col-sm-6">
+      <h4>Files</h4>
+      <a href="{{link_generator.problemInputFile(problem_id)}}">
+        Input file
+      </a>
+
+      <br>
+      <a href="{{link_generator.problemOutputFile(problem_id)}}">
+        Output file
+      </a>
+    </div>
+
   </div>
 </div>

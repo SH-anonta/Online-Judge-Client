@@ -1,5 +1,7 @@
 
 export class LinkGeneratorService {
+  readonly HOST_NAME= 'http://localhost:52774';
+
   constructor(){
 
   }
@@ -70,5 +72,15 @@ export class LinkGeneratorService {
   problemSubmissions(problem_id: number){
     return ['/problems', problem_id, 'submissions'];
   }
+
+  //
+  problemInputFile(problem_id: number): string{
+    return `${this.HOST_NAME}/api/problems/${problem_id}/input-file`;
+  }
+
+  problemOutputFile(problem_id: number): string{
+    return `${this.HOST_NAME}/api/problems/${problem_id}/output-file`;
+  }
+
 
 }

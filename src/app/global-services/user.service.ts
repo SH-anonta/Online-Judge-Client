@@ -60,4 +60,8 @@ export class UserService {
     return this.user && this.user.isAdmin;
   }
 
+  isAuthorizedToAccessProblemFiles(problem_id: number){
+    return this.user && this.user.isAdmin;
+  }
+
 }
