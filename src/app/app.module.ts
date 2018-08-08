@@ -14,6 +14,7 @@ import {AnnouncementRepositoryService} from './global-services/repository-servic
 import {ProblemRepositoryService} from './global-services/repository-services/problem-repository-service';
 import {SubmissionRepositoryService} from './global-services/repository-services/submissions-repository.service';
 import {UserRepositoryService} from './global-services/repository-services/user-repository.service';
+import {ContestRepositoryService} from './global-services/repository-services/contest-repository.service';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import {UserRepositoryService} from './global-services/repository-services/user-
     ProblemRepositoryService,
     SubmissionRepositoryService,
     UserRepositoryService,
+    ContestRepositoryService,
 
     // Needed for integrating with ASP backend
     {provide: APP_BASE_HREF, useValue: '/'}

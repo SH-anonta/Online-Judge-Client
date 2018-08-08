@@ -4,7 +4,7 @@
     <li class="nav-item">
       <a class="nav-link active"
          data-toggle="pill" role="tab" aria-controls="pills-profile" aria-selected="true"
-        [routerLink]="'21'">
+        [routerLink]="link_generator.userDetails(user_id)">
         Profile
       </a>
     </li>
@@ -12,7 +12,7 @@
     <li class="nav-item">
       <a class="nav-link"
          data-toggle="pill" role="tab" aria-controls="pills-profile" aria-selected="false"
-        [routerLink]="'12/submissions'">
+        [routerLink]="link_generator.userSubmissions(user_id)">
         Submissions
       </a>
     </li>
@@ -20,7 +20,7 @@
     <li class="nav-item">
       <a class="nav-link"
          data-toggle="pill" role="tab" aria-controls="pills-profile" aria-selected="false"
-         [routerLink]="'12/contest-history'">
+         [routerLink]="link_generator.userContestHistory(user_id)">
         Contests
       </a>
     </li>
@@ -28,7 +28,7 @@
     <li class="nav-item">
       <a class="nav-link"
          data-toggle="pill" role="tab" aria-controls="pills-profile" aria-selected="false"
-         [routerLink]="'1/problems'">
+         [routerLink]="link_generator.userProblems(user_id)">
         Problems
       </a>
     </li>

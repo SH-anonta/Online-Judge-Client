@@ -44,6 +44,10 @@ export class LinkGeneratorService {
     return ['/users', user_id, 'submissions'];
   }
 
+  userContestHistory(user_id: number){
+    return ['/users', user_id, 'contest-history'];
+  }
+
   userProfileEditor(user_id: number){
     return ['/users', user_id, 'edit'];
   }

@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {DataFetcherService} from '../../global-services/data-fetcher.service';
+import {LinkGeneratorService} from '../../global-services/link-generator.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   // does not have a selector as this is a routing component
@@ -7,12 +9,14 @@ import {DataFetcherService} from '../../global-services/data-fetcher.service';
   styleUrls: ['./user.component.html']
 })
 export class UserComponent {
+  readonly user_id: number;
 
   username: string;
   email: string;
 
-  constructor(private data_fetcher: DataFetcherService){
-
+  constructor(public link_generator: LinkGeneratorService,
+              public route: ActivatedRoute,){
+    this.user_id = this.route.snapshot.params['user_id'];
   }
 
 }
