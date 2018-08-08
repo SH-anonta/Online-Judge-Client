@@ -7,6 +7,8 @@ import { UserSubmissionsComponent } from './user-submissions/user-submissions.co
 import {SharedComponentsModule} from '../../shared-components/shared-components.module';
 import { UserContestHistoryComponent } from './user-contest-history/user-contest-history.component';
 import { UserProblemsComponent } from './user-problems/user-problems.component';
+import {FormsModule} from '@angular/forms';
+import {CommonModule} from '@angular/common';
 
 
 const routes= [
@@ -56,6 +58,8 @@ const routes= [
   imports : [
     RouterModule.forChild(routes),
     SharedComponentsModule,
+    CommonModule,
+    FormsModule,
   ],
   exports: [
     RouterModule

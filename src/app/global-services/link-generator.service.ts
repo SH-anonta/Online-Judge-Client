@@ -44,6 +44,10 @@ export class LinkGeneratorService {
     return ['/users', user_id, 'submissions'];
   }
 
+  userProfileEditor(user_id: number){
+    return ['/users', user_id, 'edit'];
+  }
+
   error404(){
     return ['/error-404'];
   }
@@ -81,6 +85,7 @@ export class LinkGeneratorService {
   problemOutputFile(problem_id: number): string{
     return `${this.HOST_NAME}/api/problems/${problem_id}/output-file`;
   }
+
 
 
 }

@@ -63,5 +63,7 @@ export class UserService {
   isAuthorizedToAccessProblemFiles(problem_id: number){
     return this.user && this.user.isAdmin;
   }
-
+  isAuthorizedToEditUserType(){
+    return this.user && this.user.isAdmin;
+  }
 }

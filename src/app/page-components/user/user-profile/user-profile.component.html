@@ -5,7 +5,7 @@
     </div>
 
     <div class="col-sm-2 text-right">
-      <a [routerLink]="'/user/21/edit'"
+      <a [routerLink]="link_generator.userProfileEditor(user_id)"
           class="btn btn-sm btn-dark">
         Edit
       </a>
@@ -25,18 +25,18 @@
 		<div class="col-sm-8 mx-auto">
       <table class="table ">
         <tr>
-          <th>User name</th>
-          <td>John</td>
+          <th>User Name</th>
+          <td>{{user_data.UserName}}</td>
         </tr>
 
         <tr>
-          <th>Title</th>
-          <td>Peasant</td>
+          <th>User Type</th>
+          <td>{{user_data.UserType}}</td>
         </tr>
 
         <tr>
           <th>Email</th>
-          <td>john@jamal.com</td>
+          <td>{{user_data.Email}}</td>
         </tr>
 
       </table>
