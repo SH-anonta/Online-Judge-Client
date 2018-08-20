@@ -1,7 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      <h3 class="h3">Practice contest #8</h3>
+      <h3 class="h3">
+        {{contest_title}}
+      </h3>
+
       <hr>
     </div>
   </div>
@@ -13,55 +16,65 @@
           <tr>
             <th>#</th>
             <th>User</th>
-            <th>A</th>
-            <th>B</th>
-            <th>C</th>
-            <th>D</th>
+            <th>Penalty</th>
+
+            <th class="text-center"
+                *ngFor="let x of problem_list; let i= index">
+              {{i}}
+            </th>
+
           </tr>
 
-          <tr>
-            <td>1</td>
-            <td>
-              <a [routerLink]="'/contest/12/submissions/user/23'">
-                John
-              </a>
-            </td>
-            <td>1/1</td>
-            <td>1/2</td>
-            <td>0/1</td>
-            <td>0/2</td>
-          </tr>
+          <tr *ngFor="let rank_item of rank_list;
+                      let rank_i= index;">
 
-          <tr>
-            <td>2</td>
+            <td>{{rank_i+rank_starts_from}}</td>
             <td>
-              <a [routerLink]="'/contest/12/submissions/user/23'">
-                Bob
+              <a [routerLink]="link_generator.userDetails(rank_item.UserId)">
+                {{rank_item.UserName}}
               </a>
             </td>
-            <td>1/1</td>
-            <td>1/3</td>
-            <td>0/2</td>
-            <td>0/2</td>
-          </tr>
 
-          <tr>
-            <td>3</td>
             <td>
-              <a [routerLink]="'/contest/12/submissions/user/23'">
-                Ross
-              </a>
+              {{rank_item.Penalty}}
             </td>
-            <td>1/1</td>
-            <td>1/3</td>
-            <td>0/2</td>
-            <td>0/3</td>
+
+            <td class="p-0 pl-1 font-weight-bold"
+                *ngFor="let reject_count of rank_item.ProblemRejectCounts; let i = index">
+
+
+              <div  [ngClass]="{'rejected-problem-block': reject_count > 0 && rank_item.ProblemAcceptTimes[i] == null,
+                                'solved-problem-block': rank_item.ProblemAcceptTimes[i] != null}"
+                    class="text-center">
+
+                <div  *ngIf="rank_item.ProblemAcceptTimes[i]">
+                   <!--todo move formating logic else whare -->
+                  <!--remove the second fraction from the date-->
+                  {{rank_item.ProblemAcceptTimes[i].toString().split('.')[0] }}
+                </div>
+
+                <div *ngIf="reject_count > 0">
+                  -{{reject_count}}
+                </div>
+              </div>
+            </td>
           </tr>
 
         </table>
       </div>
 
 
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm text-center">
+      <app-page-selector
+        (PageNavigationClick)="onPageNavigationClick($event)"
+        [current_page]="current_page"
+        [total_items]="total_list_items"
+        [items_per_page]="LIST_ITEMS_PER_PAGE">
+      </app-page-selector>
     </div>
   </div>
 </div>

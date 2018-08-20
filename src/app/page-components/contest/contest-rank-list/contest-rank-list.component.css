@@ -6,5 +6,27 @@
   overflow-x: auto;
 }
 
-table#RankTable td{
+#RankTable td{
+  /*border-style: solid;*/
+  /*border-width: thin;*/
+
+  height: 40px;
+  max-width: 10px;
 }
+
+.solved-problem-block{
+  background-color: mediumseagreen;
+  color: white;
+  height: 100%;
+}
+
+.rejected-problem-block{
+  background-color: rgba(255, 0, 0, 0.54);
+  color: white;
+  height: 100%;
+}
+
+#RankTable th{
+
+}
+

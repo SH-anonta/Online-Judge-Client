@@ -47,6 +47,23 @@ export class ContestListItemData {
   EndDate: Date;
 }
 
+
+export class ContestRankListItemData {
+  UserId: number;
+  UserName;
+  SolveCount: number;
+  Penalty: number;
+  ProblemAcceptTimes: Date[]; // todo change type to TimeSpan or something similar
+  ProblemRejectCounts: number[];
+}
+
+export class RankListCollection{
+  ContestTitle: string;
+  TotalCount: number;
+  RankStartsFrom: number;
+  Collection: ContestRankListItemData[];
+}
+
 @Injectable()
 export class ContestRepositoryService{
 
@@ -65,4 +82,12 @@ export class ContestRepositoryService{
     return this.data_fetcher.get('api/past-contests/');
   }
 
+  getContestRankList(contest_id: number, start: number, limit: number): Promise<RankListCollection>{
+    let params = {
+      start : start,
+      limit : limit,
+    };
+
+    return this.data_fetcher.get(`api/contests/${contest_id}/rank`, params);
+  }
 }
