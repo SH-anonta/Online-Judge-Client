@@ -1,9 +1,11 @@
 #RankTableContainer{
   /*overflow-x: scroll;*/
+  min-height: 700px;
 }
 
 #RankTable{
   overflow-x: auto;
+
 }
 
 #RankTable td{

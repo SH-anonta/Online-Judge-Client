@@ -11,7 +11,7 @@ import {ContestRankListItemData, ContestRepositoryService} from '../../../global
   styleUrls: ['./contest-rank-list.component.css']
 })
 export class ContestRankListComponent implements OnInit {
-  readonly LIST_ITEMS_PER_PAGE: number = 10;
+  readonly LIST_ITEMS_PER_PAGE: number = 100;
   total_list_items: number;
   current_page: number= 1;
   problem_list= [];
