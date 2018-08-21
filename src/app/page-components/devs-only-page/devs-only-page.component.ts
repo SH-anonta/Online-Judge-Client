@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import {DataFetcherService} from '../../global-services/data-fetcher.service';
 import {HttpClient} from '@angular/common/http';
 import {AnnouncementRepositoryService} from '../../global-services/repository-services/announcement-repository.service';
+import {ToastsManager} from 'ng6-toastr';
 
 @Component({
   selector: 'app-devs-only-page',
@@ -12,14 +13,15 @@ import {AnnouncementRepositoryService} from '../../global-services/repository-se
 export class DevsOnlyPageComponent implements OnInit {
 
   constructor(private client: HttpClient,
-              private announcement_repo: AnnouncementRepositoryService) { }
+              private toast_man: ToastsManager,
+              private announcement_repo: AnnouncementRepositoryService) {
+  }
 
   ngOnInit() {
   }
 
   onDoStuffBtnClick(){
-    // showAnnouncementList()
-    this.showAnnouncementDetail();
+    this.toast_man.success('Fuck off', 'You!');
   }
 
 

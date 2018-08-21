@@ -15,7 +15,7 @@ import {ProblemRepositoryService} from './global-services/repository-services/pr
 import {SubmissionRepositoryService} from './global-services/repository-services/submissions-repository.service';
 import {UserRepositoryService} from './global-services/repository-services/user-repository.service';
 import {ContestRepositoryService} from './global-services/repository-services/contest-repository.service';
-import {ToastModule} from 'ng6-toastr';
+import {ToastModule, ToastsManager} from 'ng6-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -44,6 +44,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     SubmissionRepositoryService,
     UserRepositoryService,
     ContestRepositoryService,
+
+    ToastsManager,
 
     // Needed for integrating with ASP backend
     {provide: APP_BASE_HREF, useValue: '/'}
