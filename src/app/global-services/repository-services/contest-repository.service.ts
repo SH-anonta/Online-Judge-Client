@@ -1,5 +1,6 @@
 import {DataFetcherService} from '../data-fetcher.service';
 import {Injectable} from '@angular/core';
+import {UserService} from '../user.service';
 
 export class ContestCreationFormData {
   Id: number;
@@ -67,7 +68,8 @@ export class RankListCollection{
 @Injectable()
 export class ContestRepositoryService{
 
-  constructor(private data_fetcher: DataFetcherService){
+  constructor(private data_fetcher: DataFetcherService,
+              private user_service: UserService){
   }
 
   createNewContest(data: ContestCreationFormData){
@@ -93,5 +95,17 @@ export class ContestRepositoryService{
 
   getContestDetails(contest_id: number) :Promise<ContestDetailsData>{
     return this.data_fetcher.get(`api/contests/${contest_id}`)
+  }
+
+  registerForContest(contest_id: number){
+    if(!this.user_service.userIsAuthenticated()){
+      throw new Error('User must be logged in to register for contest')
+    }
+
+    return this.data_fetcher.post(`api/contests/${contest_id}/register`)
+  }
+
+  deleteContest(contest_id: number) {
+    return this.data_fetcher.post(`api/contests/${contest_id}/delete`)
   }
 }

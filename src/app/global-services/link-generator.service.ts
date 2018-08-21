@@ -6,6 +6,16 @@ export class LinkGeneratorService {
 
   }
 
+  homePage(){
+    return ['']
+  }
+
+  errorMessagePage(){
+    return ['/error-msg'];
+  }
+
+  // contests
+
   contestList(){
     return ['/contests'];
   }
@@ -44,6 +54,10 @@ export class LinkGeneratorService {
 
   contestContestantSubmissions(contest_id: number, user_id: number){
     return ['/contests', contest_id, 'submissions/users', user_id];
+  }
+
+  contestStartCountDown(contest_id: number) {
+    return ['/contests', contest_id, 'waithea'];
   }
 
   // announcement list
@@ -127,4 +141,6 @@ export class LinkGeneratorService {
   loginPage() {
     return ['/login'];
   }
+
+
 }

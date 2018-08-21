@@ -77,7 +77,9 @@
         <tr>
           <th>Judge</th>
           <td>
-            <a [routerLink]="'/user/112'">Anonta</a>
+            <a [routerLink]="link_generator.userDetails(contest_data.CreatorId)">
+              {{contest_data.Creator}}
+            </a>
           </td>
         </tr>
 

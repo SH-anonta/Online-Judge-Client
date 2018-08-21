@@ -15,7 +15,8 @@ import {ProblemRepositoryService} from './global-services/repository-services/pr
 import {SubmissionRepositoryService} from './global-services/repository-services/submissions-repository.service';
 import {UserRepositoryService} from './global-services/repository-services/user-repository.service';
 import {ContestRepositoryService} from './global-services/repository-services/contest-repository.service';
-
+import {ToastModule} from 'ng6-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,10 @@ import {ContestRepositoryService} from './global-services/repository-services/co
     RootRouterModule,
     SharedComponentsModule,
     HttpClientModule,
+
+    BrowserAnimationsModule,
+    ToastModule.forRoot(),
+
   ],
   providers: [
     AuthService,

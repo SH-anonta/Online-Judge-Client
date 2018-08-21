@@ -40,11 +40,15 @@ export class UserService {
   }
 
   // todo these are dummy and only check if user is admin or judge
+  isAuthenticated(){
+    return this.user != null;
+  }
+
   isAuthorizedToCreateContest(){
     return this.user && (this.user.isAdmin || this.user.isJudge);
   }
 
-  isAuthorizedToEditContest(contest_id: string){
+  isAuthorizedToEditContest(contest_id: number){
     return this.user && (this.user.isAdmin || this.user.isJudge);
   }
 
@@ -63,6 +67,7 @@ export class UserService {
   isAuthorizedToAccessProblemFiles(problem_id: number){
     return this.user && this.user.isAdmin;
   }
+
   isAuthorizedToEditUserType(){
     return this.user && this.user.isAdmin;
   }

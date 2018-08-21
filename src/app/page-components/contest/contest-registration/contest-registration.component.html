@@ -1,32 +1,26 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      <h3 class="h3">Practice contest #8</h3>
+      <h3 class="h3">{{contest_data.Title}}</h3>
     </div>
   </div>
 
   <div class="row mb-2">
     <div class="col-sm">
       <hr>
-      <h5>Contest rules</h5>
+      <h5>Contest description</h5>
 
-      <div id="ContestRulesContainer">
-
-        <p >The World Finals programming language tools include include Java, C, C++, Kotlin and Python.  See the Programming Environment Web Site for detailed configuration information.  Prior to the World Finals, the judges will have solved all problems in Java and C++.
-
-          Each team will be provided with a single computer and a calculator.  All teams will have equivalent computing equipment.
-
-          Contestants may not bring any printed materials or machine-readable versions of software or data to the Contest Area. Contestants may not bring their own computers, computer terminals, calculators, or other electronic devices to the Contest Area.
-
-          Each team member may bring an unannotated natural language printed dictionary.  On-line reference materials will be made available as described in the Reference Materials section of the Programming Environment Web Site.   Each team will be permitted three copies of the Team Reference Document described in the On-Site Registration Instructions.</p>
+      <div id="ContestRulesContainer"
+           [innerHtml]="contest_data.Description">
       </div>
+
     </div>
 
   </div>
 
   <div class="row text-right">
     <div class="col-sm">
-      <button class="btn btn-primary"
+      <button class="btn btn-dark"
               (click)="onRegisterBtnClick()">
         Register
       </button>

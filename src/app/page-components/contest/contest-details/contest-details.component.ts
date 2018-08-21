@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../../global-services/user.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, NavigationExtras, Router} from '@angular/router';
 import {LinkGeneratorService} from '../../../global-services/link-generator.service';
 import {ContestDetailsData, ContestRepositoryService} from '../../../global-services/repository-services/contest-repository.service';
 
@@ -25,7 +25,7 @@ export class ContestDetailsComponent implements OnInit {
     this.loadData();
   }
 
-  loadData(page_number: number = 1){
+  loadData(){
     let promise = this.contest_repository.getContestDetails(this.contest_id);
 
     promise.then(data => {
@@ -37,8 +37,17 @@ export class ContestDetailsComponent implements OnInit {
   onDeleteBtnClick(){
     let ans = confirm('Delete this contest?');
 
+    this.router.navigate(this.link_generator.errorMessagePage(), );
+
     if(ans){
-      this.router.navigate(['/contest'])
+      let promise = this.contest_repository.deleteContest(this.contest_id);
+
+      promise.then(data =>{
+        this.router.navigate(['/contest'])
+      });
+      promise.catch(x=>{
+        alert('Failed to delete contest')
+      })
     }
   }
 }
