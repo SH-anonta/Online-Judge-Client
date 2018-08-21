@@ -66,12 +66,12 @@
       <table class="table text-left">
         <tr>
           <th>Start time</th>
-          <td>UTC 03.07.18 20:21:16</td>
+          <td>{{contest_data.StartDate | date:'medium'}}</td>
         </tr>
 
         <tr>
           <th>Duration</th>
-          <td>5Hr</td>
+          <td>{{contest_data.EndDate | date:'medium'}}</td>
         </tr>
 
         <tr>
@@ -85,23 +85,21 @@
 
         <tr>
           <th>Type</th>
-          <td>private</td>
+          <!--todo show real value-->
+          <td>public</td>
         </tr>
 
         <tr>
           <th>Problems</th>
-          <td>6</td>
+          <td>{{contest_data.Problems.length}}</td>
         </tr>
 
         <tr>
           <th>Registered</th>
-          <td>60</td>
+          <!--todo show real value-->
+          <td>0</td>
         </tr>
 
-        <tr>
-          <th>Participants</th>
-          <td>52</td>
-        </tr>
       </table>
 
     </div>

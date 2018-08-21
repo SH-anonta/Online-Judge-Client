@@ -10,10 +10,6 @@ export class LinkGeneratorService {
     return ['']
   }
 
-  errorMessagePage(){
-    return ['/error-msg'];
-  }
-
   // contests
 
   contestList(){
@@ -57,7 +53,7 @@ export class LinkGeneratorService {
   }
 
   contestStartCountDown(contest_id: number) {
-    return ['/contests', contest_id, 'waithea'];
+    return ['/contests', contest_id, 'count-down'];
   }
 
   // announcement list

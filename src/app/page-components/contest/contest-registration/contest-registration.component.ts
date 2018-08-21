@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ContestDetailsData, ContestRepositoryService} from '../../../global-services/repository-services/contest-repository.service';
 import {UserService} from '../../../global-services/user.service';
 import {LinkGeneratorService} from '../../../global-services/link-generator.service';
+import {ToastsManager} from 'ng6-toastr';
 
 @Component({
   selector: 'app-contest-registration',
@@ -16,6 +17,7 @@ export class ContestRegistrationComponent implements OnInit {
   constructor(public user_service: UserService,
               public route: ActivatedRoute,
               public link_generator: LinkGeneratorService,
+              public toast_man: ToastsManager,
               public contest_repository: ContestRepositoryService,
               private router: Router) {
     this.contest_id = this.route.snapshot.params['contest_id'];
@@ -31,12 +33,19 @@ export class ContestRegistrationComponent implements OnInit {
 
     promise.then(data => {
       this.contest_data = data;
-      console.log(data);
     });
   }
 
   onRegisterBtnClick() {
-    // todo implement
-    this.router.navigate(this.link_generator.contestStartCountDown(this.contest_id));
+    let promise = this.contest_repository.registerForContest(this.contest_id);
+
+    promise.then(x=>{
+      this.toast_man.success('Registration successful');
+      this.router.navigate(this.link_generator.contestStartCountDown(this.contest_id));
+    });
+
+    promise.catch(x=>{
+      this.toast_man.error(x.error.errorMessage, 'Failed to register');
+    });
   }
 }
