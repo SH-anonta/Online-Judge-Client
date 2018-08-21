@@ -2,12 +2,12 @@
 
   <div class="row mb-3">
     <div class="col-sm-10">
-      <h3 class="h3">Practice contest #8</h3>
+      <h3 class="h3">{{contest_data.Title}}</h3>
     </div>
 
     <div  *ngIf="user_service.isAuthorizedToEditContest('12')"
           class="col-sm-2 text-right pt-1">
-      <a [routerLink]="'/contest/11/edit'"
+      <a [routerLink]="link_generator.contestEditor(contest_id)"
          class="btn btn-sm btn-primary mr-1">
         Edit
       </a>
@@ -31,20 +31,20 @@
   <div class="row mb-5">
     <div class="col-sm">
 
-      <a [routerLink]="'/contest/11/problems'"
+      <a [routerLink]="link_generator.contestProblemList(contest_id)"
          class="btn form-control btn-dark">
         Problems
       </a>
     </div>
 
     <div class="col-sm">
-      <a [routerLink]="'/contest/11/rank'"
+      <a [routerLink]="link_generator.contestRankList(contest_id)"
          class="btn form-control btn-dark">
         Rank
       </a>
     </div>
     <div class="col-sm">
-      <a [routerLink]="'/contest/11/problems'"
+      <a [routerLink]="link_generator.contestSubmissions(contest_id)"
          class="btn form-control btn-dark">
         Submissions
       </a>
@@ -52,7 +52,7 @@
 
     <div class="col-sm">
       <!-- todo hide if user is already registered-->
-      <a [routerLink]="'/contest/11/register'"
+      <a [routerLink]="link_generator.contestRegistration(contest_id)"
          class="btn btn-dark form-control">
         Registration
       </a>

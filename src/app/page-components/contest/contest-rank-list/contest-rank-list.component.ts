@@ -47,7 +47,6 @@ export class ContestRankListComponent implements OnInit {
 
       this.contest_title = data.ContestTitle;
       this.problem_list = data.Collection[0].ProblemRejectCounts;
-      console.log(data);
     });
   }
 

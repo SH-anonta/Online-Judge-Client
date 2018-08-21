@@ -21,7 +21,7 @@ import { ContestUserSubmissionsComponent } from './contest-user-submissions/cont
 
 const routers= [
   {
-    path: 'contest',
+    path: 'contests',
     component: ContestComponent,
     children: [
       {
@@ -69,7 +69,7 @@ const routers= [
         component: ContestRankListComponent,
       },
       {
-        path: ':contest_id/submissions/user/:user_id',
+        path: ':contest_id/submissions/users/:user_id',
         component: ContestUserSubmissionsComponent,
       },
     ]

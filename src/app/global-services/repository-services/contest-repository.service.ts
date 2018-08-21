@@ -90,4 +90,8 @@ export class ContestRepositoryService{
 
     return this.data_fetcher.get(`api/contests/${contest_id}/rank`, params);
   }
+
+  getContestDetails(contest_id: number) :Promise<ContestDetailsData>{
+    return this.data_fetcher.get(`api/contests/${contest_id}`)
+  }
 }

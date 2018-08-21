@@ -7,11 +7,43 @@ export class LinkGeneratorService {
   }
 
   contestList(){
-    return ['/contest'];
+    return ['/contests'];
   }
 
   contestLink(contest_id: number){
-    return ['/contest', contest_id];
+    return ['/contests', contest_id];
+  }
+
+  contestEditor(contest_id: number){
+    return ['/contests', contest_id, 'edit'];
+  }
+
+  contestRegistration(contest_id: number){
+    return ['/contests', contest_id, 'register'];
+  }
+
+  contestSubmissions(contest_id: number){
+    return ['/contests', contest_id, 'submissions'];
+  }
+
+  contestRankList(contest_id: number){
+    return ['/contests', contest_id, 'rank'];
+  }
+
+  contestProblemList(contest_id: number){
+    return ['/contests', contest_id, 'problems'];
+  }
+
+  contestProblemDetails(contest_id: number, problem_order: number){
+    return ['/contests', contest_id, 'problem', problem_order];
+  }
+
+  contestProblemSubmit(contest_id: number, problem_order: number){
+    return ['/contests', contest_id, 'problem', problem_order, 'submit'];
+  }
+
+  contestContestantSubmissions(contest_id: number, user_id: number){
+    return ['/contests', contest_id, 'submissions/users', user_id];
   }
 
   // announcement list
@@ -27,9 +59,6 @@ export class LinkGeneratorService {
     return ['/announcements'];
   }
 
-  contestRegistration(contest_id: number){
-
-  }
 
   // users
   userDetails(user_id: number){
