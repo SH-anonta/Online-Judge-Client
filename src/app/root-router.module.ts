@@ -16,18 +16,25 @@ import {ProblemRouterModule} from './page-components/problem/problem.router.modu
 import {ContestRouterModule} from './page-components/contest/contest.router.module';
 import {AnnouncementsRouterModule} from './page-components/announcements/announcements.router.module';
 import {TimeAgoPipe} from 'time-ago-pipe';
+import {ErrorMessagePageComponent} from './page-components/error-message-page/error-message-page.component';
 
 const routes = [
   {path: '', component: HomepageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'about', component: AboutComponent},
+  {path: 'error-msg', component: ErrorMessagePageComponent},
 
   {path: 'user', component: UserComponent},
 
   {path: 'devs-only', component: DevsOnlyPageComponent},
 
-  {path: 'error-404', component: Error404Component},
+  {
+    path: 'error-404',
+    component: Error404Component,
+    data : {error_msg : 'error message not provided'}
+  },
+
   {path: '**', redirectTo: 'error-404'},
 ];
 
@@ -38,6 +45,7 @@ const routes = [
     LoginComponent,
     RegisterComponent,
     AboutComponent,
+    ErrorMessagePageComponent,
 
     DevsOnlyPageComponent,
 
@@ -56,7 +64,8 @@ const routes = [
     CommonModule,
   ],
   exports: [
-    RouterModule
+    RouterModule,
+    ErrorMessagePageComponent,
   ]
 })
 export class RootRouterModule {}
