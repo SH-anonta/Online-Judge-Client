@@ -15,8 +15,15 @@ import {ProblemRepositoryService} from './global-services/repository-services/pr
 import {SubmissionRepositoryService} from './global-services/repository-services/submissions-repository.service';
 import {UserRepositoryService} from './global-services/repository-services/user-repository.service';
 import {ContestRepositoryService} from './global-services/repository-services/contest-repository.service';
-import {ToastModule, ToastsManager} from 'ng6-toastr';
+import {ToastModule, ToastOptions, ToastsManager} from 'ng6-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+// toastr config class
+export class CustomToastConfig extends ToastOptions {
+  animate = 'flyRight'; // you can override any options available
+  showCloseButton = true;
+  positionClass = 'toast-bottom-right';
+}
 
 @NgModule({
   declarations: [
@@ -46,9 +53,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ContestRepositoryService,
 
     ToastsManager,
+    {provide: ToastOptions, useClass: CustomToastConfig},
 
     // Needed for integrating with ASP backend
-    {provide: APP_BASE_HREF, useValue: '/'}
+    {provide: APP_BASE_HREF, useValue: '/'},
 
   ],
   bootstrap: [AppComponent]

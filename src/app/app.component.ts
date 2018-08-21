@@ -2,7 +2,7 @@ import {AfterViewInit, Component, OnInit, ViewContainerRef} from '@angular/core'
 import {UserService} from './global-services/user.service';
 import {DataFetcherService} from './global-services/data-fetcher.service';
 import {Router} from '@angular/router';
-import {ToastsManager} from 'ng6-toastr';
+import {Toast, ToastsManager} from 'ng6-toastr';
 
 @Component({
   selector: 'app-root',
@@ -23,10 +23,7 @@ export class AppComponent implements OnInit, AfterViewInit{
 
   ngOnInit(){}
 
-  ngAfterViewInit(){
-    // todo remove before production navigation only set for development
-    // this.router.navigate(['/devs-only']);
-  }
+  ngAfterViewInit(){  }
 
   routerOutletActivateEventHandler(event: any) {
     //after changing route scroll to the top of page
