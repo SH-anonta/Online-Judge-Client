@@ -17,6 +17,7 @@ import {ProblemSelectorComponent} from './shared-components/problem-selector/pro
 import { ContestAllSubmissionsComponent } from './contest-all-submissions/contest-all-submissions.component';
 import { ContestCountDownComponent } from './contest-count-down/contest-count-down.component';
 import { ContestUserSubmissionsComponent } from './contest-user-submissions/contest-user-submissions.component';
+import {NumberToAlphabet} from '../../pipes/number-to-alphabet';
 
 
 const routers= [
@@ -92,6 +93,8 @@ const routers= [
     ContestAllSubmissionsComponent,
     ContestCountDownComponent,
     ContestUserSubmissionsComponent,
+
+    NumberToAlphabet,
   ],
   imports : [
     RouterModule.forChild(routers),
@@ -102,6 +105,9 @@ const routers= [
   ],
   exports: [
     RouterModule
+  ],
+  providers:[
+
   ]
 })
 export class ContestRouterModule {}

@@ -13,6 +13,7 @@ import {DocumentEditorComponent} from './document-editor/document-editor.compone
 import { PageSelectorComponent } from './page-selector/page-selector.component';
 import {FormsModule} from '@angular/forms';
 import { ErrorMessageListComponent } from './error-message-list/error-message-list.component';
+import {NumberToAlphabet} from '../pipes/number-to-alphabet';
 
 @NgModule({
   declarations:[

@@ -3,7 +3,11 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {LinkGeneratorService} from '../../../global-services/link-generator.service';
 import {AnnouncementRepositoryService} from '../../../global-services/repository-services/announcement-repository.service';
 import {UserService} from '../../../global-services/user.service';
-import {ContestRankListItemData, ContestRepositoryService} from '../../../global-services/repository-services/contest-repository.service';
+import {
+  ContestRankListItemData,
+  ContestRepositoryService,
+  RankListCollection
+} from '../../../global-services/repository-services/contest-repository.service';
 
 @Component({
   selector: 'app-rank-list',

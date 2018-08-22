@@ -20,7 +20,7 @@
 
             <th class="text-center"
                 *ngFor="let x of problem_list; let i= index">
-              {{i}}
+              {{i | number_to_alphabet}}
             </th>
 
           </tr>

@@ -1,7 +1,11 @@
 <div class="container">
 
   <div class="row mb-3">
-    <div class="col text-right">
+    <div class="col-sm">
+      <h3>Announcements</h3>
+    </div>
+
+    <div class="col-sm text-right">
       <div *ngIf="user_service.isAuthorizedToCreateAnnouncements()">
         <a [routerLink]="'/announcements/create'"
            class="btn btn-sm btn-dark">
