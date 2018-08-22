@@ -1,6 +1,7 @@
 import {DataFetcherService} from '../data-fetcher.service';
 import {Injectable} from '@angular/core';
 import {UserService} from '../user.service';
+import {ProblemDetailsData, ProblemListItem} from './problem-repository-service';
 
 export class ContestCreationFormData {
   Id: number;
@@ -20,7 +21,6 @@ export class ContestCreationFormData {
   Problems: number[];
 }
 
-
 export class ContestDetailsData {
   Id: number;
   Title: string;
@@ -33,7 +33,7 @@ export class ContestDetailsData {
   StartDate: Date;
   EndDate: Date;
 
-  Problems: number[];
+  Problems: ProblemListItem[];
 }
 
 export class ContestListItemData {

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      <h3 class="h3">Practice contest #8</h3>
+      <h3 class="h3">{{contest_data.Title}}</h3>
       <hr>
     </div>
   </div>
@@ -13,48 +13,17 @@
         <tr>
           <th>#</th>
           <th>Title</th>
-          <th>Solve</th>
         </tr>
 
-        <tr>
-          <td>A</td>
+        <tr *ngFor="let problem of contest_data.Problems; let i= index;">
+          <td>{{i | number_to_alphabet}}</td>
           <td>
-            <a [routerLink]="'/contest/8/problems/1'">
-              Book keeping machine
+            <a [routerLink]="link_generator.contestProblemDetails(contest_id, i)">
+              {{problem.Title}}
             </a>
           </td>
-          <td>50/98</td>
         </tr>
 
-        <tr>
-          <td>B</td>
-          <td>
-            <a [routerLink]="'/contest/8/problems/1'">
-              Hidden sequence
-            </a>
-          </td>
-          <td>10/51</td>
-        </tr>
-
-        <tr>
-          <td>C</td>
-          <td>
-            <a [routerLink]="'/contest/8/problems/1'">
-              Fork and knife
-            </a>
-          </td>
-          <td>3/12</td>
-        </tr>
-
-        <tr>
-          <td>D</td>
-          <td>
-            <a [routerLink]="'/contest/8/problems/1'">
-              Queue sequencer
-            </a>
-          </td>
-          <td>0/10</td>
-        </tr>
       </table>
     </div>
   </div>

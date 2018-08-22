@@ -41,11 +41,11 @@ export class LinkGeneratorService {
   }
 
   contestProblemDetails(contest_id: number, problem_order: number){
-    return ['/contests', contest_id, 'problem', problem_order];
+    return ['/contests', contest_id, 'problems', problem_order];
   }
 
   contestProblemSubmit(contest_id: number, problem_order: number){
-    return ['/contests', contest_id, 'problem', problem_order, 'submit'];
+    return ['/contests', contest_id, 'problems', problem_order, 'submit'];
   }
 
   contestContestantSubmissions(contest_id: number, user_id: number){

@@ -37,8 +37,6 @@ export class ContestDetailsComponent implements OnInit {
   onDeleteBtnClick(){
     let ans = confirm('Delete this contest?');
 
-    this.router.navigate(this.link_generator.errorMessagePage(), );
-
     if(ans){
       let promise = this.contest_repository.deleteContest(this.contest_id);
 
