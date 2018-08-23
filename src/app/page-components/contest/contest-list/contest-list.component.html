@@ -50,23 +50,28 @@
   <div class="row">
     <div class="com-sm contest-table-container p-2">
       <!--past contests-->
-      <div class="contest-table-container" *ngIf="show_past_contests;else show_past_contests_link">
+      <div *ngIf="show_past_contests;else show_past_contests_link">
 
         <h3 class="h4">Past contests</h3>
-        <app-contest-list-table
-          [contest_list]="past_contests"
-          [show_registration_button]="false">
-        </app-contest-list-table>
+        <div class="contest-table-container" >
+          <app-contest-list-table
+            [contest_list]="past_contests"
+            [show_registration_button]="false">
+          </app-contest-list-table>
+        </div>
+
+
+        <div class="text-center">
+          <app-page-selector
+            (PageNavigationClick)="onPageNavigationClick($event)"
+            [current_page]="current_page"
+            [total_items]="total_list_items"
+            [items_per_page]="LIST_ITEMS_PER_PAGE">
+          </app-page-selector>
+        </div>
       </div>
 
-      <div class="text-center">
-        <app-page-selector
-          (PageNavigationClick)="onPageNavigationClick($event)"
-          [current_page]="current_page"
-          [total_items]="total_list_items"
-          [items_per_page]="LIST_ITEMS_PER_PAGE">
-        </app-page-selector>
-      </div>
+
 
       <ng-template
         #show_past_contests_link>
