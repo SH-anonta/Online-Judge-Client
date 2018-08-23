@@ -14,6 +14,7 @@ import { PageSelectorComponent } from './page-selector/page-selector.component';
 import {FormsModule} from '@angular/forms';
 import { ErrorMessageListComponent } from './error-message-list/error-message-list.component';
 import {NumberToAlphabet} from '../pipes/number-to-alphabet';
+import {ContestListTableComponent} from './contest-list-table/contest-list-table.component';
 
 @NgModule({
   declarations:[
@@ -28,6 +29,7 @@ import {NumberToAlphabet} from '../pipes/number-to-alphabet';
     PageSelectorComponent,
     PageSelectorComponent,
     ErrorMessageListComponent,
+    ContestListTableComponent,
   ],
   imports:[
     CommonModule,
@@ -45,7 +47,8 @@ import {NumberToAlphabet} from '../pipes/number-to-alphabet';
     ProblemListTableComponent,
     DocumentEditorComponent,
     PageSelectorComponent,
-    ErrorMessageListComponent
+    ErrorMessageListComponent,
+    ContestListTableComponent
   ],
 })
 export class SharedComponentsModule {}

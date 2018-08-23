@@ -1,0 +1,31 @@
+<div class="">
+  <table class="table table-striped mb-4">
+    <tr>
+      <th>Title</th>
+      <th>Start time</th>
+      <th>End time</th>
+      <th>Judge</th>
+      <th *ngIf="show_registration_button">
+        Register
+      </th>
+    </tr>
+
+    <tr *ngFor="let contest of contest_list">
+      <td>
+        <a [routerLink]="link_generator.contestLink(contest.Id)">{{contest.Title}}</a>
+      </td>
+      <td>{{contest.StartDate | date: 'medium'}}</td>
+      <td>{{contest.EndDate}}</td>
+      <td>
+        <a [routerLink]="link_generator.userDetails(contest.CreatorId)">{{contest.Creator}}</a>
+      </td>
+
+      <td *ngIf="show_registration_button">
+        <a class="btn btn-sm btn-dark"
+           [routerLink]="link_generator.contestRegistration(contest.Id)">
+          register
+        </a>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -65,6 +65,11 @@ export class RankListCollection{
   Collection: ContestRankListItemData[];
 }
 
+export class UnFinishedContestListCollection {
+  RunningContests: ContestListItemData[];
+  UpcomingContests: ContestListItemData[];
+}
+
 @Injectable()
 export class ContestRepositoryService{
 
@@ -94,18 +99,30 @@ export class ContestRepositoryService{
   }
 
   getContestDetails(contest_id: number) :Promise<ContestDetailsData>{
-    return this.data_fetcher.get(`api/contests/${contest_id}`)
+    return this.data_fetcher.get(`api/contests/${contest_id}`);
   }
 
   registerForContest(contest_id: number){
     if(!this.user_service.userIsAuthenticated()){
-      throw new Error('User must be logged in to register for contest')
+      throw new Error('User must be logged in to register for contest');
     }
 
-    return this.data_fetcher.post(`api/contests/${contest_id}/register`)
+    return this.data_fetcher.post(`api/contests/${contest_id}/register`);
   }
 
   deleteContest(contest_id: number) {
-    return this.data_fetcher.post(`api/contests/${contest_id}/delete`)
+    return this.data_fetcher.post(`api/contests/${contest_id}/delete`);
+  }
+
+  getUnfinishedContestsList() : Promise<UnFinishedContestListCollection>{
+    return this.data_fetcher.get(`api/contests/unfinished-contests`);
+  }
+
+  getPastContestsList(start: number, limit: number): Promise<ContestListItemData[]> {
+    let params = {
+      start : start,
+      limit : limit,
+    };
+    return this.data_fetcher.get(`api/contests/past-contests`, params);
   }
 }

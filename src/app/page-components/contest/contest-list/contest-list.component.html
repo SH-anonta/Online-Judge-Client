@@ -14,55 +14,17 @@
     <div class="com-sm contest-table-container p-2">
       <!--running contests-->
       <h3 class="h4">Running</h3>
-      <table class="table table-striped mb-4">
-        <tr>
-          <th>Title</th>
-          <th>Start time</th>
-          <th>Duration</th>
-          <th>Judge</th>
-        </tr>
-
-        <tr>
-          <td>
-            <a [routerLink]="'/contest/11'">Practice contest #9</a>
-          </td>
-          <td>UTC 02.07.18 20:21:16 56</td>
-          <td>6Hrs</td>
-          <td>
-            <a [routerLink]="'/user/112'">Anonta</a>
-          </td>
-        </tr>
-
-      </table>
+      <app-contest-list-table
+        [contest_list]="running_contests"
+        [show_registration_button]="false">
+      </app-contest-list-table>
 
       <!--Up coming contests-->
       <h3 class="h4">Up coming</h3>
-      <table class="table table-striped mb-4">
-        <tr>
-          <th>Title</th>
-          <th>Start time</th>
-          <th>Duration</th>
-          <th>Judge</th>
-          <th>Register</th>
-        </tr>
-
-        <tr>
-          <td>
-            <a [routerLink]="link_generator.contestLink(11)">Practice contest #10</a>
-          </td>
-          <td>UTC 02.07.18 20:21:16 56</td>
-          <td>6Hrs</td>
-          <td>
-            <a [routerLink]="'/user/112'">Anonta</a>
-          </td>
-          <td>
-            <a class="btn btn-sm btn-dark"
-            [routerLink]="'/contest/12/register'">
-              register
-            </a>
-          </td>
-        </tr>
-      </table>
+      <app-contest-list-table
+        [contest_list]="upcoming_contests"
+        [show_registration_button]="true">
+      </app-contest-list-table>
 
 
     </div>

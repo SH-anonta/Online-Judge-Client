@@ -30,7 +30,6 @@ export class ContestDetailsComponent implements OnInit {
 
     promise.then(data => {
       this.contest_data = data;
-      console.log(data);
     });
   }
 
