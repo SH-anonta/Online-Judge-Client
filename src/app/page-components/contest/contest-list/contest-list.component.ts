@@ -6,6 +6,7 @@ import {
   ContestRepositoryService,
   UnFinishedContestListCollection
 } from '../../../global-services/repository-services/contest-repository.service';
+import {ProblemListItem} from '../../../global-services/repository-services/problem-repository-service';
 
 @Component({
   selector: 'app-contest-list',
@@ -16,7 +17,13 @@ export class ContestListComponent implements OnInit {
   running_contests: ContestListItemData[] = [];
   upcoming_contests: ContestListItemData[] = [];
 
+  show_past_contests: boolean = false;
   past_contests: ContestListItemData[] = [];
+
+  // properties for controlling pagination
+  readonly LIST_ITEMS_PER_PAGE: number = 10;
+  total_list_items: number= 0;
+  current_page:number = 1;
 
 
   constructor(public link_generator: LinkGeneratorService,
@@ -38,4 +45,29 @@ export class ContestListComponent implements OnInit {
       console.log(data);
     });
   }
+
+  loadPastContests(page_number: number= 1){
+    let start = (page_number-1)*this.LIST_ITEMS_PER_PAGE+1;
+    let limit = start+this.LIST_ITEMS_PER_PAGE-1;
+
+    let promise = this.contest_repository.getPastContestsList(start, limit);
+
+    promise.then((data: ContestListItemData[]) => {
+      this.past_contests = data;
+      console.log(data);
+    });
+  }
+
+  onPageNavigationClick(page_number){
+    this.loadPastContests();
+    this.current_page = page_number;
+    scroll(0,0);
+  }
+
+  // event handlers
+  onShowPastContestClick() {
+    this.show_past_contests= true;
+    this.loadPastContests();
+  }
 }
+

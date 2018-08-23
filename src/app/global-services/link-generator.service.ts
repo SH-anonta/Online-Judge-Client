@@ -20,6 +20,10 @@ export class LinkGeneratorService {
     return ['/contests', contest_id];
   }
 
+  contestCreator(){
+    return ['/contests/create'];
+  }
+
   contestEditor(contest_id: number){
     return ['/contests', contest_id, 'edit'];
   }
