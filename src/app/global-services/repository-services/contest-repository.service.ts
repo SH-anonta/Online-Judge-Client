@@ -70,6 +70,11 @@ export class UnFinishedContestListCollection {
   UpcomingContests: ContestListItemData[];
 }
 
+export class ContestCollection {
+  TotalCount: number;
+  Collection: ContestListItemData[];
+}
+
 @Injectable()
 export class ContestRepositoryService{
 
@@ -118,7 +123,7 @@ export class ContestRepositoryService{
     return this.data_fetcher.get(`api/contests/unfinished-contests`);
   }
 
-  getPastContestsList(start: number, limit: number): Promise<ContestListItemData[]> {
+  getPastContestsList(start: number, limit: number): Promise<ContestCollection> {
     let params = {
       start : start,
       limit : limit,

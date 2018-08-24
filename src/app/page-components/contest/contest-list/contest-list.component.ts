@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {LinkGeneratorService} from '../../../global-services/link-generator.service';
 import {UserService} from '../../../global-services/user.service';
 import {
+  ContestCollection,
   ContestListItemData,
   ContestRepositoryService,
   UnFinishedContestListCollection
@@ -52,9 +53,10 @@ export class ContestListComponent implements OnInit {
 
     let promise = this.contest_repository.getPastContestsList(start, limit);
 
-    promise.then((data: ContestListItemData[]) => {
-      this.past_contests = data;
-      console.log(data);
+    promise.then((data: ContestCollection) => {
+      this.past_contests = data.Collection;
+      this.total_list_items = data.TotalCount;
+      // console.log(data);
     });
   }
 
@@ -65,6 +67,8 @@ export class ContestListComponent implements OnInit {
   }
 
   // event handlers
+
+
   onShowPastContestClick() {
     this.show_past_contests= true;
     this.loadPastContests();

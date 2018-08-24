@@ -21,7 +21,7 @@ export class DevsOnlyPageComponent implements OnInit {
   }
 
   onDoStuffBtnClick(){
-    this.toast_man.success('Fuck off', 'You!');
+
   }
 
 
