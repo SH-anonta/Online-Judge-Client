@@ -15,24 +15,29 @@
     <div class="col-sm">
       <!--description-->
       <h4 class="h4 section-header">Description</h4>
-      <div class="description-section">
-        {{problem_data.Description}}
+      <div
+        [innerHtml]="problem_data.Description"
+        class="description-section">
       </div>
 
       <h4 class="h4 section-header">Inputs</h4>
-      <div class="description-section">
-        {{problem_data.InputSpecification}}
+      <div
+        [innerHtml]="problem_data.InputSpecification"
+        class="description-section">
+
       </div>
 
       <h4 class="h4 section-header">Outputs</h4>
-      <div class="description-section">
-        {{problem_data.OutputSpecification}}
+      <div
+        [innerHtml]="problem_data.OutputSpecification"
+        class="description-section">
       </div>
 
 
       <h4 class="h4 section-header">Constraints</h4>
-      <div class="description-section">
-        {{problem_data.Constraints}}
+      <div
+        [innerHtml]="problem_data.Constraints"
+        class="description-section">
       </div>
 
       <h4 class="h4 section-header">Limits</h4>
@@ -60,8 +65,9 @@
       </div>
 
       <h4 class="h4 section-header">Notes</h4>
-      <div class="description-section">
-        {{problem_data.Notes}}
+      <div
+        [innerHtml]="problem_data.Notes"
+        class="description-section">
       </div>
     </div>
   </div>

@@ -10,6 +10,8 @@ import {Router} from '@angular/router';
 export class ContestCreatorComponent implements OnInit {
   contest_type: string= 'private'; // this is used to hide or show the password fields
   problem_list: string[]= [];
+  error_messages: string[]= [];
+
   constructor(private router: Router) { }
 
   ngOnInit() {

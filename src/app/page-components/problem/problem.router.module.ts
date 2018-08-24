@@ -10,6 +10,7 @@ import {SharedComponentsModule} from '../../shared-components/shared-components.
 import { ProblemSubmitComponent } from './problem-submit/problem-submit.component';
 import {FormsModule} from '@angular/forms';
 import { ProblemSubmissionsComponent } from './problem-submissions/problem-submissions.component';
+import {QuillEditorModule} from 'ngx-quill-editor/quillEditor.module';
 
 
 const routes= [
@@ -43,6 +44,7 @@ const routes= [
     CommonModule,
     SharedComponentsModule,
     FormsModule,
+    QuillEditorModule
   ],
 
   exports:[

@@ -3,6 +3,9 @@
   padding: 10px;
   border-radius: 10px;
 
+
+  width: 100%;
+  overflow-x: auto;
   text-align: justify;
   text-justify: inter-character;
   /*text-justify: inter-word;*/

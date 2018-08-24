@@ -8,6 +8,14 @@
   </div>
 
   <div class="row">
+    <div class="col-sm">
+      <app-error-message-list
+        [error_messages]="error_messages">
+      </app-error-message-list>
+    </div>
+  </div>
+
+  <div class="row">
 
     <div class="col-sm">
       <form
@@ -25,48 +33,43 @@
 
         <div class="form-group text-left">
           <label for="ProblemDetails">Description</label>
-          <textarea name="Description"
-                [ngModel]
+          <quill-editor name="Description"
+                [ngModel]="''"
                 class="form-control"
-                rows="5"
-                cols="2"
-                id="ProblemDetails"></textarea>
+                id="ProblemDetails">
+          </quill-editor>
         </div>
 
         <div class="form-group text-left">
           <label for="ProblemConstraints">Constraints</label>
-          <textarea name="Constraints"
-                [ngModel]
+          <quill-editor name="Constraints"
+                [ngModel]="''"
                 class="form-control"
-                rows="5"
-                cols="2"
-                id="ProblemConstraints"></textarea>
+                id="ProblemConstraints"></quill-editor>
         </div>
 
         <div class="form-group text-left">
           <label for="Input">Input</label>
-          <textarea name="InputSpecification"
-                    [ngModel]
+          <quill-editor name="InputSpecification"
+                    [ngModel]="''"
                     class="form-control"
-                    rows="3"
-                    cols="2"
-                    id="Input"></textarea>
+                    id="Input"></quill-editor>
         </div>
 
         <div class="form-group text-left">
           <label for="Output">Output</label>
-          <textarea name="OutputSpecification"
-                    [ngModel]
+          <quill-editor name="OutputSpecification"
+                    [ngModel]="''"
                     class="form-control"
                     rows="3"
                     cols="2"
-                    id="Output"></textarea>
+                    id="Output"></quill-editor>
         </div>
 
         <div class="form-group text-left">
           <label for="SampleInput">Sample Input</label>
           <textarea name="SampleInput"
-                [ngModel]
+                [ngModel]="''"
                 class="form-control"
                 rows="5"
                 cols="2"
@@ -76,7 +79,7 @@
         <div class="form-group text-left">
           <label for="SampleOutput">Sample Output</label>
           <textarea name="SampleOutput"
-                [ngModel]
+                [ngModel]="''"
                 class="form-control"
                 rows="5"
                 cols="2"
@@ -85,12 +88,12 @@
 
         <div class="form-group text-left">
           <label for="Note">Note</label>
-          <textarea name="Note"
-                [ngModel]
+          <quill-editor name="Note"
+                [ngModel]="''"
                 class="form-control"
                 rows="3"
                 cols="2"
-                id="Note"></textarea>
+                id="Note"></quill-editor>
         </div>
 
         <label for="ContestType">Visibility</label>
@@ -107,7 +110,7 @@
           <div class="col-sm">
             <label for="TimeLimit">Time limit (s)</label>
             <input type="number"
-                   [ngModel]
+                   [ngModel]="''"
                    class="form-control"
                    id="TimeLimit"
                    name="TimeLimit">
@@ -117,7 +120,7 @@
           <div class="col-sm">
             <label for="MemoryLimit">Memory limit (MB)</label>
             <input type="number"
-                   [ngModel]
+                   [ngModel]="''"
                    class="form-control"
                    id="MemoryLimit"
                    name="MemoryLimit">

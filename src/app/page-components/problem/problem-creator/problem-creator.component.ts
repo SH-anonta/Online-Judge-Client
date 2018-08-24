@@ -12,6 +12,7 @@ import {LinkGeneratorService} from '../../../global-services/link-generator.serv
 export class ProblemCreatorComponent implements OnInit {
   private test_case_input_file: File= null;
   private test_case_output_file: File= null;
+  error_messages: string[] = [];
 
   constructor(private router: Router,
               private link_generator: LinkGeneratorService,
