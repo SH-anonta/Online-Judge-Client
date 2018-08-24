@@ -1,7 +1,9 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-8">
-      <h3 class="h3">Naive Chef</h3>
+      <h3 class="h3">
+         {{(problem_id| number_to_alphabet) + ': '+problem_data.Title}}
+      </h3>
     </div>
 
     <div class="col-sm-4 text-right">
@@ -12,8 +14,10 @@
   </div>
 
   <div class="row">
-    <div class="col-sm">
-      <app-problem-description></app-problem-description>
+    <div class="col-sm p-0">
+      <app-problem-description
+      [problem_data]="problem_data">
+      </app-problem-description>
     </div>
   </div>
 </div>

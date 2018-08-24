@@ -130,4 +130,8 @@ export class ContestRepositoryService{
     };
     return this.data_fetcher.get(`api/contests/past-contests`, params);
   }
+
+  getContestProblem(contest_id: number, problem_id: number): Promise<ProblemDetailsData> {
+    return this.data_fetcher.get(`api/contests/${contest_id}/problems/${problem_id}`)
+  }
 }
