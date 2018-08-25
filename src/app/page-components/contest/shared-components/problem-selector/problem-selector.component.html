@@ -8,8 +8,8 @@
            class="form-control">
   </div>
 
-  <div class="col-sm-1">
-    <button class="btn btn-dark font-weight-bold"
+  <div class="col-sm-1 text-right">
+    <button class="btn btn-dark font-weight-bold form-control"
             (click)="onAddProblemClick(checklist_input.value, $event)"
             type="button">
       +
@@ -18,37 +18,58 @@
 
 </div>
 
+<div class="form-row mt-2 ">
+  <div class="col-sm px-2">
+    <button
+      (click)="onUpBtnClick($event)"
+      class="form-control btn btn-dark btn-sm">
+      Up
+    </button>
+  </div>
+
+  <div class="col-sm">
+    <button
+      (click)="onDownBtnClick($event)"
+      class="form-control btn btn-dark btn-sm">
+      Down
+    </button>
+  </div>
+
+  <div class="col-sm">
+    <button
+      (click)="onRemoveProblemClick($event)"
+      class="form-control btn btn-danger btn-sm">
+      Delete
+    </button>
+  </div>
+</div>
+
 <div class="form-row">
   <div class="col-sm">
-    <hr>
     <table class="table" style="width: 100%">
       <tr>
-        <th>Code</th>
+        <th>#</th>
         <th>Title</th>
         <th>Success ratio</th>
-        <th></th>
       </tr>
 
       <!-- idx is used to identify which item to remove when a remove button is clicked-->
-      <tr *ngFor="let problem of problem_list; let idx = index">
+      <tr *ngFor="let problem of problem_list; let idx = index"
+          [ngClass]="{'selected-row': idx == selected_row}"
+          (click)="onProblemRowClick(idx)">
         <td>
-            {{problem}}
+          {{idx | number_to_alphabet}}
         </td>
 
         <td>
-          <a [routerLink]="'/problem/12'">
-            Problem title goes here
+          <a
+            target="_blank"
+            [routerLink]="'/problem/12'">
+            {{problem}}
           </a>
         </td>
 
         <td>54/90</td>
-
-        <td class="text-right">
-          <button class="btn btn-sm btn-danger font-weight-bold"
-                  (click)="onRemoveProblemClick(idx)">
-            X
-          </button>
-        </td>
       </tr>
     </table>
 
