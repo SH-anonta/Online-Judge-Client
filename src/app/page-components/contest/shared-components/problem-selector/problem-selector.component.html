@@ -3,9 +3,17 @@
 <div class="form-row">
   <div class="col-sm-11">
     <input type="text"
+           placeholder="Problem ID"
            #checklist_input
            id="ChecklistInput"
            class="form-control">
+
+    <!--<ng-autocomplete-->
+      <!--(selected)="Selected($event)"-->
+      <!--[classes]="['form-control']"-->
+      <!--[group]="group">-->
+    <!--</ng-autocomplete>-->
+
   </div>
 
   <div class="col-sm-1 text-right">
@@ -46,14 +54,20 @@
 
 <div class="form-row">
   <div class="col-sm">
-    <table class="table" style="width: 100%">
+    <table
+          *ngIf="problem_list.length != 0; else no_problem_added_msg"
+           id="ProblemsTable"
+           class="table"
+           style="width: 100%">
       <tr>
         <th>#</th>
+        <th>ID</th>
         <th>Title</th>
-        <th>Success ratio</th>
+        <th>Visibility</th>
+
       </tr>
 
-      <!-- idx is used to identify which item to remove when a remove button is clicked-->
+
       <tr *ngFor="let problem of problem_list; let idx = index"
           [ngClass]="{'selected-row': idx == selected_row}"
           (click)="onProblemRowClick(idx)">
@@ -62,16 +76,27 @@
         </td>
 
         <td>
+          {{problem.Id}}
+        </td>
+
+        <td>
           <a
             target="_blank"
-            [routerLink]="'/problem/12'">
-            {{problem}}
+            [routerLink]="link_generator.problemDetails(problem.Id)">
+            {{problem.Title}}
           </a>
         </td>
 
-        <td>54/90</td>
+        <td>
+          {{problem.IsPublic ? 'Public' : 'Private'}}
+        </td>
+
       </tr>
     </table>
+
+    <ng-template #no_problem_added_msg>
+      <p class="text-center text-danger form-text">No problems added</p>
+    </ng-template>
 
   </div>
 </div>

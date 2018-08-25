@@ -1,7 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {LinkGeneratorService} from '../../../../global-services/link-generator.service';
-import {ProblemRepositoryService} from '../../../../global-services/repository-services/problem-repository-service';
-import {setUpLocationSync} from '@angular/router/upgrade';
+import {
+  ProblemDetailsData,
+  ProblemRepositoryService
+} from '../../../../global-services/repository-services/problem-repository-service';
+import {ToastsManager} from 'ng6-toastr';
+import {HttpErrorResponse} from '@angular/common/http';
+
 
 @Component({
   selector: 'app-problem-selector',
@@ -10,26 +15,44 @@ import {setUpLocationSync} from '@angular/router/upgrade';
 })
 export class ProblemSelectorComponent implements OnInit {
   selected_row: number = 0;
-  problem_list: string[]= [];
+  problem_list: ProblemDetailsData[]= [];
 
   constructor(public link_generator: LinkGeneratorService,
+              public toast_man: ToastsManager,
               public problem_repository: ProblemRepositoryService) {
-    this.problem_list.push('Item 1');
-    this.problem_list.push('Item 2');
-    this.problem_list.push('Item 3');
-    this.problem_list.push('Item 4');
+    // this.problem_list.push('Item 1');
+    // this.problem_list.push('Item 2');
+    // this.problem_list.push('Item 3');
+    // this.problem_list.push('Item 4');
   }
 
   ngOnInit() {
 
   }
 
-  onAddProblemClick(item: string, event:any) {
-    if(item.trim()){
-      this.problem_list.push(item);
+  onAddProblemClick(problem_id: string, event:any) {
+    event.target.blur();
+    let id = parseInt(problem_id);
+
+    if(!id){
+     this.toast_man.error('Invalid Problem ID');
+      return;
     }
 
-    event.target.blur();
+    if(this.problem_list.findIndex(x=> x.Id == id) != -1){
+      this.toast_man.error('Problem already added');
+      return;
+    }
+
+    let promise = this.problem_repository.getProblem(id);
+
+    promise.then((data: ProblemDetailsData)=>{
+      this.problem_list.push(data);
+    });
+
+    promise.catch((data: HttpErrorResponse)=>{
+      this.toast_man.error('Problem not found');
+    });
   }
 
   onRemoveProblemClick(event: any) {

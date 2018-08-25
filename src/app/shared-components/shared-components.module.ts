@@ -13,9 +13,9 @@ import {DocumentEditorComponent} from './document-editor/document-editor.compone
 import { PageSelectorComponent } from './page-selector/page-selector.component';
 import {FormsModule} from '@angular/forms';
 import { ErrorMessageListComponent } from './error-message-list/error-message-list.component';
-import {NumberToAlphabet} from '../pipes/number-to-alphabet';
 import {ContestListTableComponent} from './contest-list-table/contest-list-table.component';
 import {TimeAgoPipe} from 'time-ago-pipe';
+import {NgAutoCompleteModule} from 'ng-auto-complete';
 
 @NgModule({
   declarations:[
@@ -27,7 +27,6 @@ import {TimeAgoPipe} from 'time-ago-pipe';
     ProblemDescriptionComponent,
     ProblemListTableComponent,
     DocumentEditorComponent,
-    PageSelectorComponent,
     PageSelectorComponent,
     ErrorMessageListComponent,
     ContestListTableComponent,

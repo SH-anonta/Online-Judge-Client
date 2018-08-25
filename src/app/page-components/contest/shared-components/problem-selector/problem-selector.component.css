@@ -1,3 +1,7 @@
 .selected-row{
   background-color: #e8e8e8;
 }
+
+#ProblemsTable tr:hover {
+  background-color: #e0e0e0;
+}

@@ -18,6 +18,7 @@ import { ContestAllSubmissionsComponent } from './contest-all-submissions/contes
 import { ContestCountDownComponent } from './contest-count-down/contest-count-down.component';
 import { ContestUserSubmissionsComponent } from './contest-user-submissions/contest-user-submissions.component';
 import {NumberToAlphabet} from '../../pipes/number-to-alphabet';
+import {NgAutoCompleteModule} from 'ng-auto-complete';
 
 
 const routers= [
@@ -101,7 +102,6 @@ const routers= [
     FormsModule,
     CommonModule,
     SharedComponentsModule,
-    // TimeAgoPipe
   ],
   exports: [
     RouterModule
