@@ -37,6 +37,8 @@ export class ProblemCreatorComponent implements OnInit {
     promise.catch((resp: HttpErrorResponse)=>{
       this.toast_man.error('Failed to create problem');
       this.error_messages = resp.error;
+
+      console.log(resp.error);
       scroll(0,0);
     });
   }

@@ -103,8 +103,8 @@ export class ProblemRepositoryService {
     let form = new FormData();
 
     //IMPORTANT: files must be inserted in order input_file then output_file
-    form.append('InputTestCase', input_file, input_file.name);
-    form.append('OutputTestCase', output_file, output_file.name);
+    form.append('InputTestCase', input_file, 'input_file');
+    form.append('OutputTestCase', output_file, 'output_file');
 
     form.append('Title', problem_data.Title);
     form.append('Description', problem_data.Description);
