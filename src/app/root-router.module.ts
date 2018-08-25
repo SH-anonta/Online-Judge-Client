@@ -46,8 +46,6 @@ const routes = [
 
     DevsOnlyPageComponent,
 
-  //  3rd party
-    TimeAgoPipe,
   ],
   imports: [
     RouterModule.forRoot(routes),

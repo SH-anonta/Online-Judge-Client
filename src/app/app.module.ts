@@ -17,6 +17,7 @@ import {UserRepositoryService} from './global-services/repository-services/user-
 import {ContestRepositoryService} from './global-services/repository-services/contest-repository.service';
 import {ToastModule, ToastOptions, ToastsManager} from 'ng6-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {TimeAgoPipe} from 'time-ago-pipe';
 
 // toastr config class
 export class CustomToastConfig extends ToastOptions {

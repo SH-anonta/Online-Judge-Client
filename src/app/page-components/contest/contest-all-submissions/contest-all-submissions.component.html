@@ -1,13 +1,29 @@
 <div class="container">
   <div class="row mb-2">
     <div class="col-sm">
-      <h4>Contest Name: All Submissions</h4>
+      <h4>{{contest_data.Title + ' All Submissions'}}</h4>
+
     </div>
   </div>
 
   <div class="row">
-    <div class="col-sm">
-      <app-submissions-table [submissions]="[]"></app-submissions-table>
+    <div class="col-sm" style="min-height: 300px;">
+      <app-submissions-table [submissions]="submission_list">
+      </app-submissions-table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm text-center">
+      <app-page-selector
+        #PageSelector
+        (PageNavigationClick)="onPageNavigationClick($event)"
+        [current_page]="current_page"
+        [total_items]="total_list_items"
+        [items_per_page]="LIST_ITEMS_PER_PAGE">
+
+      </app-page-selector>
+
     </div>
   </div>
 </div>

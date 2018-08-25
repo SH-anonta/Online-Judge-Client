@@ -2,6 +2,7 @@ import {DataFetcherService} from '../data-fetcher.service';
 import {Injectable} from '@angular/core';
 import {UserService} from '../user.service';
 import {ProblemDetailsData, ProblemListItem} from './problem-repository-service';
+import {SubmissionListItem} from './submissions-repository.service';
 
 export class ContestCreationFormData {
   Id: number;
@@ -75,6 +76,11 @@ export class ContestCollection {
   Collection: ContestListItemData[];
 }
 
+export class ContestSubmissionsCollection {
+  TotalCount: number;
+  Collection: SubmissionListItem[];
+}
+
 @Injectable()
 export class ContestRepositoryService{
 
@@ -133,5 +139,13 @@ export class ContestRepositoryService{
 
   getContestProblem(contest_id: number, problem_id: number): Promise<ProblemDetailsData> {
     return this.data_fetcher.get(`api/contests/${contest_id}/problems/${problem_id}`)
+  }
+
+  getContestSubmissions(contest_id: number, start: number, limit: number) {
+    let params = {
+      start : start,
+      limit : limit,
+    };
+    return this.data_fetcher.get(`api/contests/${contest_id}/submissions/`, params);
   }
 }

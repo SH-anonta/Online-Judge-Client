@@ -23,9 +23,9 @@
     <td>{{submission.ProgrammingLanguage}}</td>
     <td>{{submission.Status}}</td>
     <!--todo change date format-->
-    <td>{{submission.SubmissionDate | date}}</td>
+    <td>{{submission.SubmissionDate | timeAgo}}</td>
 
-    <td>{{submission.RunningTime}}</td>
+    <td>{{submission.RunningTime | number}}</td>
     <td>{{submission.PeakMemoryUsage}}</td>
   </tr>
 

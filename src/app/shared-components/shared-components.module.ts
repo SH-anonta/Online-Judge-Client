@@ -15,6 +15,7 @@ import {FormsModule} from '@angular/forms';
 import { ErrorMessageListComponent } from './error-message-list/error-message-list.component';
 import {NumberToAlphabet} from '../pipes/number-to-alphabet';
 import {ContestListTableComponent} from './contest-list-table/contest-list-table.component';
+import {TimeAgoPipe} from 'time-ago-pipe';
 
 @NgModule({
   declarations:[
@@ -30,6 +31,9 @@ import {ContestListTableComponent} from './contest-list-table/contest-list-table
     PageSelectorComponent,
     ErrorMessageListComponent,
     ContestListTableComponent,
+
+    // third party
+    TimeAgoPipe
   ],
   imports:[
     CommonModule,
@@ -48,7 +52,8 @@ import {ContestListTableComponent} from './contest-list-table/contest-list-table
     DocumentEditorComponent,
     PageSelectorComponent,
     ErrorMessageListComponent,
-    ContestListTableComponent
+    ContestListTableComponent,
+    TimeAgoPipe
   ],
 })
 export class SharedComponentsModule {}
