@@ -5,14 +5,29 @@ import {stringDistance} from 'codelyzer/util/utils';
 export class NumberToAlphabet implements  PipeTransform{
   static readonly MAPPING: string[];
 
+  mapNumToAlphabet(N){
+    N++;
+
+    if( N<1 )return "";
+    let name = "";
+    let b=26,r;
+    let chr;
+    while(N>0){
+      r = Math.floor( (N-1)%b );
+      chr = String.fromCharCode( 65+r );
+      name += chr;
+      N = Math.floor( (N-r)/b );
+    }
+    name = name.split("").reverse().join(""); // reversing found string
+    return name;
+  }
 
   // gets number from 0-infinity and returns string that represents the excel column name of that number
   transform(num: number): string{
-    // todo map to column name
-    if(num > 25 || num < 0){
+    if(num < 0){
       throw Error('Parameter value out of valid range')
     }
 
-    return String.fromCharCode(num+65);
+    return this.mapNumToAlphabet(num);
   }
 }
