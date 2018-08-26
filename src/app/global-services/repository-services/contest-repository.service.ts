@@ -8,6 +8,8 @@ export class ContestCreationFormData {
   Title: string;
   Description: string;
 
+  IsPublic: boolean;
+
   // expected to be utc time
   StartDate: string;
   EndDate: string;

@@ -44,4 +44,8 @@ export class UserSubmissionsComponent implements OnInit {
     this.loadData(page_number);
     this.current_page= page_number;
   }
+
+  onSubmissionListUpdate() {
+    this.loadData(this.current_page);
+  }
 }

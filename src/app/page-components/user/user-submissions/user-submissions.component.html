@@ -7,7 +7,9 @@
 
   <div class="row">
     <div class="col-sm">
-      <app-submissions-table [submissions]="submission_list">
+      <app-submissions-table
+        (onStatusUpdateRequest)="onSubmissionListUpdate()"
+        [submissions]="submission_list">
       </app-submissions-table>
     </div>
   </div>

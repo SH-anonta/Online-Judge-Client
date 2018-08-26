@@ -41,6 +41,7 @@ export class ContestCreatorComponent implements OnInit {
     promise.catch( (resp: HttpErrorResponse)=>{
       this.toast_man.error('Failed to create contest');
       this.error_messages = resp.error;
+      scroll(0,0);
     });
   }
 
