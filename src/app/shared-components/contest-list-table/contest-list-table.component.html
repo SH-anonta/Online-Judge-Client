@@ -15,7 +15,7 @@
         <a [routerLink]="link_generator.contestLink(contest.Id)">{{contest.Title}}</a>
       </td>
       <td>{{contest.StartDate | date: 'medium'}}</td>
-      <td>{{contest.EndDate}}</td>
+      <td>{{contest.EndDate | date: 'medium'}}</td>
       <td>
         <a [routerLink]="link_generator.userDetails(contest.CreatorId)">{{contest.Creator}}</a>
       </td>

@@ -19,6 +19,7 @@ import { ContestCountDownComponent } from './contest-count-down/contest-count-do
 import { ContestUserSubmissionsComponent } from './contest-user-submissions/contest-user-submissions.component';
 import {NumberToAlphabet} from '../../pipes/number-to-alphabet';
 import {NgAutoCompleteModule} from 'ng-auto-complete';
+import {QuillEditorModule} from 'ngx-quill-editor/quillEditor.module';
 
 
 const routers= [
@@ -102,6 +103,7 @@ const routers= [
     FormsModule,
     CommonModule,
     SharedComponentsModule,
+    QuillEditorModule,
   ],
   exports: [
     RouterModule

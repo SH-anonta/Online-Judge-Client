@@ -5,20 +5,17 @@ import {ProblemDetailsData, ProblemListItem} from './problem-repository-service'
 import {SubmissionListItem} from './submissions-repository.service';
 
 export class ContestCreationFormData {
-  Id: number;
   Title: string;
   Description: string;
 
-  Creator: string;
-  CreatorId: number;
-
   // expected to be utc time
-  StartDate: Date;
-  EndDate: Date;
+  StartDate: string;
+  EndDate: string;
 
   Password: string;
   ConfirmPassword: string;
 
+  // array of problem Id s
   Problems: number[];
 }
 
@@ -88,17 +85,11 @@ export class ContestRepositoryService{
               private user_service: UserService){
   }
 
-  createNewContest(data: ContestCreationFormData){
-    // todo implement
+  createNewContest(data: ContestCreationFormData): Promise<any>{
+    console.log(data);
+    return this.data_fetcher.post('api/contests/create', data);
   }
 
-  getRunningAndUpComingContests(): Promise<ContestListItemData[]>{
-    return this.data_fetcher.get('api/contests/');
-  }
-
-  getPastContests(): Promise<ContestListItemData[]>{
-    return this.data_fetcher.get('api/past-contests/');
-  }
 
   getContestRankList(contest_id: number, start: number, limit: number): Promise<RankListCollection>{
     let params = {

@@ -94,4 +94,9 @@ export class ProblemSelectorComponent implements OnInit {
 
     event.target.blur();
   }
+
+  // return all the id's of the problem
+  getProblems(): number[]{
+    return this.problem_list.map(x=>x.Id);
+  }
 }

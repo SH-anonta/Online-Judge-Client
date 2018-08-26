@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
+import {ToastsManager} from 'ng6-toastr';
+import {LinkGeneratorService} from '../../../global-services/link-generator.service';
+import {ContestCreationFormData, ContestRepositoryService} from '../../../global-services/repository-services/contest-repository.service';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-contest-creator',
@@ -8,26 +12,36 @@ import {Router} from '@angular/router';
   styleUrls: ['./contest-creator.component.css']
 })
 export class ContestCreatorComponent implements OnInit {
-  contest_type: string= 'private'; // this is used to hide or show the password fields
-  problem_list: string[]= [];
   error_messages: string[]= [];
+  @ViewChild('ProblemSelector') problem_selector;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private contest_repository: ContestRepositoryService,
+              public link_generator: LinkGeneratorService,
+              public toast_man: ToastsManager,) { }
 
   ngOnInit() {
 
   }
 
-  onAddProblemClickHandler(event: any){
-    this.problem_list.push("12");
-    event.target.blur();
+  formSubmitHandler(form: NgForm) {
+    // console.log(form);
+
+    let form_data:ContestCreationFormData = <ContestCreationFormData> form.value;
+    form_data.Problems = this.problem_selector.getProblems();
+    // form_data.StartDate = form.value.StartDate.toString();
+    // form_data.EndDate= form.value.EndDate.toString();
+
+    let promise = this.contest_repository.createNewContest(form.value);
+    promise.then( data =>{
+      this.toast_man.success('Contest created successfully');
+      this.router.navigate(this.link_generator.contestList());
+    });
+
+    promise.catch( (resp: HttpErrorResponse)=>{
+      this.toast_man.error('Failed to create contest');
+      this.error_messages = resp.error;
+    });
   }
 
-  removeProblemClickHandler(){
-    this.problem_list.pop();
-  }
-
-  createBtnClickHandler(form: NgForm) {
-    this.router.navigate(['/contest/21']);
-  }
 }

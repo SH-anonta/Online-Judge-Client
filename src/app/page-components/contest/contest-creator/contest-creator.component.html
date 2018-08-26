@@ -14,16 +14,16 @@
   </div>
 
   <div class="row">
-
-
     <div class="col-sm-12">
 
-
-      <form class="text-right" #contest_form="ngForm">
+      <form
+        class="text-right"
+        (submit)="formSubmitHandler(contest_form)"
+        #contest_form="ngForm">
         <div id="InputContainer" class="text-left">
-          <label  for="UserName">Title</label>
+          <label for="UserName">Title</label>
 
-          <input name="title"
+          <input name="Title"
                  ngModel
                  required
                  class="form-control"
@@ -31,12 +31,13 @@
                  placeholder="">
 
           <label for="DescriptionTextArea">Description</label>
-          <textarea class="form-control"
-                    ngModel
-                    required
-                    name="description"
-                    rows="5"
-                    id="DescriptionTextArea"></textarea>
+          <quill-editor
+            class="form-control"
+            [ngModel]="''"
+            required
+            name="Description"
+            id="DescriptionTextArea">
+          </quill-editor>
 
           <!--time selection-->
           <div id="DateTimeFormInputGroup" class="form-row mb-2">
@@ -44,7 +45,7 @@
               <label for="StartDatePicker">Start time</label>
               <input type="datetime-local"
                      ngModel
-                     name="start_time"
+                     name="StartDate"
                      class="form-control"
                      id="StartDatePicker">
             </div>
@@ -53,7 +54,7 @@
               <label for="EndDatePicker">End time</label>
               <input type="datetime-local"
                      ngModel
-                     name="end_time"
+                     name="EndDate"
                      class="form-control"
                      id="EndDatePicker">
             </div>
@@ -63,46 +64,50 @@
           <div class="form-row">
             <div class="col-sm">
               <label>Problems</label>
-              <app-problem-selector></app-problem-selector>
+              <app-problem-selector
+                #ProblemSelector>
+              </app-problem-selector>
             </div>
 
           </div>
 
           <label for="ContestType">Type</label>
           <select
-            name="contest_type"
-            [ngModel]
+            #contest_type
+            name="IsPublic"
+            [ngModel]="default_contest_type_option.value"
             #contest_type_selector
             id="ContestType"
             class="form-control mb-2">
-            <option selected value="select">Select</option>
-            <option value="private">Private</option>
-            <option value="public">Public</option>
+            <option #default_contest_type_option value="false">Private</option>
+            <option value="true">Public</option>
           </select>
 
           <!--// todo fix visibility-->
-          <!--<div id="PasswordInputContainer" [ngClass]="{'hidden' : contest_type != 'private'}">-->
-          <div id="PasswordInputContainer">
+          <div
+            [ngClass]="{'hidden' : contest_type.value == 'true'}"
+            id="PasswordInputContainer">
+
             <label for="Password">Password</label>
             <input id="Password"
                    ngModel
                    type="password"
-                   name="password"
+                   name="Password"
                    class="form-control">
 
             <label for="ConfirmPassword">Confirm password</label>
             <input id="ConfirmPassword"
                    ngModel
                    type="password"
-                   name="confirm_password"
+                   name="ConfirmPassword"
                    class="form-control">
           </div>
 
         </div>
 
-        <button type="submit"
-                class="btn btn-dark mt-3"
-                (click)="createBtnClickHandler(contest_form)">
+        <button
+          type="submit"
+          class="btn btn-dark mt-3">
           Create
         </button>
 
