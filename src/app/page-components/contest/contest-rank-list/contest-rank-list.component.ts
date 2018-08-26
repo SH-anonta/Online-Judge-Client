@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {LinkGeneratorService} from '../../../global-services/link-generator.service';
-import {AnnouncementRepositoryService} from '../../../global-services/repository-services/announcement-repository.service';
 import {UserService} from '../../../global-services/user.service';
 import {
   ContestRankListItemData,
@@ -45,6 +44,7 @@ export class ContestRankListComponent implements OnInit {
     let promise = this.contest_repository.getContestRankList(this.contest_id, start,limit);
 
     promise.then(data => {
+
       this.total_list_items =data.TotalCount;
       this.rank_list= data.Collection;
       this.rank_starts_from = data.RankStartsFrom;
