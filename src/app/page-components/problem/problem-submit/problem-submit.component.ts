@@ -8,7 +8,6 @@ import {
   ProgrammingLanguage
 } from '../../../global-services/repository-services/problem-repository-service';
 import {HttpErrorResponse} from '@angular/common/http';
-import {promise} from 'selenium-webdriver';
 import {NgForm} from '@angular/forms';
 
 @Component({

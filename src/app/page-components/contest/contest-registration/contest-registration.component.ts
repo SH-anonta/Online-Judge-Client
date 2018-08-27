@@ -4,6 +4,9 @@ import {ContestDetailsData, ContestRepositoryService} from '../../../global-serv
 import {UserService} from '../../../global-services/user.service';
 import {LinkGeneratorService} from '../../../global-services/link-generator.service';
 import {ToastsManager} from 'ng6-toastr';
+import {NgForm} from '@angular/forms';
+import {HttpErrorResponse} from '@angular/common/http';
+import {_catch} from 'rxjs/operator/catch';
 
 @Component({
   selector: 'app-contest-registration',
@@ -33,19 +36,28 @@ export class ContestRegistrationComponent implements OnInit {
 
     promise.then(data => {
       this.contest_data = data;
+      // console.log(data);
     });
   }
 
-  onRegisterBtnClick() {
-    let promise = this.contest_repository.registerForContest(this.contest_id);
+  onRegisterBtnClick(form: NgForm) {
+    // password is only required if contest is private
 
-    promise.then(x=>{
-      this.toast_man.success('Registration successful');
-      this.router.navigate(this.link_generator.contestStartCountDown(this.contest_id));
-    });
+    try{
+      console.log(form.value);
 
-    promise.catch(x=>{
-      this.toast_man.error(x.error.errorMessage, 'Failed to register');
-    });
+      let promise = this.contest_repository.registerForContest(this.contest_id, form.value);
+
+      promise.then(x=>{
+        this.toast_man.success('Registration successful');
+        this.router.navigate(this.link_generator.contestStartCountDown(this.contest_id));
+      });
+
+      promise.catch((x : HttpErrorResponse)=>{
+        this.toast_man.error(x.error.errorMessage, 'Failed to register');
+      });
+    }
+    catch(e){}
+
   }
 }

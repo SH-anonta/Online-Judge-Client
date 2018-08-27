@@ -25,6 +25,7 @@ export class ContestDetailsData {
   Id: number;
   Title: string;
   Description: string;
+  IsPublic: boolean;
 
   Creator: string;
   CreatorId: number;
@@ -80,6 +81,10 @@ export class ContestSubmissionsCollection {
   Collection: SubmissionListItem[];
 }
 
+export class ContestRegistrationFormData{
+  Password: string;
+}
+
 @Injectable()
 export class ContestRepositoryService{
 
@@ -88,7 +93,6 @@ export class ContestRepositoryService{
   }
 
   createNewContest(data: ContestCreationFormData): Promise<any>{
-    console.log(data);
     return this.data_fetcher.post('api/contests/create', data);
   }
 
@@ -106,12 +110,12 @@ export class ContestRepositoryService{
     return this.data_fetcher.get(`api/contests/${contest_id}`);
   }
 
-  registerForContest(contest_id: number){
+  registerForContest(contest_id: number, data: ContestRegistrationFormData): Promise<any>{
     if(!this.user_service.userIsAuthenticated()){
       throw new Error('User must be logged in to register for contest');
     }
 
-    return this.data_fetcher.post(`api/contests/${contest_id}/register`);
+    return this.data_fetcher.post(`api/contests/${contest_id}/register`, data);
   }
 
   deleteContest(contest_id: number) {
