@@ -3,7 +3,15 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      <h3 class="h3">Create a new Problem</h3>
+      <h3 class="h3">Edit problem</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
+      <app-error-message-list
+        [error_messages]="error_messages">
+      </app-error-message-list>
     </div>
   </div>
 
@@ -25,42 +33,38 @@
 
         <div class="form-group text-left">
           <label for="ProblemDetails">Description</label>
-          <textarea name="Description"
-                    [ngModel]="problem_data.Description"
-                    class="form-control"
-                    rows="5"
-                    cols="2"
-                    id="ProblemDetails"></textarea>
+          <quill-editor name="Description"
+                        [ngModel]="problem_data.Description"
+                        class="form-control"
+                        id="ProblemDetails">
+          </quill-editor>
         </div>
 
         <div class="form-group text-left">
           <label for="ProblemConstraints">Constraints</label>
-          <textarea name="Constraints"
-                    [ngModel]="problem_data.Constraints"
-                    class="form-control"
-                    rows="5"
-                    cols="2"
-                    id="ProblemConstraints"></textarea>
+          <quill-editor name="Constraints"
+                        [ngModel]="problem_data.Constraints"
+                        class="form-control"
+                        id="ProblemConstraints"></quill-editor>
         </div>
 
         <div class="form-group text-left">
           <label for="Input">Input</label>
-          <textarea name="InputSpecification"
-                    [ngModel]="problem_data.InputSpecification"
-                    class="form-control"
-                    rows="3"
-                    cols="2"
-                    id="Input"></textarea>
+          <quill-editor name="InputSpecification"
+                        [ngModel]="problem_data.InputSpecification"
+                        class="form-control"
+                        id="Input"></quill-editor>
         </div>
 
         <div class="form-group text-left">
           <label for="Output">Output</label>
-          <textarea name="OutputSpecification"
-                    [ngModel]="problem_data.OutputSpecification"
-                    class="form-control"
-                    rows="3"
-                    cols="2"
-                    id="Output"></textarea>
+          <quill-editor name="OutputSpecification"
+                        [ngModel]="problem_data.OutputSpecification"
+                        class="form-control"
+                        rows="3"
+                        cols="2"
+                        id="Output">
+          </quill-editor>
         </div>
 
         <div class="form-group text-left">
@@ -85,12 +89,12 @@
 
         <div class="form-group text-left">
           <label for="Note">Note</label>
-          <textarea name="Note"
-                    [ngModel]="problem_data.Notes"
-                    class="form-control"
-                    rows="3"
-                    cols="2"
-                    id="Note"></textarea>
+          <quill-editor name="Note"
+                        [ngModel]="problem_data.Notes"
+                        class="form-control"
+                        rows="3"
+                        cols="2"
+                        id="Note"></quill-editor>
         </div>
 
         <label for="ContestType">Visibility</label>
@@ -133,6 +137,7 @@
                    (change)="onTestCaseInputChange($event.target.files)"
                    id="InputFIle"
                    name="TestCaseInput">
+
           </div>
 
           <div class="col-sm">
@@ -143,12 +148,6 @@
                    id="OutputFile"
                    name="TestCaseOutput">
 
-          </div>
-        </div>
-
-        <div class="form-row mb-2">
-          <div class="help-block">
-            Keep empty to preserve old files,
           </div>
         </div>
 

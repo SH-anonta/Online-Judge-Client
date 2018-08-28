@@ -4,6 +4,7 @@ import {NgForm} from '@angular/forms';
 import {LinkGeneratorService} from '../../../global-services/link-generator.service';
 import {ProblemDetailsData, ProblemRepositoryService} from '../../../global-services/repository-services/problem-repository-service';
 import {HttpErrorResponse} from '@angular/common/http';
+import {ToastsManager} from 'ng6-toastr';
 
 @Component({
   selector: 'app-problem-editor',
@@ -16,10 +17,12 @@ export class ProblemEditorComponent implements OnInit {
 
   private test_case_input_file: File= null;
   private test_case_output_file: File= null;
+  error_messages: string[] = [];
 
   constructor(private router: Router,
               private link_generator: LinkGeneratorService,
               public route: ActivatedRoute,
+              public toast_man: ToastsManager,
               private problem_repository: ProblemRepositoryService) {
     this.problem_id = this.route.snapshot.params['problem_id'];
   }
@@ -34,11 +37,7 @@ export class ProblemEditorComponent implements OnInit {
       this.problem_data = data;
     });
 
-    promise.catch((error: HttpErrorResponse)=>{
-      if(error.status == 404){
-        this.router.navigate(this.link_generator.error404());
-      }
-    });
+
   }
 
   onUpdateBtnClick(form: NgForm){
@@ -48,7 +47,16 @@ export class ProblemEditorComponent implements OnInit {
                                                         this.test_case_output_file);
 
     promise.then(data =>{
+      this.toast_man.success('Problem updated successfully');
       this.router.navigate(this.link_generator.problemDetails(this.problem_id));
+    });
+
+    promise.catch((resp: HttpErrorResponse)=>{
+      this.toast_man.error('Failed to create problem');
+      this.error_messages = resp.error;
+
+      console.log(resp.error);
+      scroll(0,0);
     });
   }
 
