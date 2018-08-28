@@ -158,4 +158,8 @@ export class ContestRepositoryService{
   submitSolution(contest_id: number, problem_order: number, data: SubmissionFormData) {
     return this.data_fetcher.post(`api/contests/${contest_id}/problems/${problem_order}/submit`, data);
   }
+
+  getContestantSubmissions(contest_id: number, user_id: number): Promise<SubmissionListItem[]>{
+    return this.data_fetcher.get(`api/contests/${contest_id}/contestants/${user_id}/submissions`)
+  }
 }
