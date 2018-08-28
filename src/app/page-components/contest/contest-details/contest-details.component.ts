@@ -10,8 +10,12 @@ import {ContestDetailsData, ContestRepositoryService} from '../../../global-serv
   styleUrls: ['./contest-details.component.css']
 })
 export class ContestDetailsComponent implements OnInit {
+  show_contest_end_count_down: boolean= false;
+
   contest_id: number;
   contest_data: ContestDetailsData = new ContestDetailsData();
+  count_down_till: Date;
+
 
   constructor(public user_service: UserService,
               public route: ActivatedRoute,
@@ -19,6 +23,11 @@ export class ContestDetailsComponent implements OnInit {
               public contest_repository: ContestRepositoryService,
               private router: Router) {
     this.contest_id = this.route.snapshot.params['contest_id'];
+
+    //set dummy time until real value is retrieved
+    let dummy = new Date();
+    dummy.setHours(24);
+    this.count_down_till = dummy
   }
 
   ngOnInit() {
@@ -30,7 +39,18 @@ export class ContestDetailsComponent implements OnInit {
 
     promise.then(data => {
       this.contest_data = data;
+      let contest_start_time = new Date(data.StartDate).getTime();
+      let contest_end_time = new Date(data.EndDate).getTime();
+
+      this.count_down_till= new Date(data.EndDate);
+
+      this.show_contest_end_count_down = contest_start_time < Date.now()
+                                        && contest_end_time > Date.now();
     });
+  }
+
+  countDownFinishEventHandler(){
+
   }
 
   onDeleteBtnClick(){
