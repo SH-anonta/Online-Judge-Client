@@ -1,7 +1,7 @@
 import {DataFetcherService} from '../data-fetcher.service';
 import {Injectable} from '@angular/core';
 import {UserService} from '../user.service';
-import {ProblemDetailsData, ProblemListItem} from './problem-repository-service';
+import {ProblemDetailsData, ProblemListItem, SubmissionFormData} from './problem-repository-service';
 import {SubmissionListItem} from './submissions-repository.service';
 import construct = Reflect.construct;
 
@@ -153,5 +153,9 @@ export class ContestRepositoryService{
       limit : limit,
     };
     return this.data_fetcher.get(`api/contests/${contest_id}/submissions/`, params);
+  }
+
+  submitSolution(contest_id: number, problem_order: number, data: SubmissionFormData) {
+    return this.data_fetcher.post(`api/contests/${contest_id}/problems/${problem_order}/submit`, data);
   }
 }

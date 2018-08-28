@@ -54,7 +54,7 @@ export class LinkGeneratorService {
   }
 
   contestContestantSubmissions(contest_id: number, user_id: number){
-    return ['/contests', contest_id, 'submissions/users', user_id];
+    return ['/contests', contest_id, 'submissions','users', user_id];
   }
 
   contestStartCountDown(contest_id: number) {

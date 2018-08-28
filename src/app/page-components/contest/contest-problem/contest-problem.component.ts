@@ -32,7 +32,7 @@ export class ContestProblemComponent implements OnInit {
 
     promise.then((data:ProblemDetailsData )=>{
       this.problem_data = data;
-      console.log(data);
+      // console.log(data);
     });
 
     promise.catch(x =>{
