@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core';
 import {UserService} from '../user.service';
 import {ProblemDetailsData, ProblemListItem} from './problem-repository-service';
 import {SubmissionListItem} from './submissions-repository.service';
+import construct = Reflect.construct;
 
 export class ContestCreationFormData {
   Title: string;
@@ -35,6 +36,11 @@ export class ContestDetailsData {
   EndDate: Date;
 
   Problems: ProblemListItem[];
+
+
+  constructor(){
+    this.Problems= []
+  }
 }
 
 export class ContestListItemData {
@@ -96,6 +102,9 @@ export class ContestRepositoryService{
     return this.data_fetcher.post('api/contests/create', data);
   }
 
+  updateContest(contest_id: number, data: ContestCreationFormData) : Promise<any>{
+    return this.data_fetcher.post(`api/contests/${contest_id}/edit`, data);
+  }
 
   getContestRankList(contest_id: number, start: number, limit: number): Promise<RankListCollection>{
     let params = {

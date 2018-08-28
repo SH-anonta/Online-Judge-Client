@@ -18,7 +18,7 @@ export class ContestCreatorComponent implements OnInit {
   constructor(private router: Router,
               private contest_repository: ContestRepositoryService,
               public link_generator: LinkGeneratorService,
-              public toast_man: ToastsManager,) { }
+              public toast_man: ToastsManager) { }
 
   ngOnInit() {
 
@@ -29,8 +29,6 @@ export class ContestCreatorComponent implements OnInit {
 
     let form_data:ContestCreationFormData = <ContestCreationFormData> form.value;
     form_data.Problems = this.problem_selector.getProblems();
-    // form_data.StartDate = form.value.StartDate.toString();
-    // form_data.EndDate= form.value.EndDate.toString();
 
     let promise = this.contest_repository.createNewContest(form.value);
     promise.then( data =>{

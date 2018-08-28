@@ -14,7 +14,6 @@ import {ToastsManager} from 'ng6-toastr';
 export class ProblemEditorComponent implements OnInit {
   problem_id: number;
   problem_data: ProblemDetailsData= new ProblemDetailsData();
-
   private test_case_input_file: File= null;
   private test_case_output_file: File= null;
   error_messages: string[] = [];

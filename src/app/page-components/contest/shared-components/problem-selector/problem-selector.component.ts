@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {LinkGeneratorService} from '../../../../global-services/link-generator.service';
 import {
   ProblemDetailsData,
@@ -15,15 +15,11 @@ import {HttpErrorResponse} from '@angular/common/http';
 })
 export class ProblemSelectorComponent implements OnInit {
   selected_row: number = 0;
-  problem_list: ProblemDetailsData[]= [];
+  @Input() problem_list: ProblemDetailsData[]= [];
 
   constructor(public link_generator: LinkGeneratorService,
               public toast_man: ToastsManager,
               public problem_repository: ProblemRepositoryService) {
-    // this.problem_list.push('Item 1');
-    // this.problem_list.push('Item 2');
-    // this.problem_list.push('Item 3');
-    // this.problem_list.push('Item 4');
   }
 
   ngOnInit() {

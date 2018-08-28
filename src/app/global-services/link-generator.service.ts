@@ -16,6 +16,7 @@ export class LinkGeneratorService {
     return ['/contests'];
   }
 
+
   contestLink(contest_id: number){
     return ['/contests', contest_id];
   }
