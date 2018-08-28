@@ -24,7 +24,7 @@
 
       <form (submit)="onRegisterBtnClick(form)" #form = ngForm>
         <div class="form-row mb-2"
-             [ngClass]="{'hidden' : contest_data.IsPublic}">
+             [ngClass]="{'d-none' : contest_data.IsPublic}">
           <div class="col-sm">
             <div>
               <label for="Password">Password</label>
