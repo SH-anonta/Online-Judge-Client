@@ -37,6 +37,8 @@ export class ContestEditorComponent implements OnInit {
 
     promise.then(data => {
       this.contest_data = data;
+      this.problem_list = data.Problems
+      console.log(data.Problems);
     });
   }
 
@@ -47,6 +49,7 @@ export class ContestEditorComponent implements OnInit {
   formSubmitHandler(form: NgForm){
     let form_data:ContestCreationFormData = <ContestCreationFormData> form.value;
     form_data.Problems = this.problem_selector.getProblems();
+    console.log(form_data.Problems);
 
     let promise = this.contest_repository.updateContest(this.contest_id, form.value);
 
