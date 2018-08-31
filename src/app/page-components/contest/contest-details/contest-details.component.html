@@ -5,7 +5,7 @@
       <h3 class="h3">{{contest_data.Title}}</h3>
     </div>
 
-    <div  *ngIf="user_service.isAuthorizedToEditContest('12')"
+    <div  *ngIf="user_service.isAuthorizedToEditContest(contest_id)"
           class="col-sm-2 text-right pt-1">
       <a [routerLink]="link_generator.contestEditor(contest_id)"
          class="btn btn-sm btn-dark mr-1">
