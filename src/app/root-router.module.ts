@@ -16,16 +16,31 @@ import {ProblemRouterModule} from './page-components/problem/problem.router.modu
 import {ContestRouterModule} from './page-components/contest/contest.router.module';
 import {AnnouncementsRouterModule} from './page-components/announcements/announcements.router.module';
 import {NgAutoCompleteModule} from 'ng-auto-complete';
+import {IsAuthenticated} from './route-guards/IsAuthenticated';
+import {IsNotAuthenticated} from './route-guards/IsNotAuthenticated';
 
 const routes = [
   {path: '', component: HomepageComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [IsNotAuthenticated],
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    canActivate: [IsNotAuthenticated],
+  },
+
   {path: 'about', component: AboutComponent},
 
   {path: 'user', component: UserComponent},
 
-  {path: 'devs-only', component: DevsOnlyPageComponent},
+  {
+    path: 'devs-only',
+    component: DevsOnlyPageComponent,
+    canActivate: [IsAuthenticated],
+  },
 
   {
     path: 'error-404',

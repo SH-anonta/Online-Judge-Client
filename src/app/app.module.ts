@@ -18,6 +18,8 @@ import {ContestRepositoryService} from './global-services/repository-services/co
 import {ToastModule, ToastOptions, ToastsManager} from 'ng6-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TimeAgoPipe} from 'time-ago-pipe';
+import {IsAuthenticated} from './route-guards/IsAuthenticated';
+import {IsNotAuthenticated} from './route-guards/IsNotAuthenticated';
 
 // toastr config class
 export class CustomToastConfig extends ToastOptions {
@@ -52,6 +54,10 @@ export class CustomToastConfig extends ToastOptions {
     SubmissionRepositoryService,
     UserRepositoryService,
     ContestRepositoryService,
+
+    //route guards
+    IsAuthenticated,
+    IsNotAuthenticated,
 
     ToastsManager,
     {provide: ToastOptions, useClass: CustomToastConfig},
