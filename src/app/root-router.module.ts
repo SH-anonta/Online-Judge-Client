@@ -18,6 +18,7 @@ import {AnnouncementsRouterModule} from './page-components/announcements/announc
 import {NgAutoCompleteModule} from 'ng-auto-complete';
 import {IsAuthenticated} from './route-guards/IsAuthenticated';
 import {IsNotAuthenticated} from './route-guards/IsNotAuthenticated';
+import {IsAdministrator} from './route-guards/IsAdministrator';
 
 const routes = [
   {path: '', component: HomepageComponent},
@@ -75,6 +76,9 @@ const routes = [
   ],
   exports: [
     RouterModule,
+  ],
+  providers:[
+
   ]
 })
 export class RootRouterModule {}

@@ -39,6 +39,10 @@ export class UserService {
     //todo clear session on the server side
   }
 
+  isAdmin(): boolean{
+    return this.user && this.user.isAdmin;
+  }
+
   // todo these are dummy and only check if user is admin or judge
   isAuthenticated(){
     return this.user != null;

@@ -20,6 +20,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TimeAgoPipe} from 'time-ago-pipe';
 import {IsAuthenticated} from './route-guards/IsAuthenticated';
 import {IsNotAuthenticated} from './route-guards/IsNotAuthenticated';
+import {IsAdministrator} from './route-guards/IsAdministrator';
 
 // toastr config class
 export class CustomToastConfig extends ToastOptions {
@@ -56,6 +57,7 @@ export class CustomToastConfig extends ToastOptions {
     ContestRepositoryService,
 
     //route guards
+    IsAdministrator,
     IsAuthenticated,
     IsNotAuthenticated,
 
