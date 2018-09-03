@@ -54,12 +54,12 @@ export class ContestEditorComponent implements OnInit {
     let promise = this.contest_repository.updateContest(this.contest_id, form.value);
 
     promise.then( data =>{
-      this.toast_man.success('Contest created successfully');
+      this.toast_man.success('Contest updated successfully');
       this.router.navigate(this.link_generator.contestLink(this.contest_id));
     });
 
     promise.catch( (resp: HttpErrorResponse)=>{
-      this.toast_man.error('Failed to create contest');
+      this.toast_man.error('Failed to update contest');
       this.error_messages = resp.error;
       scroll(0,0);
     });

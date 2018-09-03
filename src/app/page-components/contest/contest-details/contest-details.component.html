@@ -29,7 +29,11 @@
   </div>
 
   <div class="row mb-5">
-    <div class="col-sm">
+    <div
+      *ngIf="contest_started
+            || user_service.isAdmin
+            || user_service.user_id == contest_data.CreatorId"
+      class="col-sm">
 
       <a [routerLink]="link_generator.contestProblemList(contest_id)"
          class="btn form-control btn-dark">

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../../global-services/user.service';
-import {ActivatedRoute, NavigationExtras, Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {LinkGeneratorService} from '../../../global-services/link-generator.service';
 import {ContestDetailsData, ContestRepositoryService} from '../../../global-services/repository-services/contest-repository.service';
 
@@ -11,6 +11,7 @@ import {ContestDetailsData, ContestRepositoryService} from '../../../global-serv
 })
 export class ContestDetailsComponent implements OnInit {
   show_contest_end_count_down: boolean= false;
+  contest_started: boolean= false;
 
   contest_id: number;
   contest_data: ContestDetailsData = new ContestDetailsData();
@@ -32,6 +33,8 @@ export class ContestDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.loadData();
+    console.log('Admin: ', this.user_service.isAdmin());
+    console.log('Id', this.user_service.user_id);
   }
 
   loadData(){
@@ -46,6 +49,8 @@ export class ContestDetailsComponent implements OnInit {
 
       this.show_contest_end_count_down = contest_start_time < Date.now()
                                         && contest_end_time > Date.now();
+
+      this.contest_started= contest_start_time < Date.now();
     });
   }
 

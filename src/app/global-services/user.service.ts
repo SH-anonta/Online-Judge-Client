@@ -22,7 +22,7 @@ export class LoginInfo{
   }
 
   public createUserObject(){
-    return new User(this.UserName, '',
+    return new User(this.UserName, this.Id,
               this.UserType == LoginInfo.JUDGE_UESR_TYPE_ENUM,
               this.UserType == LoginInfo.ADMIN_UESR_TYPE_ENUM);
   }
@@ -37,7 +37,7 @@ export class UserService {
   }
 
   get user_id(): number{
-    return this._user.id;
+    return this.user ? this._user.id : null;
   }
 
   constructor(private authenticator: AuthService,

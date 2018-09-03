@@ -52,21 +52,20 @@ export class UserRepositoryService {
     return this.data_fetcher.post('api/register', data);
   }
 
-
   getDummyUserStateData(){
     return new Promise((resolve, reject) => {
       resolve({
-        Id: 1,
+        Id: 2,
         UserName: 'admin',
-        UserType: 0,
+        UserType: 1,
       });
     });
 
   }
   getUserState() : Promise<any>{
-    console.log('WARNING: DUMMY USER STATE BEING USED');
+    // console.log('WARNING: DUMMY USER STATE BEING USED');
     // todo replace with real data before build
-    return this.getDummyUserStateData();
-    // return this.data_fetcher.get('api/users/my-state');
+    // return this.getDummyUserStateData();
+    return this.data_fetcher.get('api/users/my-state');
   }
 }
