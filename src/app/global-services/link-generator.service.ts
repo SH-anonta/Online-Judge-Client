@@ -62,6 +62,10 @@ export class LinkGeneratorService {
   }
 
   // announcement list
+  announcementCreator(){
+    return ['/announcements/create'];
+  }
+
   announcementDetails(announcement_id: number){
     return ['/announcements', announcement_id];
   }

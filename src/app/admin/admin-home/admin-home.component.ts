@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LinkGeneratorService} from '../../global-services/link-generator.service';
 
 @Component({
   selector: 'app-admin-home',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public link_generator: LinkGeneratorService) { }
 
   ngOnInit() {
   }

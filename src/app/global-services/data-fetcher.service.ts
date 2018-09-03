@@ -64,14 +64,7 @@ export class DataFetcherService {
 
   getAllUsersList(): Promise<User[]>{
     return new Promise<User[]>((resolve, reject)=>{
-      let users = [
-        new User('Sally', 'sally@jamal.com'),
-        new User('John', 'john@jamal.com'),
-        new User('Rofik', 'rofik@jamal.com'),
-        new User('kamal', 'kamal@jamal.com'),
-        new User('Arif', 'arif@jamal.com'),
-        new User('Bob', 'bob@jamal.com'),
-      ];
+      let users = [];
 
       resolve(users);
     });

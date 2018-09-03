@@ -9,28 +9,24 @@
 
   <div class="row">
     <div class="col-sm-8 mx-auto">
-      <table class="table">
-        <tr>
-          <th>Total user</th>
-          <td>103264</td>
-        </tr>
+      <a
+        class="page-link"
+        [routerLink]="link_generator.announcementCreator()">
+        Create Announcement
+      </a>
 
-        <tr>
-          <th>Users online</th>
-          <td>21564</td>
-        </tr>
+      <a
+        class="page-link"
+        [routerLink]="'/admin/user-list'">
+        User List
+      </a>
 
-        <tr>
-          <th>Total problems</th>
-          <td>305</td>
-        </tr>
+      <a
+        class="page-link"
+        [routerLink]="'/admin/problem-list'">
+        Problem List
+      </a>
 
-        <tr>
-          <th>Total contests</th>
-          <td>54</td>
-        </tr>
-
-      </table>
 
     </div>
   </div>
