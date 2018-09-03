@@ -40,7 +40,6 @@ const routes = [
   {
     path: 'devs-only',
     component: DevsOnlyPageComponent,
-    canActivate: [IsAuthenticated],
   },
 
   {

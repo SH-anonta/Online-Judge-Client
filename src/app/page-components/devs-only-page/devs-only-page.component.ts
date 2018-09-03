@@ -33,11 +33,11 @@ export class DevsOnlyPageComponent implements OnInit {
 
     promise.then(x=>{
       console.log(x);
-    })
+    });
   }
 
   getTempController(){
-    let promise = this.data_fetcher.get('api/temp/page');
+    let promise = this.data_fetcher.get('api/users/my-state');
 
     promise.then(x=>{
       console.log(x);

@@ -51,4 +51,8 @@ export class UserRepositoryService {
   createNewUser(data: UserRegistrationFormData ): Promise<any>{
     return this.data_fetcher.post('api/register', data);
   }
+
+  getUserState() : Promise<any>{
+    return this.data_fetcher.get('api/users/my-state');
+  }
 }

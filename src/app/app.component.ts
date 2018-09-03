@@ -19,6 +19,9 @@ export class AppComponent implements OnInit, AfterViewInit{
 
     // view container for toast notifications
     toast_man.setRootViewContainerRef(view_container_ref);
+
+    // this lets the keep the app keep the user's state between tags
+    user_service.updateUserState();
   }
 
   ngOnInit(){}

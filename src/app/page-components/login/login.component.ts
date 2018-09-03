@@ -5,6 +5,7 @@ import { NgForm } from '@angular/forms';
 import {UserService} from '../../global-services/user.service';
 import {User} from '../../global-models/user.model';
 import { Router} from '@angular/router';
+import {LinkGeneratorService} from '../../global-services/link-generator.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,9 @@ export class LoginComponent implements OnInit {
   @ViewChild('Form') form: NgForm;
 
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService,
+              public link_generator: LinkGeneratorService,
+              private router: Router) { }
 
   ngOnInit() {
     // this.form = this.form_ref.nativeElement;
@@ -27,8 +30,8 @@ export class LoginComponent implements OnInit {
   onFormSubmit(form: NgForm){
     let promise = this.userService.login(form.value.username, form.value.password);
 
-    promise.then((user: User)=> this.router.navigate(['/'])
-    );
-
+    promise.then((user: User)=> {
+      this.router.navigate(this.link_generator.homePage())
+    });
   }
 }
