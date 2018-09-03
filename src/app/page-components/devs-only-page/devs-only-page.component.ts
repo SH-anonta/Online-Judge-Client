@@ -1,7 +1,6 @@
 import {Component, OnInit, ViewContainerRef} from '@angular/core';
 import {DataFetcherService} from '../../global-services/data-fetcher.service';
 import {HttpClient} from '@angular/common/http';
-import {AnnouncementRepositoryService} from '../../global-services/repository-services/announcement-repository.service';
 import {ToastsManager} from 'ng6-toastr';
 
 @Component({
@@ -14,40 +13,34 @@ export class DevsOnlyPageComponent implements OnInit {
 
   constructor(private client: HttpClient,
               private toast_man: ToastsManager,
-              private announcement_repo: AnnouncementRepositoryService) {
+              private data_fetcher: DataFetcherService) {
   }
 
   ngOnInit() {
   }
 
   onDoStuffBtnClick(){
-
+    this.doAuth();
   }
 
-
-  showAnnouncementList(){
-    let p = this.announcement_repo.getAnnouncements(1, 10);
-
-    p.then(d =>{
-      console.log(d);
-    });
-    p.catch(e =>{
-      console.log(e);
-    });
-
-    let x = this;
+  onRedDoStuffBtnClick(){
+    this.getTempController();
   }
 
-  private showAnnouncementDetail() {
-    let p = this.announcement_repo.getAnnouncement(1);
+  doAuth(){
+    let data = {UserName: 'admin', Password: 'password'};
+    let promise = this.data_fetcher.post('api/login', data);
 
-    p.then(d =>{
-      console.log(d);
-    });
-    p.catch(e =>{
-      console.log(e);
-    });
+    promise.then(x=>{
+      console.log(x);
+    })
+  }
 
-    let x = this;
+  getTempController(){
+    let promise = this.data_fetcher.get('api/temp/page');
+
+    promise.then(x=>{
+      console.log(x);
+    })
   }
 }
