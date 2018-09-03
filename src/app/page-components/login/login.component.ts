@@ -6,6 +6,7 @@ import {UserService} from '../../global-services/user.service';
 import {User} from '../../global-models/user.model';
 import { Router} from '@angular/router';
 import {LinkGeneratorService} from '../../global-services/link-generator.service';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ import {LinkGeneratorService} from '../../global-services/link-generator.service
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  show_error_msg: boolean = false;
   @ViewChild('Form') form_ref: ElementRef;
   @ViewChild('Form') form: NgForm;
 
@@ -32,6 +34,10 @@ export class LoginComponent implements OnInit {
 
     promise.then((user: User)=> {
       this.router.navigate(this.link_generator.homePage())
+    });
+
+    promise.catch((error: HttpErrorResponse)=> {
+      this.show_error_msg= true;
     });
   }
 }
