@@ -85,7 +85,6 @@ export class UserService {
     return this.user && this.user.isAdmin;
   }
 
-  // todo these are dummy and only check if user is admin or judge
   isAuthenticated(){
     return this.user != null;
   }
@@ -99,7 +98,7 @@ export class UserService {
   }
 
   isAuthorizedToCreateProblem(){
-
+    return this.user && (this.user.isAdmin || this.user.isJudge);
   }
 
   isAuthorizedToEditProblem(problem_id: string){

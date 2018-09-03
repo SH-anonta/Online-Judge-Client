@@ -4,7 +4,9 @@
       <h3>All Problems</h3>
     </div>
 
-    <div class="col-sm-2 text-right">
+    <div
+      *ngIf="user_service.isAuthorizedToCreateProblem()"
+      class="col-sm-2 text-right">
       <a [routerLink]="link_generator.problemCreate()"
          class="btn btn-sm btn-dark">
         Create

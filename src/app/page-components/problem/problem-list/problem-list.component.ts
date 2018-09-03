@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {AnnouncementRepositoryService} from '../../../global-services/repository-services/announcement-repository.service';
 import {ProblemListItem, ProblemRepositoryService} from '../../../global-services/repository-services/problem-repository-service';
 import {HttpErrorResponse} from '@angular/common/http';
+import {UserService} from '../../../global-services/user.service';
 
 @Component({
   selector: 'app-problem-list',
@@ -18,6 +19,7 @@ export class ProblemListComponent implements OnInit {
   current_page:number = 1;
 
   constructor(private router: Router,
+              public user_service: UserService,
               public route: ActivatedRoute,
               public link_generator: LinkGeneratorService,
               private problem_repository: ProblemRepositoryService) {}
