@@ -43,7 +43,7 @@ export class UserService {
   constructor(private authenticator: AuthService,
               private user_repository: UserRepositoryService){
     //todo remove statement before release, user is logged by default for ease of development only
-    this.login('admin', 'password');
+    // this.login('admin', 'password');
   }
 
   updateUserState(){

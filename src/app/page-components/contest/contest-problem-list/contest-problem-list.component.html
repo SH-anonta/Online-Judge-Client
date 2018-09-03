@@ -9,7 +9,12 @@
   <div class="row">
 
     <div class="col-sm-10 mx-auto">
-      <table class="table table-striped">
+      <table
+        *ngIf="contest_has_started
+        || (user_service.user && user_service.user.isAdmin)
+        || user_service.user_id == contest_data.CreatorId;
+        else message_div"
+        class="table table-striped">
         <tr>
           <th>#</th>
           <th>Title</th>
@@ -25,6 +30,10 @@
         </tr>
 
       </table>
+
+      <ng-template #message_div>
+        <p>The contest has not started yet</p>
+      </ng-template>
     </div>
   </div>
 </div>

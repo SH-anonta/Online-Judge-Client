@@ -20,6 +20,7 @@ import { ContestUserSubmissionsComponent } from './contest-user-submissions/cont
 import {NumberToAlphabet} from '../../pipes/number-to-alphabet';
 import {NgAutoCompleteModule} from 'ng-auto-complete';
 import {QuillEditorModule} from 'ngx-quill-editor/quillEditor.module';
+import {IsAuthenticated} from '../../route-guards/IsAuthenticated';
 
 
 const routers= [
@@ -34,6 +35,7 @@ const routers= [
       {
         path: 'create',
         component: ContestCreatorComponent,
+        canActivate: [IsAuthenticated]
       },
       {
         path: ':contest_id',
@@ -42,10 +44,12 @@ const routers= [
       {
         path: ':contest_id/register',
         component: ContestRegistrationComponent,
+        canActivate: [IsAuthenticated]
       },
       {
         path: ':contest_id/edit',
         component: ContestEditorComponent,
+        canActivate: [IsAuthenticated]
       },
       {
         path: ':contest_id/submissions',
@@ -66,6 +70,7 @@ const routers= [
       {
         path: ':contest_id/problems/:problem_id/submit',
         component: ContestSubmitComponent,
+        canActivate: [IsAuthenticated]
       },
       {
         path: ':contest_id/rank',
