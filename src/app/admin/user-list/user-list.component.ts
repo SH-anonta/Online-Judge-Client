@@ -2,28 +2,33 @@ import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {User} from '../../global-models/user.model';
 import {DataFetcherService} from '../../global-services/data-fetcher.service';
 
+
+class UserListItem {
+  Id: number;
+  UserName: string;
+  UserType: string;
+}
+
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })
-export class UserListComponent implements OnInit, AfterViewInit {
-  user_list: User[]= [];
+export class UserListComponent implements OnInit {
+  user_list: UserListItem[]= [];
+
   constructor(private data_fetcher: DataFetcherService) { }
 
   ngOnInit() {
+    this.loadData();
   }
 
-  ngAfterViewInit(){
-    // load the list of users
-    const promise = this.data_fetcher.getAllUsersList();
 
-    promise.then(users =>{
-      this.user_list = users;
-    });
+  loadData(){
+    let promise = this.data_fetcher.get('api/users');
 
-    promise.catch((reason)=>{
-      console.log('Failed to get user list: ', reason)
+    promise.then(x=>{
+      this.user_list = x;
     });
   }
 }

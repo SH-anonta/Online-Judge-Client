@@ -22,7 +22,6 @@ export class ProblemListComponent implements OnInit {
     let promise = this.data_fetcher.get('api/problems/all');
 
     promise.then(x=>{
-      console.log(x)
       this.problem_list= x;
     });
   }
