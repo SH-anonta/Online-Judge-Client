@@ -65,7 +65,7 @@ export class UserRepositoryService {
   getUserState() : Promise<any>{
     // console.log('WARNING: DUMMY USER STATE BEING USED');
     // todo replace with real data before build
-    // return this.getDummyUserStateData();
-    return this.data_fetcher.get('api/users/my-state');
+    return this.getDummyUserStateData();
+    // return this.data_fetcher.get('api/users/my-state');
   }
 }

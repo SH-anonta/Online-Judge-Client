@@ -5,7 +5,8 @@
       <h3 class="h3">{{contest_data.Title}}</h3>
     </div>
 
-    <div  *ngIf="user_service.isAuthorizedToEditContest(contest_id)"
+    <div  *ngIf="user_service.user.isAdmin
+                || user_service.user_id == contest_data.CreatorId"
           class="col-sm-2 text-right pt-1">
       <a [routerLink]="link_generator.contestEditor(contest_id)"
          class="btn btn-sm btn-dark mr-1">
@@ -31,7 +32,7 @@
   <div class="row mb-5">
     <div
       *ngIf="contest_started
-            || user_service.isAdmin
+            || user_service.user.isAdmin
             || user_service.user_id == contest_data.CreatorId"
       class="col-sm">
 
@@ -51,14 +52,6 @@
       <a [routerLink]="link_generator.contestSubmissions(contest_id)"
          class="btn form-control btn-dark">
         Submissions
-      </a>
-    </div>
-
-    <div class="col-sm">
-      <!-- todo hide if user is already registered-->
-      <a [routerLink]="link_generator.contestRegistration(contest_id)"
-         class="btn btn-dark form-control">
-        Registration
       </a>
     </div>
 
