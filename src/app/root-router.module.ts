@@ -19,6 +19,7 @@ import {NgAutoCompleteModule} from 'ng-auto-complete';
 import {IsAuthenticated} from './route-guards/IsAuthenticated';
 import {IsNotAuthenticated} from './route-guards/IsNotAuthenticated';
 import {IsAdministrator} from './route-guards/IsAdministrator';
+import {SharedComponentsModule} from './shared-components/shared-components.module';
 
 const routes = [
   {path: '', component: HomepageComponent},
@@ -69,6 +70,7 @@ const routes = [
     ProblemRouterModule,
     ContestRouterModule,
     AnnouncementsRouterModule,
+    SharedComponentsModule,
 
     FormsModule,
     CommonModule,

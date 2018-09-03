@@ -28,6 +28,7 @@ export class UserListComponent implements OnInit {
     let promise = this.data_fetcher.get('api/users');
 
     promise.then(x=>{
+      console.log(x);
       this.user_list = x;
     });
   }

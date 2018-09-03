@@ -3,6 +3,7 @@ import {NgForm} from '@angular/forms';
 import {Router} from '@angular/router';
 import {UserRepositoryService} from '../../global-services/repository-services/user-repository.service';
 import {LinkGeneratorService} from '../../global-services/link-generator.service';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -10,6 +11,7 @@ import {LinkGeneratorService} from '../../global-services/link-generator.service
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  error_messages: string[] = [];
 
   @ViewChild('reg_form') registration_form;
 
@@ -24,6 +26,10 @@ export class RegisterComponent implements OnInit {
     let promise = this.user_repository.createNewUser(form.value);
     promise.then(x=>{
       this.router.navigate(this.link_generator.loginPage())
+    });
+
+    promise.catch((resp: HttpErrorResponse)=>{
+      this.error_messages = resp.error;
     });
   }
 }
