@@ -16,7 +16,7 @@ export class UserComponent {
 
   constructor(public link_generator: LinkGeneratorService,
               public route: ActivatedRoute,){
-    this.user_id = this.route.snapshot.params['user_id'];
+    this.user_id = this.route.params['user_id'];
   }
 
 }

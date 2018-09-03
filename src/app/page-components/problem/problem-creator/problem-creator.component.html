@@ -98,12 +98,12 @@
 
         <label for="ContestType">Visibility</label>
         <select
-          name="Visibility"
+          name="IsPublic"
           [ngModel]="1"
           class="form-control mb-3"
           id="ContestType">
-          <option selected value="0">Private</option>
-          <option value="1">Public</option>
+          <option selected value="false">Private</option>
+          <option value="true">Public</option>
         </select>
 
         <div class="form-row mb-2">

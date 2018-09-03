@@ -14,7 +14,7 @@
       </a>
     </li>
 
-    <li>
+    <li *ngIf="(user_service.user && (user_service.user.isJudge || user_service.user.isAdmin))">
       <a
         class="page-link"
         [routerLink]="link_generator.userProblems(user_service.user_id)">
